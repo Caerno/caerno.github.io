@@ -14,11 +14,11 @@
     },
     {
       "label": "What I built",
-      "text": "In five months I took the platform from an empty repository to production with a live clinic. It has deterministic dialogue orchestration, an LLM, RAG over clinic knowledge, a booking state machine and operator handoff. Separately I built a behavioural regression rig: simulated patients talk to the bot and a calibrated LLM judge scores every dialogue (5,300+ automated tests, judge on a local GPU at zero cloud cost). The cost of every model call is visible end to end."
+      "text": "In five months I took the platform from an empty repository to production with a live clinic. It has deterministic dialogue orchestration, an LLM, RAG over clinic knowledge, a booking state machine and operator handoff. Separately I built a behavioural regression rig: simulated patients talk to the bot and a calibrated LLM judge scores the behaviour they produce (5,300+ automated tests, judge on a local GPU at zero cloud cost). The cost of every model call is visible end to end."
     },
     {
       "label": "Result",
-      "text": "Clinics run in production, real patients book through the bot, every dialogue is scored for quality. The unit economics of the product are modelled for investor negotiations."
+      "text": "Clinics run in production, real patients book through the bot, and dialogue behaviour is tested systematically before a release. The unit economics of the product are modelled for investor negotiations."
     },
     {
       "label": "Stack",
