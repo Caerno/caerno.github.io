@@ -334,7 +334,7 @@ ${fits.fits.map((f) => `
   <section class="hero">
     <div class="hero__main">
     <p class="hero__role" id="lens-role">${esc(t(`lens.${def.id}.role`, def.role))}</p>
-    <h2 class="hero__name">${t('profile.nameLines', profile.nameLines.join('|')).split('|').map(esc).join('<br>')}</h2>
+    <h2 class="hero__name">${t('profile.nameLines', profile.nameLines.join('|')).split(/\s*\|\s*/).map(esc).join('<br>')}</h2>
     <p class="hero__headline" id="lens-headline">${esc(t(`lens.${def.id}.headline`, def.headline))}</p>
     <p class="hero__status">${esc(t('profile.status', profile.status))}</p>
     <nav class="lenses">
