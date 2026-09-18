@@ -333,7 +333,7 @@ ${fits.fits.map((f) => `
   <section class="hero">
     <div class="hero__main">
     <p class="hero__role" id="lens-role">${esc(t(`lens.${def.id}.role`, def.role))}</p>
-    <h2 class="hero__name">${profile.nameLines.map(esc).join('<br>')}</h2>
+    <h2 class="hero__name">${t('profile.nameLines', profile.nameLines.join('|')).split('|').map(esc).join('<br>')}</h2>
     <p class="hero__headline" id="lens-headline">${esc(t(`lens.${def.id}.headline`, def.headline))}</p>
     <p class="hero__status">${esc(t('profile.status', profile.status))}</p>
     <nav class="lenses">
@@ -461,7 +461,7 @@ ${fitsCol}
   const band = `
   <a class="band" href="./crew.html">
     <span class="band__label">${u('orgDoor')}</span>
-    <span class="band__text">${esc(t('band.text', 'Twelve seats an AI product needs — what each owns, what breaks while it is empty, and who has to sit next to it.'))} ${crew.roles.length} ${u('seats')} · ${covCount.covered ?? 0} ${u('covered')} · ${covCount.partial ?? 0} ${u('partial')} · ${covCount.uncovered ?? 0} ${u('openCount')}.</span>
+    <span class="band__text">${esc(u('bandText'))} ${crew.roles.length} ${u('seats')} · ${covCount.covered ?? 0} ${u('covered')} · ${covCount.partial ?? 0} ${u('partial')} · ${covCount.uncovered ?? 0} ${u('openCount')}.</span>
     <span class="band__go">→</span>
   </a>`;
 
@@ -487,7 +487,6 @@ ${fitsCol}
 ${head('')}
 ${hero}
 ${linkrow}
-${band}
   <div class="cards">
 ${fulls}
   </div>
@@ -496,13 +495,14 @@ ${fulls}
 ${minis}
   </div>
   <p class="note">${esc(t('profile.note', profile.note))}</p>
+${band}
 ${minedSection}
 </div>
 ${script}`;
 
   await writeFile(
     join(OUT, 'index.html'),
-    page({ title: `${profile.name} — ${t('profile.role', profile.role)}`, description: t(`lens.${def.id}.headline`, def.headline), body: gallery, file: 'index.html' })
+    page({ title: `${t('profile.name', profile.name)} — ${t('profile.role', profile.role)}`, description: t(`lens.${def.id}.headline`, def.headline), body: gallery, file: 'index.html' })
   );
 
   for (const c of cases) {
@@ -516,7 +516,7 @@ ${linkrow}
 </div>`;
     await writeFile(
       join(OUT, `${c.slug}.html`),
-      page({ title: `${t(`case.${c.slug}.domain`, c.domain)} — ${profile.name}`, description: t(`case.${c.slug}.tagline`, c.tagline), body, file: `${c.slug}.html` })
+      page({ title: `${t(`case.${c.slug}.domain`, c.domain)} — ${t('profile.name', profile.name)}`, description: t(`case.${c.slug}.tagline`, c.tagline), body, file: `${c.slug}.html` })
     );
   }
 
@@ -564,7 +564,7 @@ ${SEAT_SCRIPT}`;
 
   await writeFile(
     join(OUT, 'crew.html'),
-    page({ title: `${t('crew.title', crew.meta.title)} — ${profile.name}`, description: t('crew.lede', crew.meta.lede), body: crewBody, file: 'crew.html' })
+    page({ title: `${t('crew.title', crew.meta.title)} — ${t('profile.name', profile.name)}`, description: t('crew.lede', crew.meta.lede), body: crewBody, file: 'crew.html' })
   );
 
   for (const r of crew.roles) {
@@ -592,7 +592,7 @@ ${renderRoleDetail(r, caseMap)}
 </div>`;
     await writeFile(
       join(OUT, `crew-${r.id}.html`),
-      page({ title: `${t(`role.${r.id}.seat`, r.seat)} — ${profile.name}`, description: t(`role.${r.id}.owns`, r.owns), body, file: `crew-${r.id}.html` })
+      page({ title: `${t(`role.${r.id}.seat`, r.seat)} — ${t('profile.name', profile.name)}`, description: t(`role.${r.id}.owns`, r.owns), body, file: `crew-${r.id}.html` })
     );
   }
 
@@ -605,8 +605,8 @@ ${renderRoleDetail(r, caseMap)}
   await writeFile(join(DIST, 'styles.css'), css.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n{3,}/g, '\n\n').trimStart());
   console.log(
     `✓ dist/: index.html (${lenses.length} упаковки) + ${cases.length} кейсов + ` +
-      `crew.html (${crew.roles.filter((r) => r.tier === 'core').length} основных / ${crew.roles.filter((r) => r.tier !== 'core').length} вспомогательных кресел) + ` +
-      `${crew.roles.length} страниц кресел, en + ru + styles.css`
+      `crew.html (${crew.roles.filter((r) => r.tier === 'core').length} основных / ${crew.roles.filter((r) => r.tier !== 'core').length} вспомогательных ролей) + ` +
+      `${crew.roles.length} страниц ролей, en + ru + styles.css`
   );
 }
 

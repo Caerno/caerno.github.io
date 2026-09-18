@@ -136,6 +136,10 @@
     "supportSeats": {
       "en": "Support seats — part-time, shared, or someone else's entirely",
       "ru": "Вспомогательные — на часть ставки, общие или вовсе чужие"
+    },
+    "bandText": {
+      "en": "Twelve roles an AI product needs — what each owns, what breaks while it is empty, and who has to work next to it.",
+      "ru": "Двенадцать ролей, которые нужны продукту с LLM: за что каждая отвечает, что ломается, пока она не закрыта, и кто должен работать рядом."
     }
   }
 }

@@ -32,8 +32,8 @@ export async function loadTexts(DATA) {
   const P = (path, box, key, hint) => units.push({ id: path, kind: 'plain', section, path, box, key, hint });
 
   S('Первый экран: имя, роль, тезис, статус, ссылки');
-  P('profile.json → name', profile, 'name', 'имя в заголовке окна и в подписях страниц');
-  P('profile.json → nameLines', profile, 'nameLines', 'крупное имя, по строке на элемент; правится как список через |');
+  U('profile.json → name', 'profile.name', profile, 'name', 'имя в шапке и в заголовке вкладки');
+  U('profile.json → nameLines', 'profile.nameLines', profile, 'nameLines', 'крупное имя на первом экране, строки через |');
   U('profile.json → role', 'profile.role', profile, 'role', 'строка роли под шапкой — показывается, пока не выбрана линза');
   U('profile.json → status', 'profile.status', profile, 'status', 'формат работы, часовой пояс, язык');
   U('profile.json → note', 'profile.note', profile, 'note');
