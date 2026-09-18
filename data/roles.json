@@ -1,0 +1,412 @@
+{
+  "meta": {
+    "title": "Twelve seats",
+    "kicker": "the crew an AI product needs before it survives a paying customer",
+    "lede": "An AI product needs about twelve seats filled before it can work properly with a paying customer. Most do not need a full-time person. One person can hold several of them for a while — that is what keeps a crew small, and it is why some problems surface late. Two of the seats cannot be replaced by engineering.",
+    "howto": "For each seat: what it owns, how you know the work is done, what happens while it is empty, and who has to work next to it. Where a seat says covered, I have done that work and the evidence is linked. Where it says open, you need a separate person — and those two are the ones I would hire first.",
+    "scope": "This is about crews of three to fifteen people building a product with an LLM in it. In a company of four hundred these are departments and many of the answers change.",
+    "portraits": "Roles are named the way the market names them; the emoji is a marker, not a mascot."
+  },
+  "roles": [
+    {
+      "id": "cartographer",
+      "seat": "Product & domain discovery",
+      "tier": "core",
+      "owns": "Turning an unfamiliar domain into requirements you can build against: understanding how it works from the client's point of view before anyone writes code.",
+      "measured": "How much gets rebuilt after the first release meets a real user.",
+      "empty": "Engineers try to infer the domain from a single feature request. The product ships quickly into a demo, turns out to be wrong in structure, and the team cannot say why for months.",
+      "grades": "senior → lead. There is no junior version: the job is knowing what not to build.",
+      "kit": [
+        "domain mapping",
+        "requirement archaeology",
+        "spec writing",
+        "stakeholder interviews"
+      ],
+      "coverage": "covered",
+      "evidence": [
+        {
+          "text": "Clinic front desk: a patient dialogue is a state machine that speaks natural language. Separating the booking from the conversation with the patient is what made quality testable.",
+          "case": "healthcare"
+        },
+        {
+          "text": "Sixteen years reading other people's ledgers, contracts and asset registers — forensic analysis where the conclusion had to survive cross-examination in an arbitration court.",
+          "case": "forensic-finance"
+        },
+        {
+          "text": "Two more domains I studied from outside: elections in a volunteer community and a data-analysis curriculum in edtech.",
+          "case": "wiki-governance"
+        }
+      ],
+      "limit": "I can understand a domain if a practitioner explains how it works. I cannot replace that practitioner: I have never treated a patient, and I know the difference between a model of a clinic and the clinic.",
+      "complement": {
+        "seat": "The design partner — a real practitioner inside the domain",
+        "why": "I can only understand what I am shown. So you need someone inside the domain who explains regularly how the work really goes and corrects my assumptions. One available practitioner is worth more than three advisors with impressive titles.",
+        "when": "Before the first line of code. Without that person you have a hypothesis, not a product."
+      },
+      "emoji": "🧭"
+    },
+    {
+      "id": "shipwright",
+      "seat": "LLM product engineering",
+      "tier": "core",
+      "owns": "The product itself: dialogue orchestration, retrieval, agentic pipelines, integrations and the other technical parts that hold it up.",
+      "measured": "Whether the product works for someone who was not involved in building it.",
+      "empty": "Nothing exists. Everything else on this page is a plan.",
+      "grades": "mid → senior. A mid can build the main scenario; the senior work starts at the seams.",
+      "kit": [
+        "Python",
+        "dialogue orchestration",
+        "RAG",
+        "FSM design",
+        "integration work"
+      ],
+      "coverage": "covered",
+      "evidence": [
+        {
+          "text": "An LLM platform for clinics: in five months I took it from an empty repository to production with a live client. It has deterministic dialogue orchestration, retrieval over clinic knowledge, a booking state machine and operator handoff.",
+          "case": "healthcare"
+        },
+        {
+          "text": "Lua in production on roughly 1.4 million Wikipedia pages — code maintained by strangers, where a bad edge case is visible to everyone.",
+          "case": "wikipedia-infra"
+        }
+      ],
+      "limit": "One product in production with live client traffic. I have not run a system under load heavy enough to make scale itself the main engineering problem, and I say so before anyone asks.",
+      "complement": {
+        "seat": "Frontend & interaction engineer",
+        "why": "I build the system and its seams. The interface is separate work, and a good system can lose to a worse one that is easier to use.",
+        "when": "The first hire after the engineer, in any product with a user interface."
+      },
+      "emoji": "🛠"
+    },
+    {
+      "id": "judge",
+      "seat": "Evaluation & QA",
+      "tier": "core",
+      "owns": "Checking the claim 'it works', and the evidence that survives someone looking for the error.",
+      "measured": "Whether a quality regression is caught by the rig before it is caught by a customer.",
+      "empty": "Quality gets judged by eye. Every release becomes a bet, and the team gradually avoids changing the system because nobody can tell whether it got better.",
+      "grades": "senior. What matters here is memory of what has already broken.",
+      "kit": [
+        "simulation testing",
+        "LLM-as-judge calibration",
+        "regression rigs",
+        "rubric design"
+      ],
+      "coverage": "covered",
+      "evidence": [
+        {
+          "text": "A behavioural regression rig where simulated patients talk to the bot and a calibrated LLM judge scores every dialogue — 5300+ automated tests, judge running on a local GPU at zero cloud cost.",
+          "case": "healthcare"
+        },
+        {
+          "text": "Before that: sixteen years where a conclusion had to hold up in an adversarial process, not a slide review. Evals are the same discipline with a newer object.",
+          "case": "forensic-finance"
+        },
+        {
+          "text": "Detecting manipulation in 49,286 votes across nine years of community elections — and building the criteria that separate an anomaly from ordinary behaviour.",
+          "case": "wiki-governance"
+        }
+      ],
+      "limit": "A judge scores against criteria. I can build the rig and calibrate it, but I cannot decide what counts as a good result in medicine or law.",
+      "complement": {
+        "seat": "The domain specialist who owns the scoring criteria",
+        "why": "The standard is not mine to invent. In a clinic that is a clinician; in finance, an auditor. Without them the rig measures self-consistency and calls it quality.",
+        "when": "As soon as the rig exists. Two hours of their attention a week — not a full seat, but those two hours are the whole value of the rig."
+      },
+      "emoji": "✅"
+    },
+    {
+      "id": "quartermaster",
+      "seat": "Platform, observability & cost",
+      "tier": "core",
+      "owns": "Where the tokens go, what one conversation costs, and what the system is doing right now.",
+      "measured": "Cost per unit of result, and how long it takes to find the cause of a failure.",
+      "empty": "The bill arrives before the understanding. Nobody can answer 'is this feature profitable' or 'why was last Tuesday bad'.",
+      "grades": "mid → senior. Setting up metrics is mid work; deciding what is worth measuring is not.",
+      "kit": [
+        "Prometheus",
+        "Grafana",
+        "Loki",
+        "per-call cost accounting",
+        "local GPU inference"
+      ],
+      "coverage": "covered",
+      "evidence": [
+        {
+          "text": "End-to-end cost observability for every LLM call, and the unit cost of a dialogue as a number rather than an intuition.",
+          "case": "healthcare"
+        },
+        {
+          "text": "Moving the judge to a local GPU — a cost decision made because the cost was visible. That is the whole point of this seat.",
+          "case": "healthcare"
+        }
+      ],
+      "limit": "Observability is not availability. I set up metrics, diagnose failures and cut cost. A 24/7 on-call rotation against an uptime SLA is a separate seat.",
+      "complement": {
+        "seat": "On-call ownership (SRE)",
+        "why": "Knowing what broke and being contractually responsible for it not breaking are different jobs with different sleep schedules.",
+        "when": "At the first customer with an SLA in the contract."
+      },
+      "emoji": "📊"
+    },
+    {
+      "id": "assayer",
+      "seat": "Unit economics & business model",
+      "tier": "core",
+      "owns": "Whether the thing can make money, and the point at which that stops being a guess.",
+      "measured": "Whether the model matches the real invoice three months later.",
+      "empty": "The price is set out of thin air. A round is raised on a story the numbers contradict, and the problem surfaces in due diligence.",
+      "grades": "founder-level or fractional. Rarely a full-time hire before series A.",
+      "kit": [
+        "unit economics",
+        "cost modelling",
+        "investor-facing models",
+        "econometrics"
+      ],
+      "coverage": "covered",
+      "evidence": [
+        {
+          "text": "Unit economics of an LLM product modelled for investor negotiations — built on the per-call cost data rather than on assumptions.",
+          "case": "healthcare"
+        },
+        {
+          "text": "Sixteen years of econometric models, audits and distressed-asset workouts, where the numbers were read by someone paid to find the hole in them.",
+          "case": "forensic-finance"
+        }
+      ],
+      "limit": "I model what a customer has to pay for the economics to work. What a customer is actually willing to pay is a question about the market, and that needs a sales person.",
+      "complement": {
+        "seat": "Commercial ownership — sales",
+        "why": "A model gives you a floor for the price; only a sales conversation gives you the ceiling. The two seats should argue every week, and they should not stay in the same head for long.",
+        "when": "Immediately. This is the pair that decides whether the company exists."
+      },
+      "emoji": "💰"
+    },
+    {
+      "id": "miner",
+      "seat": "Data engineering",
+      "tier": "support",
+      "owns": "Raw material — collecting and cleaning the data everything else is built on.",
+      "measured": "How much of the pipeline another person can run on their own.",
+      "empty": "Analysis runs on one person's laptop and dies with their laptop.",
+      "grades": "mid. Senior only when volume or freshness becomes the constraint.",
+      "kit": [
+        "Python",
+        "SQL",
+        "scraping & API pulls",
+        "dataset publication"
+      ],
+      "coverage": "covered",
+      "evidence": [
+        {
+          "text": "Sixteen years of getting data out of other people's ledgers, registries and contract archives — the extraction and cleaning half of forensic work.",
+          "case": "forensic-finance"
+        },
+        {
+          "text": "49,286 votes across nine years of Wikipedia arbitration elections — collected, entity-resolved and published as an open dataset on Kaggle.",
+          "case": "wiki-governance"
+        },
+        {
+          "text": "Vacancy and skills corpora assembled for analysis; teaching the data-wrangling half of an analytics curriculum for four years.",
+          "case": "edtech"
+        }
+      ],
+      "limit": "I build datasets and pipelines another person can run without my help, and I publish them. A platform that runs unattended on a schedule and needs someone on call when it breaks is a different job: operations, not assembly.",
+      "complement": {
+        "seat": "Data platform engineer",
+        "why": "Assembling data once and maintaining a pipeline with an SLA are different jobs. My approach stops working when the data has to stay current.",
+        "when": "When a pipeline must run unattended on a schedule and someone notices within an hour if it does not."
+      },
+      "emoji": "🧱"
+    },
+    {
+      "id": "scout",
+      "seat": "Applied research & model selection",
+      "tier": "support",
+      "owns": "Which model to pick, when a prompt or retrieval is enough and when fine-tuning is needed, and what the benchmark actually measures.",
+      "measured": "Decisions that still work after the next model release instead of needing a rewrite.",
+      "empty": "The stack gets chosen by whatever was visible that month, and chosen again the next.",
+      "grades": "mid → senior, narrow. The senior part is knowing when no research is needed at all.",
+      "kit": [
+        "model evaluation",
+        "retrieval design",
+        "prompt architecture",
+        "local inference"
+      ],
+      "coverage": "partial",
+      "evidence": [
+        {
+          "text": "Selecting and calibrating the judge model against human-agreed scores; designing retrieval over clinic knowledge with its failure cases written down.",
+          "case": "healthcare"
+        }
+      ],
+      "limit": "I select models, compare them and integrate them into the product. I do not train models, and I do not treat reading papers as a substitute for having trained one.",
+      "complement": {
+        "seat": "Applied scientist / ML researcher",
+        "why": "Needed the moment the honest answer is 'train something', not 'choose and wire something'.",
+        "when": "Most AI products never reach that line. Work out whether you need a research seat at all before hiring for it: a year of a researcher on a product that needed integration work is expensive."
+      },
+      "emoji": "🔬"
+    },
+    {
+      "id": "warden",
+      "seat": "Security, privacy & compliance",
+      "tier": "support",
+      "owns": "What happens to other people's data, and what the product is allowed to promise.",
+      "measured": "The absence of the mistake you cannot undo.",
+      "empty": "The incident is discovered by the customer, and the second customer reads about it.",
+      "grades": "senior specialist, plus counsel. Improvisation does not work here.",
+      "kit": [
+        "PII boundaries",
+        "data retention design",
+        "obligation reading",
+        "audit discipline"
+      ],
+      "coverage": "partial",
+      "evidence": [
+        {
+          "text": "A medical-domain product built under PII constraints: what the model may see, what is stored, what the bot must never say.",
+          "case": "healthcare"
+        },
+        {
+          "text": "An audit background means I read obligations in the source text rather than reconstructing them from a blog post.",
+          "case": "forensic-finance"
+        }
+      ],
+      "limit": "I work within the constraints and I know where a specialist is needed. Signing off on regulatory compliance is not my role, and nobody should hand it to me.",
+      "complement": {
+        "seat": "Data protection officer / compliance counsel, plus a security engineer if there is a certification target",
+        "why": "My seat makes theirs possible: clean data boundaries and an honest inventory of what is stored where. It does not replace their work.",
+        "when": "Before the second customer in a regulated domain. Before the first, if that first one is a hospital."
+      },
+      "emoji": "🔒"
+    },
+    {
+      "id": "steward",
+      "seat": "Delivery & project management",
+      "tier": "support",
+      "owns": "Scope, sequence and the promises the team makes to people outside it.",
+      "measured": "Whether the promised date and the promised scope both matched what actually shipped.",
+      "empty": "Everything is in progress and nothing ships. Status turns into a feeling, and the problems become visible only when optimism stops helping.",
+      "grades": "mid → lead. Part-time in a small crew, which is why it sits in support rather than core.",
+      "kit": [
+        "scoping",
+        "delivery planning",
+        "stakeholder management",
+        "estimation"
+      ],
+      "coverage": "covered",
+      "evidence": [
+        {
+          "text": "Sixteen years of working with data, including forensic engagements delivered into domains that were not mine, on dates that were contractual — scoping, sequencing and defending the result were part of the job.",
+          "case": "forensic-finance"
+        },
+        {
+          "text": "Lead expert on a data curriculum with a cohort schedule that does not move for anybody.",
+          "case": "edtech"
+        },
+        {
+          "text": "Empty repository to a production client in five months, with the sequencing decisions that made that possible.",
+          "case": "healthcare"
+        }
+      ],
+      "limit": "This works up to roughly a dozen people. I own scope, sequencing and delivery. Performance reviews and long-term career work belong to an engineering manager.",
+      "complement": {
+        "seat": "Engineering manager",
+        "why": "Past about fifteen people, planning starts taking too much time away from building. One person can no longer do both jobs well.",
+        "when": "At the third engineer, or the first one who needs a career conversation rather than a task."
+      },
+      "emoji": "📋"
+    },
+    {
+      "id": "scribe",
+      "seat": "Documentation & enablement",
+      "tier": "support",
+      "owns": "Whether the next person can use and maintain what was built without its author.",
+      "measured": "How many questions arrive that the documentation already answers.",
+      "empty": "If everything rests on one author, losing that person stops the work. Handing such a system over can take a month.",
+      "grades": "any grade, but it has to be someone who has built things — technical writing by a non-builder documents the interface and misses the trap.",
+      "kit": [
+        "technical writing",
+        "teaching",
+        "runbooks",
+        "architecture decision records"
+      ],
+      "coverage": "covered",
+      "evidence": [
+        {
+          "text": "Four years teaching the data track at Yandex Practicum — the difference between knowing something and being able to hand it over.",
+          "case": "edtech"
+        },
+        {
+          "text": "A Lua module documented well enough for other volunteers to extend it without my help.",
+          "case": "wikipedia-infra"
+        }
+      ],
+      "limit": "I write internal documentation, decision records and runbooks, and I hand the system over to whoever will maintain it. The copy a customer reads is separate design work.",
+      "complement": {
+        "seat": "Content designer",
+        "why": "Everything a user reads inside the product — error text, empty states, the bot's own voice — is design work, not writing work.",
+        "when": "As soon as the product has words in it that a customer reads. In a conversational product, that is day one."
+      },
+      "emoji": "📚"
+    },
+    {
+      "id": "glazier",
+      "seat": "Frontend & interaction",
+      "tier": "support",
+      "owns": "The interface a person uses.",
+      "measured": "Whether a new user can complete the task without being told how.",
+      "empty": "A good system loses to a worse one that is easier to use. If the interface is unclear, every demo needs someone explaining it.",
+      "grades": "mid → senior, plus design.",
+      "kit": [
+        "interaction design",
+        "design systems",
+        "accessibility",
+        "frontend engineering"
+      ],
+      "coverage": "uncovered",
+      "evidence": [
+        {
+          "text": "I build working interfaces — this page is one of them, written by hand without a framework. Beyond that the designer's work starts: interaction design, a design system and visual identity."
+        }
+      ],
+      "limit": "This seat is deliberately open: good design is a separate profession, and pretending an engineer replaces a designer usually means getting an engineer's interface.",
+      "complement": {
+        "seat": "A seat for a separate specialist",
+        "why": "It is the first hire I would make after myself in any crew whose product has a screen. Not the tenth — the first.",
+        "when": "Before the first customer demo you cannot personally narrate."
+      },
+      "emoji": "🖥"
+    },
+    {
+      "id": "envoy",
+      "seat": "Sales & design partners",
+      "tier": "support",
+      "owns": "The sales pipeline — the conversations that end in signed contracts.",
+      "measured": "Signed design partners first, repeat sales second.",
+      "empty": "A well-built product ends up with one user, and the team explains it with marketing problems.",
+      "grades": "founder-level early, then a real commercial hire. Never an intern.",
+      "kit": [
+        "outbound",
+        "discovery calls",
+        "pricing conversations",
+        "closing"
+      ],
+      "coverage": "uncovered",
+      "evidence": [
+        {
+          "text": "I can build the model, prepare the numbers for the deck, run the technical part of a customer conversation and talk to their engineers as an equal. But I do not find clients and I do not close deals."
+        }
+      ],
+      "limit": "I run the technical part of discovery, demo architecture and the unit-economics side of a commercial conversation. I am a technical partner to a founder, not an outbound sales rep. Finding clients and closing deals is a separate seat.",
+      "complement": {
+        "seat": "A founder-seller",
+        "why": "If a technical crew has nobody in this seat, engineering will not fix it. A good product may simply never find customers.",
+        "when": "Before the engineering starts. This is also the seat I check for in a company before agreeing to join."
+      },
+      "emoji": "🤝"
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "_": "Подписи интерфейса и названия методов. Русские названия методов — в i18n/ru.json (method.<id>).",
+  "methods": {
+    "domain-mapping": "Domain mapping",
+    "anomaly-detection": "Anomaly detection",
+    "entity-resolution": "Entity resolution",
+    "simulation-testing": "Simulation testing",
+    "cost-observability": "Cost observability",
+    "production-ownership": "Production ownership"
+  },
+  "ui": {
+    "masthead": {
+      "en": "field engagements",
+      "ru": "полевые задачи"
+    },
+    "viewAs": {
+      "en": "view as",
+      "ru": "смотреть как"
+    },
+    "alsoRecord": {
+      "en": "also on record",
+      "ru": "ещё в послужном"
+    },
+    "allEng": {
+      "en": "all engagements",
+      "ru": "все задачи"
+    },
+    "engagements": {
+      "en": "engagements",
+      "ru": "задачи"
+    },
+    "orgDoor": {
+      "en": "or start from the org chart",
+      "ru": "или зайти от оргструктуры"
+    },
+    "seats": {
+      "en": "seats",
+      "ru": "ролей"
+    },
+    "covered": {
+      "en": "covered",
+      "ru": "закрываю"
+    },
+    "partial": {
+      "en": "partial",
+      "ru": "частично"
+    },
+    "openSeat": {
+      "en": "open seat",
+      "ru": "роль открыта"
+    },
+    "openCount": {
+      "en": "open",
+      "ru": "открыты"
+    },
+    "covNote": {
+      "en": "I have done this work; evidence below",
+      "ru": "делал это, доказательства ниже"
+    },
+    "parNote": {
+      "en": "I cover part of it, and the boundary is stated",
+      "ru": "закрываю часть, граница названа"
+    },
+    "openNote": {
+      "en": "not covered by me — hire for it",
+      "ru": "не закрываю — нужен отдельный человек"
+    },
+    "owns": {
+      "en": "Owns",
+      "ru": "За что отвечает"
+    },
+    "measured": {
+      "en": "Measured by",
+      "ru": "Чем измеряется"
+    },
+    "empty": {
+      "en": "While the seat is empty",
+      "ru": "Если роль не закрыта"
+    },
+    "grades": {
+      "en": "Grade band",
+      "ru": "Грейд"
+    },
+    "myCoverage": {
+      "en": "My coverage",
+      "ru": "Моё покрытие"
+    },
+    "whereStop": {
+      "en": "Where I stop:",
+      "ru": "Где я останавливаюсь:"
+    },
+    "compSeat": {
+      "en": "Complementary seat",
+      "ru": "Кто нужен рядом"
+    },
+    "fillIt": {
+      "en": "Fill it:",
+      "ru": "Когда закрывать:"
+    },
+    "ownPage": {
+      "en": "open as its own page ↗",
+      "ru": "открыть отдельной страницей ↗"
+    },
+    "details": {
+      "en": "details",
+      "ru": "подробно"
+    },
+    "coreSeats": {
+      "en": "Core seats — without these the product does not exist",
+      "ru": "Основные роли — без них продукта не существует"
+    },
+    "allSeats": {
+      "en": "← all twelve seats",
+      "ru": "← все двенадцать ролей"
+    },
+    "coreSeat": {
+      "en": "Core seat",
+      "ru": "Основная роль"
+    },
+    "supportSeat": {
+      "en": "Support seat",
+      "ru": "Вспомогательная роль"
+    },
+    "twelve": {
+      "en": "twelve seats",
+      "ru": "двенадцать ролей"
+    },
+    "otherLang": {
+      "en": "RU",
+      "ru": "EN"
+    },
+    "fitSeats": {
+      "en": "seats for this →",
+      "ru": "роли под это →"
+    },
+    "supportSeats": {
+      "en": "Support seats — part-time, shared, or someone else's entirely",
+      "ru": "Вспомогательные — на часть ставки, общие или вовсе чужие"
+    }
+  }
+}

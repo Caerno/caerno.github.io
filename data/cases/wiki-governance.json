@@ -1,0 +1,35 @@
+{
+  "slug": "wiki-governance",
+  "domain": "Wiki governance",
+  "period": "2015 — 2024 (data) · 2026 (study)",
+  "org": "Independent study — Russian Wikipedia arbitration elections",
+  "title": [
+    "Wiki",
+    "governance"
+  ],
+  "tagline": "How is influence organised in a volunteer community of thousands? Nine years of election data, with voters renaming themselves along the way.",
+  "blocks": [
+    {
+      "label": "What I saw",
+      "text": "Before the clustering there is an identity problem: 1,260 voters whose names change through rename logs, typos and time."
+    },
+    {
+      "label": "What I built",
+      "text": "A dataset of 49,286 votes across 40 arbitration elections (2015–2024). Identities were matched through rename logs and edit distance; PCA and Ward clustering show five stable groups that persist year after year."
+    },
+    {
+      "label": "Result",
+      "text": "The dataset is public on Kaggle. For completeness: I served as an arbitrator there myself (as Carn) and ended up inside one of the clusters."
+    }
+  ],
+  "methods": [
+    "entity-resolution",
+    "anomaly-detection"
+  ],
+  "links": [
+    {
+      "label": "Kaggle dataset",
+      "url": "https://www.kaggle.com/datasets/caerno/ruwiki-elections"
+    }
+  ]
+}

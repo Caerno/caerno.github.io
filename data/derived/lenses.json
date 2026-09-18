@@ -1,0 +1,270 @@
+{
+  "source": "mined",
+  "snapshot": "2026-08-09",
+  "lenses": [
+    {
+      "id": "d1",
+      "source": "mined",
+      "label": "Teaching & enablement analyst",
+      "role": "teaching & enablement analyst",
+      "headline": "Work shaped like this needs 5 seats filled. I hold documentation & enablement, llm product engineering, data engineering, platform, observability & cost, delivery & project management.",
+      "lede": "Every seat this work asks for is one I hold or partly hold — which is the whole argument for putting one person on it instead of three.",
+      "featured": [
+        "edtech",
+        "wikipedia-infra"
+      ],
+      "n": 872,
+      "fit": 1,
+      "grades": {
+        "unspecified": 186,
+        "senior": 363,
+        "intern": 86,
+        "junior": 162,
+        "lead+": 75
+      },
+      "crew": {
+        "needs": [
+          {
+            "id": "scribe",
+            "share": 0.92,
+            "seat": "Documentation & enablement",
+            "emoji": "📚",
+            "coverage": "covered",
+            "complement": "Content designer"
+          },
+          {
+            "id": "shipwright",
+            "share": 0.49,
+            "seat": "LLM product engineering",
+            "emoji": "🛠",
+            "coverage": "covered",
+            "complement": "Frontend & interaction engineer"
+          },
+          {
+            "id": "miner",
+            "share": 0.46,
+            "seat": "Data engineering",
+            "emoji": "🧱",
+            "coverage": "covered",
+            "complement": "Data platform engineer"
+          },
+          {
+            "id": "quartermaster",
+            "share": 0.44,
+            "seat": "Platform, observability & cost",
+            "emoji": "📊",
+            "coverage": "covered",
+            "complement": "SRE / on-call ownership"
+          },
+          {
+            "id": "steward",
+            "share": 0.41,
+            "seat": "Delivery & project management",
+            "emoji": "📋",
+            "coverage": "covered",
+            "complement": "Engineering manager"
+          }
+        ],
+        "iCover": [
+          "Documentation & enablement",
+          "LLM product engineering",
+          "Data engineering",
+          "Platform, observability & cost",
+          "Delivery & project management"
+        ],
+        "partly": [],
+        "bring": []
+      }
+    },
+    {
+      "id": "d2",
+      "source": "mined",
+      "label": "Linux developer",
+      "role": "linux developer",
+      "headline": "Work shaped like this needs 4 seats filled. I hold platform, observability & cost, llm product engineering, data engineering.",
+      "lede": "Next to me this work still needs frontend & interaction. Everything else on the list I can carry, which is what makes a crew this small possible at all.",
+      "featured": [
+        "healthcare",
+        "wikipedia-infra"
+      ],
+      "n": 1441,
+      "fit": 0.94,
+      "grades": {
+        "senior": 613,
+        "unspecified": 14,
+        "junior": 656,
+        "intern": 84,
+        "lead+": 74
+      },
+      "crew": {
+        "needs": [
+          {
+            "id": "quartermaster",
+            "share": 0.98,
+            "seat": "Platform, observability & cost",
+            "emoji": "📊",
+            "coverage": "covered",
+            "complement": "SRE / on-call ownership"
+          },
+          {
+            "id": "shipwright",
+            "share": 0.96,
+            "seat": "LLM product engineering",
+            "emoji": "🛠",
+            "coverage": "covered",
+            "complement": "Frontend & interaction engineer"
+          },
+          {
+            "id": "miner",
+            "share": 0.76,
+            "seat": "Data engineering",
+            "emoji": "🧱",
+            "coverage": "covered",
+            "complement": "Data platform engineer"
+          },
+          {
+            "id": "glazier",
+            "share": 0.33,
+            "seat": "Frontend & interaction",
+            "emoji": "🖥",
+            "coverage": "uncovered",
+            "complement": "This seat is the complement"
+          }
+        ],
+        "iCover": [
+          "Platform, observability & cost",
+          "LLM product engineering",
+          "Data engineering"
+        ],
+        "partly": [],
+        "bring": [
+          {
+            "seat": "Frontend & interaction",
+            "emoji": "🖥",
+            "share": 0.33,
+            "hire": "This seat is the complement"
+          }
+        ]
+      }
+    },
+    {
+      "id": "d3",
+      "source": "mined",
+      "label": "Terraform / IaC engineer",
+      "role": "terraform / iac engineer",
+      "headline": "Work shaped like this needs 3 seats filled. I hold platform, observability & cost, llm product engineering, data engineering.",
+      "lede": "Every seat this work asks for is one I hold or partly hold — which is the whole argument for putting one person on it instead of three.",
+      "featured": [
+        "healthcare",
+        "wikipedia-infra"
+      ],
+      "n": 1982,
+      "fit": 0.72,
+      "grades": {
+        "senior": 941,
+        "unspecified": 44,
+        "lead+": 141,
+        "intern": 80,
+        "junior": 776
+      },
+      "crew": {
+        "needs": [
+          {
+            "id": "quartermaster",
+            "share": 1,
+            "seat": "Platform, observability & cost",
+            "emoji": "📊",
+            "coverage": "covered",
+            "complement": "SRE / on-call ownership"
+          },
+          {
+            "id": "shipwright",
+            "share": 0.8,
+            "seat": "LLM product engineering",
+            "emoji": "🛠",
+            "coverage": "covered",
+            "complement": "Frontend & interaction engineer"
+          },
+          {
+            "id": "miner",
+            "share": 0.54,
+            "seat": "Data engineering",
+            "emoji": "🧱",
+            "coverage": "covered",
+            "complement": "Data platform engineer"
+          }
+        ],
+        "iCover": [
+          "Platform, observability & cost",
+          "LLM product engineering",
+          "Data engineering"
+        ],
+        "partly": [],
+        "bring": []
+      }
+    },
+    {
+      "id": "d4",
+      "source": "mined",
+      "label": "BI tooling scientist",
+      "role": "bi tooling scientist",
+      "headline": "Work shaped like this needs 3 seats filled. I hold data engineering, llm product engineering, platform, observability & cost.",
+      "lede": "Every seat this work asks for is one I hold or partly hold — which is the whole argument for putting one person on it instead of three.",
+      "featured": [
+        "forensic-finance",
+        "wiki-governance"
+      ],
+      "n": 1850,
+      "fit": 0.53,
+      "grades": {
+        "unspecified": 51,
+        "senior": 641,
+        "junior": 936,
+        "intern": 162,
+        "lead+": 60
+      },
+      "crew": {
+        "needs": [
+          {
+            "id": "miner",
+            "share": 1,
+            "seat": "Data engineering",
+            "emoji": "🧱",
+            "coverage": "covered",
+            "complement": "Data platform engineer"
+          },
+          {
+            "id": "shipwright",
+            "share": 0.9,
+            "seat": "LLM product engineering",
+            "emoji": "🛠",
+            "coverage": "covered",
+            "complement": "Frontend & interaction engineer"
+          },
+          {
+            "id": "quartermaster",
+            "share": 0.35,
+            "seat": "Platform, observability & cost",
+            "emoji": "📊",
+            "coverage": "covered",
+            "complement": "SRE / on-call ownership"
+          }
+        ],
+        "iCover": [
+          "Data engineering",
+          "LLM product engineering",
+          "Platform, observability & cost"
+        ],
+        "partly": [],
+        "bring": []
+      }
+    }
+  ],
+  "dropped": [
+    {
+      "id": "d5",
+      "label": "Kafka / streaming developer",
+      "reason": "определяющий термин Kafka/NoSQL не входит в атомы профиля — линза названа по чужому навыку (17.09.2026)"
+    }
+  ]
+}

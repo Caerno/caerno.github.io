@@ -1,0 +1,33 @@
+{
+  "slug": "edtech",
+  "domain": "EdTech",
+  "period": "2022 — 2025",
+  "org": "Yandex Practicum — lead expert, Data Analysis & Data Science",
+  "title": [
+    "EdTech"
+  ],
+  "tagline": "Hundreds of real student projects, each one a new, partly broken problem to understand quickly.",
+  "blocks": [
+    {
+      "label": "What I saw",
+      "text": "Code review at volume is anomaly detection: a few typical mistakes show up across endlessly different tasks. What matters is not knowing the answer in advance but finding the problem fast in unfamiliar code. I also saw a problem in the process itself: the work was tracked in spreadsheets, so a late review was noticed only after the deadline had passed."
+    },
+    {
+      "label": "What I built",
+      "text": "Four years of expert reviews and mentoring on the data-analysis track. It is the easiest item here to verify: the institution kept choosing to continue the work. Then I reworked the submission process itself, with no new code and no new service: intake came through email and web forms, hand-offs and deadlines lived in the tracker and moved through its API. The state of a review became a record instead of a cell someone had to remember to update. Later I described the same process in BPMN 2.0 and checked the model against the tracker's event log: 354,000 status changes across 60,000 tickets, 99.3% of them matching the model, plus p50/p90 times and SLA-breach shares per flow."
+    },
+    {
+      "label": "Result",
+      "text": "I learned to see how a person reasons from their code, and to return the work with improvements they can act on. For teaching that is the same skill as working in an unfamiliar domain. Deadlines also stopped depending on whether someone noticed a problem: missed ones used to happen about twice a week and surfaced after the fact; afterwards they became isolated cases, no longer than two days, and visible while the work was still running. One reviewer dropped the work and was replaced; the normal queue absorbed the other case."
+    },
+    {
+      "label": "Stack",
+      "text": "email and form intake, Jira-class tracker driven through its API, BPMN 2.0 (Camunda Modeler), Python for the event-log analysis"
+    }
+  ],
+  "methods": [
+    "anomaly-detection",
+    "domain-mapping"
+  ],
+  "links": []
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "forensic-finance",
+  "domain": "Forensic finance",
+  "period": "2010 — 2022",
+  "org": "Contec, Consulting & Legal Services — senior financial analyst · ADVISER Audit & Consulting — general manager, part-time (2011–2019)",
+  "title": [
+    "Forensic",
+    "finance"
+  ],
+  "tagline": "Other people's books, tangled ownership structures, disputes — and the search for facts somebody tried to hide.",
+  "blocks": [
+    {
+      "label": "What I saw",
+      "text": "Fraud shows up as a break in the usual pattern. So you first reconstruct how this particular business normally works, and only then compare that picture against reality."
+    },
+    {
+      "label": "What I built",
+      "text": "Sixteen years of working with data: financial analytics and expert work in companies I was seeing for the first time. I reconstructed money flows, untangled ownership structures and wrote conclusions that could survive hostile scrutiny. In parallel, eight years as part-time general manager of an audit and consulting firm."
+    },
+    {
+      "label": "Result",
+      "text": "One approach underlies all of it: get into an unfamiliar domain, understand how it works, find the anomaly. After 2022 I have applied the same approach to data systems instead of ledgers."
+    }
+  ],
+  "methods": [
+    "domain-mapping",
+    "anomaly-detection",
+    "entity-resolution"
+  ],
+  "links": []
+}

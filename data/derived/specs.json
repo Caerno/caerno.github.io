@@ -1,0 +1,1436 @@
+{
+  "source": "mined",
+  "snapshot": "2026-08-09",
+  "corpus": {
+    "raw": 109891,
+    "it": 17000,
+    "sources": [
+      "IT_vacancies_full",
+      "Raw_Jobs",
+      "arbeitnow",
+      "remotive",
+      "vacancies_last"
+    ]
+  },
+  "method": "подстрочный матчинг алиасов атомов + k-means (косинус) по бинарным векторам, k=10",
+  "minCluster": 25,
+  "clusters": [
+    {
+      "k": 7,
+      "n": 3442,
+      "share": 0.202,
+      "coverage": 0.2,
+      "fit": 0.11,
+      "coveredAtoms": [
+        "Git"
+      ],
+      "missingAtoms": [
+        "React",
+        "Frontend / UI",
+        "JavaScript / TypeScript",
+        "On-site presence"
+      ],
+      "topAtoms": [
+        {
+          "id": "react",
+          "label": "React",
+          "share": 0.51,
+          "lift": 3.48,
+          "mine": false
+        },
+        {
+          "id": "frontend",
+          "label": "Frontend / UI",
+          "share": 0.83,
+          "lift": 3.35,
+          "mine": false
+        },
+        {
+          "id": "js",
+          "label": "JavaScript / TypeScript",
+          "share": 0.95,
+          "lift": 3.27,
+          "mine": false
+        },
+        {
+          "id": "git",
+          "label": "Git",
+          "share": 0.51,
+          "lift": 1.38,
+          "mine": true
+        },
+        {
+          "id": "onsite",
+          "label": "On-site presence",
+          "share": 0.56,
+          "lift": 1.06,
+          "mine": false
+        }
+      ],
+      "grades": {
+        "unspecified": 51,
+        "senior": 1428,
+        "junior": 1608,
+        "intern": 232,
+        "lead+": 123
+      },
+      "titleTop": [
+        "developer·1178",
+        "frontend·884",
+        "разработчик·820",
+        "frontend-разработчик·487",
+        "senior·354",
+        "middle·232"
+      ],
+      "examples": [
+        "SaaS Product Support Jedi — Creative Force",
+        "Tech Lead Full-Stack Rails Engineer — Mitre Media",
+        "Remote Office Assistant — Coalition Technologies ",
+        "Founding Product Engineer — Clera",
+        "Product Engineer (Full-Stack) — Clera"
+      ],
+      "enough": true,
+      "crew": {
+        "needs": [
+          {
+            "id": "glazier",
+            "share": 1,
+            "seat": "Frontend & interaction",
+            "emoji": "🖥",
+            "coverage": "uncovered",
+            "complement": "This seat is the complement"
+          },
+          {
+            "id": "quartermaster",
+            "share": 0.64,
+            "seat": "Platform, observability & cost",
+            "emoji": "📊",
+            "coverage": "covered",
+            "complement": "SRE / on-call ownership"
+          },
+          {
+            "id": "shipwright",
+            "share": 0.63,
+            "seat": "LLM product engineering",
+            "emoji": "🛠",
+            "coverage": "covered",
+            "complement": "Frontend & interaction engineer"
+          }
+        ],
+        "iCover": [
+          "Platform, observability & cost",
+          "LLM product engineering"
+        ],
+        "partly": [],
+        "bring": [
+          {
+            "seat": "Frontend & interaction",
+            "emoji": "🖥",
+            "share": 1,
+            "hire": "This seat is the complement"
+          }
+        ]
+      }
+    },
+    {
+      "k": 6,
+      "n": 2024,
+      "share": 0.119,
+      "coverage": 0.43,
+      "fit": 0.32,
+      "coveredAtoms": [
+        "SQL",
+        "Delivery management",
+        "Git"
+      ],
+      "missingAtoms": [
+        "QA automation",
+        "Scrum / agile ceremony",
+        "Java",
+        "On-site presence"
+      ],
+      "topAtoms": [
+        {
+          "id": "qa",
+          "label": "QA automation",
+          "share": 0.44,
+          "lift": 4.23,
+          "mine": false
+        },
+        {
+          "id": "scrum",
+          "label": "Scrum / agile ceremony",
+          "share": 0.52,
+          "lift": 2.98,
+          "mine": false
+        },
+        {
+          "id": "sql",
+          "label": "SQL",
+          "share": 0.81,
+          "lift": 2.09,
+          "mine": true
+        },
+        {
+          "id": "java",
+          "label": "Java",
+          "share": 0.52,
+          "lift": 1.89,
+          "mine": false
+        },
+        {
+          "id": "delivery",
+          "label": "Delivery management",
+          "share": 0.3,
+          "lift": 1.7,
+          "mine": true
+        },
+        {
+          "id": "onsite",
+          "label": "On-site presence",
+          "share": 0.62,
+          "lift": 1.18,
+          "mine": false
+        },
+        {
+          "id": "git",
+          "label": "Git",
+          "share": 0.37,
+          "lift": 1,
+          "mine": true
+        }
+      ],
+      "grades": {
+        "senior": 681,
+        "unspecified": 8,
+        "junior": 1138,
+        "lead+": 56,
+        "intern": 141
+      },
+      "titleTop": [
+        "engineer·655",
+        "developer·256",
+        "java·247",
+        "инженер·203",
+        "разработчик·192",
+        "automation·188"
+      ],
+      "examples": [
+        "Enterprise AI Transformation Lead, DACH — Clera",
+        "SAP Developer — InCycling GmbH",
+        "Senior QA Engineer with Automation — Alex Staff Agency Careers",
+        "Quality Assurance Engineer (m/w/d) — Yalwa GmbH",
+        "SAP ABAP-Entwickler:in — Pertemps ERP"
+      ],
+      "enough": true,
+      "crew": {
+        "needs": [
+          {
+            "id": "miner",
+            "share": 0.83,
+            "seat": "Data engineering",
+            "emoji": "🧱",
+            "coverage": "covered",
+            "complement": "Data platform engineer"
+          },
+          {
+            "id": "shipwright",
+            "share": 0.75,
+            "seat": "LLM product engineering",
+            "emoji": "🛠",
+            "coverage": "covered",
+            "complement": "Frontend & interaction engineer"
+          },
+          {
+            "id": "steward",
+            "share": 0.63,
+            "seat": "Delivery & project management",
+            "emoji": "📋",
+            "coverage": "covered",
+            "complement": "Engineering manager"
+          },
+          {
+            "id": "quartermaster",
+            "share": 0.62,
+            "seat": "Platform, observability & cost",
+            "emoji": "📊",
+            "coverage": "covered",
+            "complement": "SRE / on-call ownership"
+          },
+          {
+            "id": "judge",
+            "share": 0.49,
+            "seat": "Evaluation & QA",
+            "emoji": "✅",
+            "coverage": "covered",
+            "complement": "The domain authority who owns the rubric"
+          },
+          {
+            "id": "glazier",
+            "share": 0.31,
+            "seat": "Frontend & interaction",
+            "emoji": "🖥",
+            "coverage": "uncovered",
+            "complement": "This seat is the complement"
+          }
+        ],
+        "iCover": [
+          "Data engineering",
+          "LLM product engineering",
+          "Delivery & project management",
+          "Platform, observability & cost",
+          "Evaluation & QA"
+        ],
+        "partly": [],
+        "bring": [
+          {
+            "seat": "Frontend & interaction",
+            "emoji": "🖥",
+            "share": 0.31,
+            "hire": "This seat is the complement"
+          }
+        ]
+      }
+    },
+    {
+      "k": 2,
+      "n": 1982,
+      "share": 0.117,
+      "coverage": 0.75,
+      "fit": 0.72,
+      "coveredAtoms": [
+        "DevOps practice",
+        "Observability",
+        "Kubernetes",
+        "CI/CD",
+        "Linux",
+        "Docker",
+        "Python",
+        "PostgreSQL",
+        "Git"
+      ],
+      "missingAtoms": [
+        "Terraform / IaC",
+        "NoSQL",
+        "Kafka / streaming"
+      ],
+      "topAtoms": [
+        {
+          "id": "terraform",
+          "label": "Terraform / IaC",
+          "share": 0.69,
+          "lift": 6.79,
+          "mine": false
+        },
+        {
+          "id": "devops",
+          "label": "DevOps practice",
+          "share": 0.82,
+          "lift": 5.04,
+          "mine": true
+        },
+        {
+          "id": "obsv",
+          "label": "Observability",
+          "share": 0.6,
+          "lift": 4,
+          "mine": true
+        },
+        {
+          "id": "k8s",
+          "label": "Kubernetes",
+          "share": 0.68,
+          "lift": 3.85,
+          "mine": true
+        },
+        {
+          "id": "cicd",
+          "label": "CI/CD",
+          "share": 0.75,
+          "lift": 3.06,
+          "mine": true
+        },
+        {
+          "id": "linux",
+          "label": "Linux",
+          "share": 0.83,
+          "lift": 2.92,
+          "mine": true
+        },
+        {
+          "id": "docker",
+          "label": "Docker",
+          "share": 0.68,
+          "lift": 2.65,
+          "mine": true
+        },
+        {
+          "id": "nosql",
+          "label": "NoSQL",
+          "share": 0.29,
+          "lift": 1.75,
+          "mine": false
+        },
+        {
+          "id": "kafka",
+          "label": "Kafka / streaming",
+          "share": 0.28,
+          "lift": 1.61,
+          "mine": false
+        },
+        {
+          "id": "python",
+          "label": "Python",
+          "share": 0.54,
+          "lift": 1.51,
+          "mine": true
+        },
+        {
+          "id": "postgres",
+          "label": "PostgreSQL",
+          "share": 0.38,
+          "lift": 1.5,
+          "mine": true
+        },
+        {
+          "id": "git",
+          "label": "Git",
+          "share": 0.36,
+          "lift": 0.96,
+          "mine": true
+        }
+      ],
+      "grades": {
+        "senior": 941,
+        "unspecified": 44,
+        "lead+": 141,
+        "intern": 80,
+        "junior": 776
+      },
+      "titleTop": [
+        "devops·1040",
+        "engineer·592",
+        "инженер·544",
+        "senior·202",
+        "администратор·145",
+        "системный·141"
+      ],
+      "examples": [
+        "Senior Site Reliability Engineer — Honeycomb",
+        "Software Engineer - GPU reliability — Wehrtyou",
+        "Detection Engineer — Elevenlabs",
+        "Platform & DevOps Engineer (m/w/d) — Yoummday GmbH",
+        "Senior Software Engineer (m/w/d) - SEtrade — VISPIRON GmbH"
+      ],
+      "enough": true,
+      "crew": {
+        "needs": [
+          {
+            "id": "quartermaster",
+            "share": 1,
+            "seat": "Platform, observability & cost",
+            "emoji": "📊",
+            "coverage": "covered",
+            "complement": "SRE / on-call ownership"
+          },
+          {
+            "id": "shipwright",
+            "share": 0.8,
+            "seat": "LLM product engineering",
+            "emoji": "🛠",
+            "coverage": "covered",
+            "complement": "Frontend & interaction engineer"
+          },
+          {
+            "id": "miner",
+            "share": 0.54,
+            "seat": "Data engineering",
+            "emoji": "🧱",
+            "coverage": "covered",
+            "complement": "Data platform engineer"
+          }
+        ],
+        "iCover": [
+          "Platform, observability & cost",
+          "LLM product engineering",
+          "Data engineering"
+        ],
+        "partly": [],
+        "bring": []
+      }
+    },
+    {
+      "k": 4,
+      "n": 1921,
+      "share": 0.113,
+      "coverage": 0.6,
+      "fit": 0.49,
+      "coveredAtoms": [
+        "PostgreSQL",
+        "Kubernetes",
+        "Docker",
+        "CI/CD",
+        "SQL",
+        "Git"
+      ],
+      "missingAtoms": [
+        "Kafka / streaming",
+        "NoSQL",
+        "Java",
+        "On-site presence"
+      ],
+      "topAtoms": [
+        {
+          "id": "kafka",
+          "label": "Kafka / streaming",
+          "share": 0.8,
+          "lift": 4.55,
+          "mine": false
+        },
+        {
+          "id": "nosql",
+          "label": "NoSQL",
+          "share": 0.62,
+          "lift": 3.75,
+          "mine": false
+        },
+        {
+          "id": "postgres",
+          "label": "PostgreSQL",
+          "share": 0.73,
+          "lift": 2.89,
+          "mine": true
+        },
+        {
+          "id": "k8s",
+          "label": "Kubernetes",
+          "share": 0.45,
+          "lift": 2.55,
+          "mine": true
+        },
+        {
+          "id": "docker",
+          "label": "Docker",
+          "share": 0.57,
+          "lift": 2.24,
+          "mine": true
+        },
+        {
+          "id": "java",
+          "label": "Java",
+          "share": 0.55,
+          "lift": 2.01,
+          "mine": false
+        },
+        {
+          "id": "cicd",
+          "label": "CI/CD",
+          "share": 0.29,
+          "lift": 1.2,
+          "mine": true
+        },
+        {
+          "id": "onsite",
+          "label": "On-site presence",
+          "share": 0.55,
+          "lift": 1.04,
+          "mine": false
+        },
+        {
+          "id": "sql",
+          "label": "SQL",
+          "share": 0.4,
+          "lift": 1.02,
+          "mine": true
+        },
+        {
+          "id": "git",
+          "label": "Git",
+          "share": 0.37,
+          "lift": 0.98,
+          "mine": true
+        }
+      ],
+      "grades": {
+        "unspecified": 12,
+        "intern": 84,
+        "senior": 956,
+        "lead+": 159,
+        "junior": 710
+      },
+      "titleTop": [
+        "developer·733",
+        "java·533",
+        "разработчик·402",
+        "senior·297",
+        "backend·199",
+        "middle·150"
+      ],
+      "examples": [
+        "Java Backend Entwickler - Spring Boot & Camunda (m/w/d) — Rockstardevelopers GmbH",
+        "Werkstudent Anwendungsentwicklung & Digitalisierung (m/w/d) — Andres Industries AG",
+        "Backend Engineer - Transfers Gateway — sumup",
+        "Senior Backend Engineer (w/m/d) — Tomorrow Gmbh",
+        "Backend Engineer - Transfers Gateway — SumUp"
+      ],
+      "enough": true,
+      "crew": {
+        "needs": [
+          {
+            "id": "shipwright",
+            "share": 0.98,
+            "seat": "LLM product engineering",
+            "emoji": "🛠",
+            "coverage": "covered",
+            "complement": "Frontend & interaction engineer"
+          },
+          {
+            "id": "miner",
+            "share": 0.94,
+            "seat": "Data engineering",
+            "emoji": "🧱",
+            "coverage": "covered",
+            "complement": "Data platform engineer"
+          },
+          {
+            "id": "quartermaster",
+            "share": 0.86,
+            "seat": "Platform, observability & cost",
+            "emoji": "📊",
+            "coverage": "covered",
+            "complement": "SRE / on-call ownership"
+          },
+          {
+            "id": "glazier",
+            "share": 0.39,
+            "seat": "Frontend & interaction",
+            "emoji": "🖥",
+            "coverage": "uncovered",
+            "complement": "This seat is the complement"
+          },
+          {
+            "id": "steward",
+            "share": 0.31,
+            "seat": "Delivery & project management",
+            "emoji": "📋",
+            "coverage": "covered",
+            "complement": "Engineering manager"
+          }
+        ],
+        "iCover": [
+          "LLM product engineering",
+          "Data engineering",
+          "Platform, observability & cost",
+          "Delivery & project management"
+        ],
+        "partly": [],
+        "bring": [
+          {
+            "seat": "Frontend & interaction",
+            "emoji": "🖥",
+            "share": 0.39,
+            "hire": "This seat is the complement"
+          }
+        ]
+      }
+    },
+    {
+      "k": 3,
+      "n": 1850,
+      "share": 0.109,
+      "coverage": 0.6,
+      "fit": 0.53,
+      "coveredAtoms": [
+        "Data analysis & reporting",
+        "Python",
+        "SQL"
+      ],
+      "missingAtoms": [
+        "BI tooling",
+        "On-site presence"
+      ],
+      "topAtoms": [
+        {
+          "id": "bi",
+          "label": "BI tooling",
+          "share": 0.34,
+          "lift": 8.35,
+          "mine": false
+        },
+        {
+          "id": "dataviz",
+          "label": "Data analysis & reporting",
+          "share": 0.72,
+          "lift": 5.69,
+          "mine": true
+        },
+        {
+          "id": "python",
+          "label": "Python",
+          "share": 0.87,
+          "lift": 2.42,
+          "mine": true
+        },
+        {
+          "id": "sql",
+          "label": "SQL",
+          "share": 0.9,
+          "lift": 2.33,
+          "mine": true
+        },
+        {
+          "id": "onsite",
+          "label": "On-site presence",
+          "share": 0.57,
+          "lift": 1.08,
+          "mine": false
+        }
+      ],
+      "grades": {
+        "unspecified": 51,
+        "senior": 641,
+        "junior": 936,
+        "intern": 162,
+        "lead+": 60
+      },
+      "titleTop": [
+        "data·581",
+        "аналитик·507",
+        "analyst·351",
+        "engineer·238",
+        "scientist·192",
+        "данных·190"
+      ],
+      "examples": [
+        "Business Development Representative — Outsite",
+        "Senior Software Engineer (EMO) — Ovoenergy",
+        "Software Developer - Risk Data Pipelines — Squarepointcapital",
+        "Software Developer - Data Pipelines (Python) — Squarepointcapital",
+        "Senior Data Engineer - Real time analytics — Aircall"
+      ],
+      "enough": true,
+      "crew": {
+        "needs": [
+          {
+            "id": "miner",
+            "share": 1,
+            "seat": "Data engineering",
+            "emoji": "🧱",
+            "coverage": "covered",
+            "complement": "Data platform engineer"
+          },
+          {
+            "id": "shipwright",
+            "share": 0.9,
+            "seat": "LLM product engineering",
+            "emoji": "🛠",
+            "coverage": "covered",
+            "complement": "Frontend & interaction engineer"
+          },
+          {
+            "id": "quartermaster",
+            "share": 0.35,
+            "seat": "Platform, observability & cost",
+            "emoji": "📊",
+            "coverage": "covered",
+            "complement": "SRE / on-call ownership"
+          }
+        ],
+        "iCover": [
+          "Data engineering",
+          "LLM product engineering",
+          "Platform, observability & cost"
+        ],
+        "partly": [],
+        "bring": []
+      }
+    },
+    {
+      "k": 1,
+      "n": 1441,
+      "share": 0.085,
+      "coverage": 0.88,
+      "fit": 0.94,
+      "coveredAtoms": [
+        "Linux",
+        "PostgreSQL",
+        "Git",
+        "Docker",
+        "Python",
+        "SQL",
+        "CI/CD"
+      ],
+      "missingAtoms": [
+        "On-site presence"
+      ],
+      "topAtoms": [
+        {
+          "id": "linux",
+          "label": "Linux",
+          "share": 0.67,
+          "lift": 2.37,
+          "mine": true
+        },
+        {
+          "id": "postgres",
+          "label": "PostgreSQL",
+          "share": 0.57,
+          "lift": 2.26,
+          "mine": true
+        },
+        {
+          "id": "git",
+          "label": "Git",
+          "share": 0.8,
+          "lift": 2.15,
+          "mine": true
+        },
+        {
+          "id": "docker",
+          "label": "Docker",
+          "share": 0.52,
+          "lift": 2.04,
+          "mine": true
+        },
+        {
+          "id": "python",
+          "label": "Python",
+          "share": 0.7,
+          "lift": 1.95,
+          "mine": true
+        },
+        {
+          "id": "sql",
+          "label": "SQL",
+          "share": 0.64,
+          "lift": 1.65,
+          "mine": true
+        },
+        {
+          "id": "cicd",
+          "label": "CI/CD",
+          "share": 0.26,
+          "lift": 1.05,
+          "mine": true
+        },
+        {
+          "id": "onsite",
+          "label": "On-site presence",
+          "share": 0.46,
+          "lift": 0.87,
+          "mine": false
+        }
+      ],
+      "grades": {
+        "senior": 613,
+        "unspecified": 14,
+        "junior": 656,
+        "intern": 84,
+        "lead+": 74
+      },
+      "titleTop": [
+        "developer·417",
+        "python·327",
+        "разработчик·268",
+        "engineer·237",
+        "backend·151",
+        "senior·140"
+      ],
+      "examples": [
+        "Senior Functional Safety Engineer/Safety Systems Engineer - M/F/D — Navflex",
+        "Software Test Engineer (m/w/x) — K-tronik GmbH",
+        "Development Engineer Production – Fokus Software (f/m/d) — Quantum-Systems GmbH",
+        "(Junior) Data Engineer (m/w/d) — Alexander Thamm GmbH",
+        "AI Integration & Automation Engineer (m/w/d) — Customs Support Group"
+      ],
+      "enough": true,
+      "crew": {
+        "needs": [
+          {
+            "id": "quartermaster",
+            "share": 0.98,
+            "seat": "Platform, observability & cost",
+            "emoji": "📊",
+            "coverage": "covered",
+            "complement": "SRE / on-call ownership"
+          },
+          {
+            "id": "shipwright",
+            "share": 0.96,
+            "seat": "LLM product engineering",
+            "emoji": "🛠",
+            "coverage": "covered",
+            "complement": "Frontend & interaction engineer"
+          },
+          {
+            "id": "miner",
+            "share": 0.76,
+            "seat": "Data engineering",
+            "emoji": "🧱",
+            "coverage": "covered",
+            "complement": "Data platform engineer"
+          },
+          {
+            "id": "glazier",
+            "share": 0.33,
+            "seat": "Frontend & interaction",
+            "emoji": "🖥",
+            "coverage": "uncovered",
+            "complement": "This seat is the complement"
+          }
+        ],
+        "iCover": [
+          "Platform, observability & cost",
+          "LLM product engineering",
+          "Data engineering"
+        ],
+        "partly": [],
+        "bring": [
+          {
+            "seat": "Frontend & interaction",
+            "emoji": "🖥",
+            "share": 0.33,
+            "hire": "This seat is the complement"
+          }
+        ]
+      }
+    },
+    {
+      "k": 9,
+      "n": 1414,
+      "share": 0.083,
+      "coverage": 0.5,
+      "fit": 0.38,
+      "coveredAtoms": [
+        "Python",
+        "Linux"
+      ],
+      "missingAtoms": [
+        "C / C++",
+        "On-site presence"
+      ],
+      "topAtoms": [
+        {
+          "id": "cpp",
+          "label": "C / C++",
+          "share": 0.46,
+          "lift": 6.32,
+          "mine": false
+        },
+        {
+          "id": "python",
+          "label": "Python",
+          "share": 0.86,
+          "lift": 2.39,
+          "mine": true
+        },
+        {
+          "id": "linux",
+          "label": "Linux",
+          "share": 0.62,
+          "lift": 2.2,
+          "mine": true
+        },
+        {
+          "id": "onsite",
+          "label": "On-site presence",
+          "share": 0.64,
+          "lift": 1.22,
+          "mine": false
+        }
+      ],
+      "grades": {
+        "senior": 551,
+        "unspecified": 74,
+        "lead+": 90,
+        "junior": 591,
+        "intern": 108
+      },
+      "titleTop": [
+        "engineer·342",
+        "developer·245",
+        "инженер·143",
+        "senior·130",
+        "разработчик·127",
+        "python·100"
+      ],
+      "examples": [
+        "Senior Robotic Systems Engineer — Clera",
+        "Cloud Engineer (m/w/d) mit Karriereambitionen! — Auralis Group",
+        "Forward Deployed Engineer, DACH — Clera",
+        "Product Engineer — Clera",
+        "Senior Python / C++ Software Engineer — Worldquant"
+      ],
+      "enough": true,
+      "crew": {
+        "needs": [
+          {
+            "id": "shipwright",
+            "share": 0.97,
+            "seat": "LLM product engineering",
+            "emoji": "🛠",
+            "coverage": "covered",
+            "complement": "Frontend & interaction engineer"
+          },
+          {
+            "id": "quartermaster",
+            "share": 0.75,
+            "seat": "Platform, observability & cost",
+            "emoji": "📊",
+            "coverage": "covered",
+            "complement": "SRE / on-call ownership"
+          }
+        ],
+        "iCover": [
+          "LLM product engineering",
+          "Platform, observability & cost"
+        ],
+        "partly": [],
+        "bring": []
+      }
+    },
+    {
+      "k": 8,
+      "n": 1380,
+      "share": 0.081,
+      "coverage": 0.25,
+      "fit": 0.11,
+      "coveredAtoms": [
+        "Git"
+      ],
+      "missingAtoms": [
+        "Mobile",
+        "Java",
+        "On-site presence"
+      ],
+      "topAtoms": [
+        {
+          "id": "mobile",
+          "label": "Mobile",
+          "share": 0.9,
+          "lift": 6.58,
+          "mine": false
+        },
+        {
+          "id": "java",
+          "label": "Java",
+          "share": 0.63,
+          "lift": 2.28,
+          "mine": false
+        },
+        {
+          "id": "git",
+          "label": "Git",
+          "share": 0.47,
+          "lift": 1.25,
+          "mine": true
+        },
+        {
+          "id": "onsite",
+          "label": "On-site presence",
+          "share": 0.64,
+          "lift": 1.23,
+          "mine": false
+        }
+      ],
+      "grades": {
+        "senior": 631,
+        "unspecified": 24,
+        "intern": 65,
+        "junior": 613,
+        "lead+": 47
+      },
+      "titleTop": [
+        "developer·637",
+        "android·315",
+        "senior·219",
+        "разработчик·216",
+        "engineer·202",
+        "java·130"
+      ],
+      "examples": [
+        "Senior Backend Engineer - (Kotlin, Spring, AWS) - Better Places (d/f/m) — Bettermile",
+        "Senior Full-Stack Engineer — Clera",
+        "Founding Full-Stack iOS Engineer — Clera",
+        "Senior Software Engineer - Platform — Choco",
+        "Software-Entwickler (m/w/d) — Everbrent GmbH"
+      ],
+      "enough": true,
+      "crew": {
+        "needs": [
+          {
+            "id": "glazier",
+            "share": 0.91,
+            "seat": "Frontend & interaction",
+            "emoji": "🖥",
+            "coverage": "uncovered",
+            "complement": "This seat is the complement"
+          },
+          {
+            "id": "shipwright",
+            "share": 0.83,
+            "seat": "LLM product engineering",
+            "emoji": "🛠",
+            "coverage": "covered",
+            "complement": "Frontend & interaction engineer"
+          },
+          {
+            "id": "quartermaster",
+            "share": 0.66,
+            "seat": "Platform, observability & cost",
+            "emoji": "📊",
+            "coverage": "covered",
+            "complement": "SRE / on-call ownership"
+          }
+        ],
+        "iCover": [
+          "LLM product engineering",
+          "Platform, observability & cost"
+        ],
+        "partly": [],
+        "bring": [
+          {
+            "seat": "Frontend & interaction",
+            "emoji": "🖥",
+            "share": 0.91,
+            "hire": "This seat is the complement"
+          }
+        ]
+      }
+    },
+    {
+      "k": 5,
+      "n": 872,
+      "share": 0.051,
+      "coverage": 1,
+      "fit": 1,
+      "coveredAtoms": [
+        "English C1",
+        "Teaching & enablement",
+        "Data analysis & reporting",
+        "Delivery management"
+      ],
+      "missingAtoms": [],
+      "topAtoms": [
+        {
+          "id": "english",
+          "label": "English C1",
+          "share": 0.83,
+          "lift": 8.95,
+          "mine": true
+        },
+        {
+          "id": "teaching",
+          "label": "Teaching & enablement",
+          "share": 0.49,
+          "lift": 6.31,
+          "mine": true
+        },
+        {
+          "id": "dataviz",
+          "label": "Data analysis & reporting",
+          "share": 0.31,
+          "lift": 2.41,
+          "mine": true
+        },
+        {
+          "id": "delivery",
+          "label": "Delivery management",
+          "share": 0.38,
+          "lift": 2.17,
+          "mine": true
+        }
+      ],
+      "grades": {
+        "unspecified": 186,
+        "senior": 363,
+        "intern": 86,
+        "junior": 162,
+        "lead+": 75
+      },
+      "titleTop": [
+        "engineer·349",
+        "developer·179",
+        "senior·164",
+        "analyst·119",
+        "software·74",
+        "data·64"
+      ],
+      "examples": [
+        "Tier III Service Desk Engineer — Unio Digital",
+        "Freelance Copywriter — Coalition Technologies ",
+        "Content Reviewer - United States — TELUS Digital",
+        "Software Test Engineer (m/w/d) — FoxTalent",
+        "Senior Systems Engineer — spire"
+      ],
+      "enough": true,
+      "crew": {
+        "needs": [
+          {
+            "id": "scribe",
+            "share": 0.92,
+            "seat": "Documentation & enablement",
+            "emoji": "📚",
+            "coverage": "covered",
+            "complement": "Content designer"
+          },
+          {
+            "id": "shipwright",
+            "share": 0.49,
+            "seat": "LLM product engineering",
+            "emoji": "🛠",
+            "coverage": "covered",
+            "complement": "Frontend & interaction engineer"
+          },
+          {
+            "id": "miner",
+            "share": 0.46,
+            "seat": "Data engineering",
+            "emoji": "🧱",
+            "coverage": "covered",
+            "complement": "Data platform engineer"
+          },
+          {
+            "id": "quartermaster",
+            "share": 0.44,
+            "seat": "Platform, observability & cost",
+            "emoji": "📊",
+            "coverage": "covered",
+            "complement": "SRE / on-call ownership"
+          },
+          {
+            "id": "steward",
+            "share": 0.41,
+            "seat": "Delivery & project management",
+            "emoji": "📋",
+            "coverage": "covered",
+            "complement": "Engineering manager"
+          }
+        ],
+        "iCover": [
+          "Documentation & enablement",
+          "LLM product engineering",
+          "Data engineering",
+          "Platform, observability & cost",
+          "Delivery & project management"
+        ],
+        "partly": [],
+        "bring": []
+      }
+    },
+    {
+      "k": 0,
+      "n": 674,
+      "share": 0.04,
+      "coverage": 0.5,
+      "fit": 0.31,
+      "coveredAtoms": [
+        "English C1",
+        "DevOps practice",
+        "Delivery management",
+        "Kubernetes",
+        "CI/CD",
+        "Docker"
+      ],
+      "missingAtoms": [
+        "GCP",
+        "AWS",
+        "Azure",
+        "React",
+        "JavaScript / TypeScript",
+        "NoSQL"
+      ],
+      "topAtoms": [
+        {
+          "id": "gcp",
+          "label": "GCP",
+          "share": 0.27,
+          "lift": 8.99,
+          "mine": false
+        },
+        {
+          "id": "aws",
+          "label": "AWS",
+          "share": 0.66,
+          "lift": 8.84,
+          "mine": false
+        },
+        {
+          "id": "azure",
+          "label": "Azure",
+          "share": 0.33,
+          "lift": 8.37,
+          "mine": false
+        },
+        {
+          "id": "english",
+          "label": "English C1",
+          "share": 0.42,
+          "lift": 4.47,
+          "mine": true
+        },
+        {
+          "id": "devops",
+          "label": "DevOps practice",
+          "share": 0.4,
+          "lift": 2.43,
+          "mine": true
+        },
+        {
+          "id": "react",
+          "label": "React",
+          "share": 0.36,
+          "lift": 2.43,
+          "mine": false
+        },
+        {
+          "id": "delivery",
+          "label": "Delivery management",
+          "share": 0.39,
+          "lift": 2.24,
+          "mine": true
+        },
+        {
+          "id": "k8s",
+          "label": "Kubernetes",
+          "share": 0.36,
+          "lift": 2.01,
+          "mine": true
+        },
+        {
+          "id": "js",
+          "label": "JavaScript / TypeScript",
+          "share": 0.58,
+          "lift": 1.99,
+          "mine": false
+        },
+        {
+          "id": "cicd",
+          "label": "CI/CD",
+          "share": 0.46,
+          "lift": 1.87,
+          "mine": true
+        },
+        {
+          "id": "nosql",
+          "label": "NoSQL",
+          "share": 0.3,
+          "lift": 1.83,
+          "mine": false
+        },
+        {
+          "id": "docker",
+          "label": "Docker",
+          "share": 0.42,
+          "lift": 1.62,
+          "mine": true
+        }
+      ],
+      "grades": {
+        "senior": 367,
+        "intern": 18,
+        "unspecified": 80,
+        "lead+": 74,
+        "junior": 135
+      },
+      "titleTop": [
+        "engineer·259",
+        "developer·251",
+        "senior·181",
+        "software·76",
+        "java·71",
+        "backend·64"
+      ],
+      "examples": [
+        "Senior Graphic Designer — Lemon.io",
+        "Senior DevOps Engineer — Lemon.io",
+        "Senior Product Engineer (Fullstack) — Clipster",
+        "Founding Engineer Intern — SCAILE Technologies GmbH",
+        "Senior Mendix Engineer — Mendix"
+      ],
+      "enough": true,
+      "crew": {
+        "needs": [
+          {
+            "id": "quartermaster",
+            "share": 0.98,
+            "seat": "Platform, observability & cost",
+            "emoji": "📊",
+            "coverage": "covered",
+            "complement": "SRE / on-call ownership"
+          },
+          {
+            "id": "shipwright",
+            "share": 0.88,
+            "seat": "LLM product engineering",
+            "emoji": "🛠",
+            "coverage": "covered",
+            "complement": "Frontend & interaction engineer"
+          },
+          {
+            "id": "glazier",
+            "share": 0.73,
+            "seat": "Frontend & interaction",
+            "emoji": "🖥",
+            "coverage": "uncovered",
+            "complement": "This seat is the complement"
+          },
+          {
+            "id": "miner",
+            "share": 0.62,
+            "seat": "Data engineering",
+            "emoji": "🧱",
+            "coverage": "covered",
+            "complement": "Data platform engineer"
+          },
+          {
+            "id": "scribe",
+            "share": 0.49,
+            "seat": "Documentation & enablement",
+            "emoji": "📚",
+            "coverage": "covered",
+            "complement": "Content designer"
+          },
+          {
+            "id": "steward",
+            "share": 0.44,
+            "seat": "Delivery & project management",
+            "emoji": "📋",
+            "coverage": "covered",
+            "complement": "Engineering manager"
+          }
+        ],
+        "iCover": [
+          "Platform, observability & cost",
+          "LLM product engineering",
+          "Data engineering",
+          "Documentation & enablement",
+          "Delivery & project management"
+        ],
+        "partly": [],
+        "bring": [
+          {
+            "seat": "Frontend & interaction",
+            "emoji": "🖥",
+            "share": 0.73,
+            "hire": "This seat is the complement"
+          }
+        ]
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "label": "On-site presence",
+      "share": 0.523
+    },
+    {
+      "label": "German language",
+      "share": 0.018
+    },
+    {
+      "label": "Formal degree required",
+      "share": 0.016
+    }
+  ]
+}

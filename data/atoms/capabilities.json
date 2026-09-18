@@ -1,0 +1,716 @@
+{
+  "profile_id": "dk",
+  "source": "manual",
+  "origin": "stuff/Personal/Резюме 2026.md — блоки «Уровни навыков на hh», «Технологии», «О себе» (12.07.2026)",
+  "schema": {
+    "type": "KSAO+Tools: Knowledge | Ability | Method | Skill | Tool | Trait",
+    "scale": "general | domain | role | task",
+    "transfer": "high | mid | low — грубая категория, не десятичная дробь",
+    "level": "advanced | mid | basic | null — только там, где заявлено в резюме",
+    "note": "уровень осмыслен для Tool/Skill; для Ability и Knowledge поле оставлено пустым намеренно",
+    "aliases": "алиас, оканчивающийся на *, матчится как префикс (русские окончания); остальные — по границам слова"
+  },
+  "atoms": [
+    {
+      "id": "python",
+      "label": "Python",
+      "type": "Tool",
+      "scale": "general",
+      "transfer": "high",
+      "level": "advanced",
+      "aliases": [
+        "python",
+        "python3",
+        "питон"
+      ],
+      "cases": [
+        "healthcare",
+        "edtech"
+      ]
+    },
+    {
+      "id": "asyncio",
+      "label": "asyncio",
+      "type": "Tool",
+      "scale": "role",
+      "transfer": "high",
+      "level": "advanced",
+      "aliases": [
+        "asyncio",
+        "async python",
+        "asynchronous python"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "aiohttp",
+      "label": "aiohttp",
+      "type": "Tool",
+      "scale": "task",
+      "transfer": "mid",
+      "level": "advanced",
+      "aliases": [
+        "aiohttp"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "fastapi",
+      "label": "FastAPI",
+      "type": "Tool",
+      "scale": "task",
+      "transfer": "mid",
+      "level": "basic",
+      "aliases": [
+        "fastapi"
+      ],
+      "cases": []
+    },
+    {
+      "id": "pydantic",
+      "label": "Pydantic",
+      "type": "Tool",
+      "scale": "task",
+      "transfer": "mid",
+      "level": null,
+      "aliases": [
+        "pydantic"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "postgres",
+      "label": "PostgreSQL",
+      "type": "Tool",
+      "scale": "general",
+      "transfer": "high",
+      "level": "advanced",
+      "aliases": [
+        "postgresql",
+        "postgres",
+        "psql"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "sql",
+      "label": "SQL",
+      "type": "Skill",
+      "scale": "general",
+      "transfer": "high",
+      "level": "advanced",
+      "aliases": [
+        "sql",
+        "язык sql"
+      ],
+      "cases": [
+        "healthcare",
+        "edtech",
+        "forensic-finance"
+      ]
+    },
+    {
+      "id": "alembic",
+      "label": "Alembic",
+      "type": "Tool",
+      "scale": "task",
+      "transfer": "low",
+      "level": null,
+      "aliases": [
+        "alembic"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "rest",
+      "label": "REST API design",
+      "type": "Skill",
+      "scale": "general",
+      "transfer": "high",
+      "level": "advanced",
+      "aliases": [
+        "rest api",
+        "restful",
+        "api design"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "docker",
+      "label": "Docker",
+      "type": "Tool",
+      "scale": "general",
+      "transfer": "high",
+      "level": "advanced",
+      "aliases": [
+        "docker",
+        "containeriz"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "k8s",
+      "label": "Kubernetes",
+      "type": "Tool",
+      "scale": "general",
+      "transfer": "high",
+      "level": "mid",
+      "aliases": [
+        "kubernetes",
+        "k8s"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "cicd",
+      "label": "CI/CD",
+      "type": "Method",
+      "scale": "general",
+      "transfer": "high",
+      "level": "advanced",
+      "aliases": [
+        "ci/cd",
+        "cicd",
+        "continuous integration",
+        "gitlab ci",
+        "github actions",
+        "jenkins"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "git",
+      "label": "Git",
+      "type": "Tool",
+      "scale": "general",
+      "transfer": "high",
+      "level": "advanced",
+      "aliases": [
+        "git",
+        "version control"
+      ],
+      "cases": [
+        "healthcare",
+        "wikipedia-infra"
+      ]
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "type": "Tool",
+      "scale": "general",
+      "transfer": "high",
+      "level": "mid",
+      "aliases": [
+        "linux",
+        "unix",
+        "bash",
+        "линукс"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "devops",
+      "label": "DevOps practice",
+      "type": "Method",
+      "scale": "general",
+      "transfer": "high",
+      "level": "mid",
+      "aliases": [
+        "devops",
+        "infrastructure as code",
+        "terraform",
+        "девопс"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "llm",
+      "label": "LLM engineering",
+      "type": "Skill",
+      "scale": "domain",
+      "transfer": "high",
+      "level": "advanced",
+      "aliases": [
+        "llm",
+        "large language model",
+        "gpt",
+        "claude",
+        "openai",
+        "anthropic",
+        "gemini"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "rag",
+      "label": "RAG / retrieval",
+      "type": "Method",
+      "scale": "domain",
+      "transfer": "high",
+      "level": "advanced",
+      "aliases": [
+        "rag",
+        "retrieval augmented",
+        "vector search",
+        "embedding",
+        "qdrant",
+        "faiss",
+        "pgvector",
+        "chroma",
+        "weaviate",
+        "векторн* баз*",
+        "векторн* поиск",
+        "эмбеддинг*"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "prompting",
+      "label": "Prompt engineering",
+      "type": "Skill",
+      "scale": "domain",
+      "transfer": "high",
+      "level": "advanced",
+      "aliases": [
+        "prompt engineering",
+        "prompting",
+        "few-shot",
+        "промпт*"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "agents",
+      "label": "Agentic systems",
+      "type": "Method",
+      "scale": "domain",
+      "transfer": "high",
+      "level": null,
+      "aliases": [
+        "agentic",
+        "ai agent",
+        "multi-agent",
+        "mcp",
+        "tool use",
+        "langchain",
+        "langgraph",
+        "llamaindex",
+        "агентн*",
+        "мультиагентн*"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "nlp",
+      "label": "NLP",
+      "type": "Knowledge",
+      "scale": "domain",
+      "transfer": "high",
+      "level": "mid",
+      "aliases": [
+        "nlp",
+        "natural language processing",
+        "intent classification",
+        "named entity",
+        "обработк* естественн* язык*",
+        "классификаци* намерен*"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "ml",
+      "label": "Machine learning",
+      "type": "Knowledge",
+      "scale": "general",
+      "transfer": "high",
+      "level": "mid",
+      "aliases": [
+        "machine learning",
+        "ml ",
+        "scikit",
+        "pytorch",
+        "tensorflow",
+        "deep learning",
+        "машинн* обучен*",
+        "нейросет*",
+        "нейронн* сет*"
+      ],
+      "cases": [
+        "edtech"
+      ]
+    },
+    {
+      "id": "localinf",
+      "label": "Local inference",
+      "type": "Skill",
+      "scale": "task",
+      "transfer": "mid",
+      "level": null,
+      "aliases": [
+        "ollama",
+        "vllm",
+        "local inference",
+        "gpu inference",
+        "quantiz",
+        "локальн* инференс"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "evals",
+      "label": "LLM evaluation & judging",
+      "type": "Method",
+      "scale": "domain",
+      "transfer": "high",
+      "level": null,
+      "aliases": [
+        "eval",
+        "llm-as-a-judge",
+        "llm judge",
+        "benchmark",
+        "regression test",
+        "автотест*",
+        "регрессионн* тестирован*",
+        "модульн* тест*"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "simtest",
+      "label": "Simulation testing",
+      "type": "Method",
+      "scale": "domain",
+      "transfer": "high",
+      "level": null,
+      "aliases": [
+        "simulation test",
+        "synthetic user",
+        "load test",
+        "e2e test",
+        "end-to-end test",
+        "нагрузочн* тестирован*",
+        "интеграционн* тест*"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "codereview",
+      "label": "Code review",
+      "type": "Skill",
+      "scale": "general",
+      "transfer": "high",
+      "level": "advanced",
+      "aliases": [
+        "code review",
+        "pull request review",
+        "mentoring",
+        "код-ревью",
+        "ревью кода"
+      ],
+      "cases": [
+        "edtech"
+      ]
+    },
+    {
+      "id": "obsv",
+      "label": "Observability",
+      "type": "Method",
+      "scale": "general",
+      "transfer": "high",
+      "level": null,
+      "aliases": [
+        "observability",
+        "monitoring",
+        "prometheus",
+        "grafana",
+        "loki",
+        "opentelemetry",
+        "datadog",
+        "мониторинг",
+        "логирован*",
+        "наблюдаемост*"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "costobs",
+      "label": "Cost observability",
+      "type": "Method",
+      "scale": "domain",
+      "transfer": "high",
+      "level": null,
+      "aliases": [
+        "cost optimization",
+        "finops",
+        "unit cost",
+        "token cost",
+        "оптимизаци* затрат",
+        "стоимост* запрос*"
+      ],
+      "cases": [
+        "healthcare"
+      ]
+    },
+    {
+      "id": "domainmap",
+      "label": "Domain mapping",
+      "type": "Method",
+      "scale": "general",
+      "transfer": "high",
+      "level": null,
+      "aliases": [
+        "requirements analysis",
+        "domain model",
+        "stakeholder",
+        "discovery",
+        "сбор требований",
+        "постановка задач",
+        "бизнес-требован*"
+      ],
+      "cases": [
+        "healthcare",
+        "forensic-finance",
+        "edtech"
+      ]
+    },
+    {
+      "id": "anomaly",
+      "label": "Anomaly detection",
+      "type": "Method",
+      "scale": "general",
+      "transfer": "high",
+      "level": null,
+      "aliases": [
+        "anomaly detection",
+        "fraud detection",
+        "outlier"
+      ],
+      "cases": [
+        "forensic-finance",
+        "wiki-governance",
+        "edtech"
+      ]
+    },
+    {
+      "id": "entityres",
+      "label": "Entity resolution",
+      "type": "Method",
+      "scale": "domain",
+      "transfer": "high",
+      "level": null,
+      "aliases": [
+        "entity resolution",
+        "deduplication",
+        "record linkage",
+        "identity resolution"
+      ],
+      "cases": [
+        "forensic-finance",
+        "wiki-governance"
+      ]
+    },
+    {
+      "id": "dataviz",
+      "label": "Data analysis & reporting",
+      "type": "Skill",
+      "scale": "general",
+      "transfer": "high",
+      "level": null,
+      "aliases": [
+        "data analysis",
+        "pandas",
+        "analytics",
+        "dashboard",
+        "reporting",
+        "tableau",
+        "power bi",
+        "анализ данных",
+        "аналитика данных",
+        "отч[её]тность",
+        "дашборд*"
+      ],
+      "cases": [
+        "edtech",
+        "forensic-finance"
+      ]
+    },
+    {
+      "id": "forensic",
+      "label": "Forensic / audit analysis",
+      "type": "Knowledge",
+      "scale": "domain",
+      "transfer": "mid",
+      "level": null,
+      "aliases": [
+        "audit",
+        "forensic",
+        "compliance",
+        "due diligence",
+        "аудит",
+        "финансов* анализ",
+        "комплаенс"
+      ],
+      "cases": [
+        "forensic-finance"
+      ]
+    },
+    {
+      "id": "unitecon",
+      "label": "Unit economics",
+      "type": "Knowledge",
+      "scale": "general",
+      "transfer": "high",
+      "level": null,
+      "aliases": [
+        "unit economics",
+        "business case",
+        "p&l",
+        "financial model",
+        "pricing",
+        "юнит-экономик*",
+        "финансов* модел*",
+        "ценообразован*"
+      ],
+      "cases": [
+        "healthcare",
+        "forensic-finance"
+      ]
+    },
+    {
+      "id": "econometrics",
+      "label": "Econometrics",
+      "type": "Knowledge",
+      "scale": "general",
+      "transfer": "mid",
+      "level": null,
+      "aliases": [
+        "econometric",
+        "statistics",
+        "statistical",
+        "a/b test",
+        "hypothesis test",
+        "статистическ* анализ",
+        "a/b-тест*",
+        "проверк* гипотез"
+      ],
+      "cases": [
+        "forensic-finance",
+        "edtech"
+      ]
+    },
+    {
+      "id": "delivery",
+      "label": "Delivery management",
+      "type": "Skill",
+      "scale": "general",
+      "transfer": "high",
+      "level": null,
+      "aliases": [
+        "project management",
+        "stakeholder management",
+        "agile",
+        "scrum",
+        "roadmap",
+        "управление проектами",
+        "проектн* менеджмент",
+        "agile",
+        "скрам"
+      ],
+      "cases": [
+        "forensic-finance",
+        "healthcare"
+      ]
+    },
+    {
+      "id": "teaching",
+      "label": "Teaching & enablement",
+      "type": "Skill",
+      "scale": "general",
+      "transfer": "high",
+      "level": null,
+      "aliases": [
+        "teaching",
+        "training",
+        "workshop",
+        "documentation",
+        "technical writing",
+        "наставничеств*",
+        "менторств*",
+        "техническ* документаци*",
+        "обучение сотрудник*"
+      ],
+      "cases": [
+        "edtech",
+        "wikipedia-infra"
+      ]
+    },
+    {
+      "id": "english",
+      "label": "English C1",
+      "type": "Skill",
+      "scale": "general",
+      "transfer": "high",
+      "level": "advanced",
+      "aliases": [
+        "english",
+        "английск* язык"
+      ],
+      "cases": []
+    },
+    {
+      "id": "lua",
+      "label": "Lua",
+      "type": "Tool",
+      "scale": "task",
+      "transfer": "low",
+      "level": null,
+      "aliases": [
+        "lua"
+      ],
+      "cases": [
+        "wikipedia-infra"
+      ]
+    }
+  ]
+}

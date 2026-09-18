@@ -1,0 +1,42 @@
+{
+  "slug": "wikipedia-infra",
+  "domain": "Wikipedia infra",
+  "period": "in production",
+  "org": "ru.wikipedia — Module:Calendar (Lua)",
+  "title": [
+    "Wikipedia",
+    "infra"
+  ],
+  "tagline": "Unremarkable but important code: a calendar module that runs on 1.4 million pages of Russian Wikipedia.",
+  "blocks": [
+    {
+      "label": "What I built",
+      "text": "A Lua module that merged years of drifted calendar templates into one maintained implementation, running on 1.4M pages."
+    },
+    {
+      "label": "Also in production",
+      "text": "talk-snapshots: a service on Wikimedia Toolforge that stores snapshots of discussion pages across seven wikis. I built, deployed and maintain it myself: readiness and health probes, CI with action versions pinned to SHAs."
+    },
+    {
+      "label": "Result",
+      "text": "The least eye-catching project here and the most widely deployed. Owning production means the system keeps working even when nobody is watching."
+    },
+    {
+      "label": "Stack",
+      "text": "Lua (Scribunto) for the module · Python 3.13, GitHub Actions with pinned SHAs, ruff, Dependabot, buildpacks, Toolforge for the service"
+    }
+  ],
+  "methods": [
+    "production-ownership"
+  ],
+  "links": [
+    {
+      "label": "talk-snapshots (live)",
+      "url": "https://talk-snapshots.toolforge.org/"
+    },
+    {
+      "label": "Module:Calendar source",
+      "url": "https://github.com/Caerno/Calendar-Lua"
+    }
+  ]
+}

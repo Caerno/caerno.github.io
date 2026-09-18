@@ -1,0 +1,33 @@
+{
+  "_": "Тексты добытых упаковок — ПРАВИТСЯ РУКАМИ, майнер этот файл не трогает. Ключ = id из derived/lenses.json (d1..dN по убыванию fit — после пере-майнинга сверить). Поля: label, role, headline, lede. Русский — в data/i18n/ru.json (lens.d1.* и т.д.)",
+  "d1": {
+    "label": "Teaching & enablement analyst",
+    "role": "teaching & enablement analyst",
+    "headline": "Work shaped like this needs 5 seats filled. I hold documentation & enablement, llm product engineering, data engineering, platform, observability & cost, delivery & project management.",
+    "lede": "Every seat this work asks for is one I hold or partly hold — which is the whole argument for putting one person on it instead of three."
+  },
+  "d2": {
+    "label": "Linux developer",
+    "role": "linux developer",
+    "headline": "Work shaped like this needs 4 seats filled. I hold platform, observability & cost, llm product engineering, data engineering.",
+    "lede": "Next to me this work still needs frontend & interaction. Everything else on the list I can carry, which is what makes a crew this small possible at all."
+  },
+  "d3": {
+    "label": "Terraform / IaC engineer",
+    "role": "terraform / iac engineer",
+    "headline": "Work shaped like this needs 3 seats filled. I hold platform, observability & cost, llm product engineering, data engineering.",
+    "lede": "Every seat this work asks for is one I hold or partly hold — which is the whole argument for putting one person on it instead of three."
+  },
+  "d4": {
+    "label": "BI tooling scientist",
+    "role": "bi tooling scientist",
+    "headline": "Work shaped like this needs 3 seats filled. I hold data engineering, llm product engineering, platform, observability & cost.",
+    "lede": "Every seat this work asks for is one I hold or partly hold — which is the whole argument for putting one person on it instead of three."
+  },
+  "d5": {
+    "label": "Kafka / streaming developer",
+    "role": "kafka / streaming developer",
+    "headline": "Work shaped like this needs 5 seats filled. I hold llm product engineering, data engineering, platform, observability & cost, delivery & project management.",
+    "lede": "Next to me this work still needs frontend & interaction. Everything else on the list I can carry, which is what makes a crew this small possible at all."
+  }
+}

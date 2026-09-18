@@ -1,0 +1,57 @@
+[
+  {
+    "id": "da",
+    "label": "Data Analyst",
+    "role": "lead data analyst",
+    "headline": "I take raw data to the numbers decisions are made on — and I answer for the number when someone asks where it came from.",
+    "lede": "Sixteen years working with data. Financial and forensic analysis, where a number had to stand up to the other side; client projects where I led teams from agreeing the success metrics to handing over dashboards and defending the findings; A/B experiments from design and data collection through to the read-out. And the part nobody sees: getting data out of places where nobody had prepared it — registries, contract archives, rename logs.",
+    "featured": [
+      "forensic-finance",
+      "wiki-governance"
+    ]
+  },
+  {
+    "id": "sa",
+    "label": "Solutions Architect",
+    "role": "solutions architect / system analyst",
+    "headline": "I design the solution for the customer's problem — system structure, integrations, the requirements for speed, cost and reliability — and take it through to working delivery.",
+    "lede": "A specification is honest when the person who wrote it has to build it. I map an unfamiliar domain, turn it into something a team can build against — dialogue states, a data model, integration contracts, acceptance criteria for each of them — and then implement it. Where the process itself was the problem, I described it in BPMN and checked the model against the tracker's event log instead of against opinions.",
+    "featured": [
+      "healthcare",
+      "edtech"
+    ]
+  },
+  {
+    "id": "fde",
+    "label": "Forward-Deployed Engineer",
+    "role": "forward-deployed engineer",
+    "headline": "I work on the customer's side: I fit the product to their process, get it running inside their systems, and teach the people who will use it daily.",
+    "lede": "Delivery is where a product meets the parts of reality nobody wrote down. I walk the workflow with the people who run it, adapt the product to how they actually work, put it into their systems, train the people who live with it, and carry back what broke so the product changes. Four years of that for non-profit and startup customers, and a clinic taken from the first conversation to a working system.",
+    "featured": [
+      "edtech",
+      "healthcare"
+    ]
+  },
+  {
+    "id": "ai",
+    "label": "AI / LLM Engineer",
+    "role": "AI / LLM engineer",
+    "headline": "I build the LLM product and the rig that proves it works — dialogue, retrieval, agentic pipelines, quality scoring and per-call cost.",
+    "lede": "Deterministic dialogue orchestration with an LLM surface rather than an agent left to improvise: for booking a doctor's appointment, predictability is the feature. Around it the part most teams skip — simulated patients talking to the bot, a calibrated judge scoring the behaviour, 5,300+ automated tests as a release gate, and the cost of every model call visible on its own. This is the engineering seat inside a team: I build it and prove it, while priorities and budget stay with the product.",
+    "featured": [
+      "healthcare",
+      "wikipedia-infra"
+    ]
+  },
+  {
+    "id": "cto",
+    "label": "Fractional CTO",
+    "role": "fractional CTO",
+    "headline": "I own the technical side: what to build and what not to build, what to build it with, what it costs and who does the work.",
+    "lede": "A founder without a technical team needs more than someone who writes the code: someone who sets dates and acceptance, hires and vets contractors, keeps the product off a single vendor, and answers for data and risk. Five months from the start of the work to a live paying client, with the unit economics modelled well enough to take into investor talks — I know what a dialogue costs and where cutting corners is not an option.",
+    "featured": [
+      "healthcare",
+      "forensic-finance"
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "slug": "healthcare",
+  "domain": "Healthcare",
+  "period": "2025 — now",
+  "org": "Livi-Pro — conversational AI for clinics · CTO / Head of R&D, full technical ownership (one senior engineer reporting)",
+  "title": [
+    "Health­care"
+  ],
+  "tagline": "Clinics lose patients in messenger chats: slow replies, no night coverage, no trace of what was promised.",
+  "blocks": [
+    {
+      "label": "What I saw",
+      "text": "A patient dialogue is a state machine that speaks natural language. Booking is structured data collection; empathy is how that process looks to the patient. Separate the two and quality becomes something you can test instead of eyeball."
+    },
+    {
+      "label": "What I built",
+      "text": "In five months I took the platform from an empty repository to production with a live clinic. It has deterministic dialogue orchestration, an LLM, RAG over clinic knowledge, a booking state machine and operator handoff. Separately I built a behavioural regression rig: simulated patients talk to the bot and a calibrated LLM judge scores every dialogue (5,300+ automated tests, judge on a local GPU at zero cloud cost). The cost of every model call is visible end to end."
+    },
+    {
+      "label": "Result",
+      "text": "Clinics run in production, real patients book through the bot, every dialogue is scored for quality. The unit economics of the product are modelled for investor negotiations."
+    },
+    {
+      "label": "Stack",
+      "text": "async Python, PostgreSQL, RAG over a clinic knowledge base, Kubernetes, Prometheus · Grafana · Loki, local GPU inference for the judge"
+    }
+  ],
+  "methods": [
+    "domain-mapping",
+    "simulation-testing",
+    "cost-observability",
+    "production-ownership"
+  ],
+  "links": []
+}

@@ -1,0 +1,38 @@
+{
+  "_": "Типы проектов, под которые я хорошо ложусь. Пока авторские (source: manual) — это первая версия того самого переключателя типов. Показываются в хиро справа от имени. Поле lens связывает тип проекта с упаковкой из packagings.json: выбор типа применяет её роль, тезис, лид и подборку кейсов. Второго механизма переключения нет.",
+  "label": "Where I fit",
+  "fits": [
+    {
+      "id": "zero-to-client",
+      "label": "LLM product, zero to first paying client",
+      "line": "Small team, no ML department, a domain nobody in the room has worked in. Architecture, retrieval, tests and the cost model are one job here, not four.",
+      "seats": [
+        "shipwright",
+        "cartographer",
+        "quartermaster"
+      ],
+      "lens": "cto"
+    },
+    {
+      "id": "demo-to-real",
+      "label": "A prototype that demos well and breaks on real users",
+      "line": "The fix is rarely more content. It is a rig that tells you whether yesterday's change made things better, and a domain model that matches how the conversation actually goes.",
+      "seats": [
+        "judge",
+        "cartographer"
+      ],
+      "lens": "ai"
+    },
+    {
+      "id": "contested-analysis",
+      "label": "Analysis in someone else's domain that will be argued with",
+      "line": "Numbers that have to hold up when the other side is paid to break them. Sixteen years of that, and the same discipline is what evals are.",
+      "seats": [
+        "cartographer",
+        "judge",
+        "assayer"
+      ],
+      "lens": "sa"
+    }
+  ]
+}
