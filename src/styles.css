@@ -534,7 +534,6 @@ body {
   color: var(--accent);
   margin-top: 6px;
 }
-.rolecard[open] > summary .rolecard__more::after { content: ' — open'; }
 .rolecard[open] > summary .rolecard__more { transform: rotate(0); }
 .rolecard[open] { grid-row: auto; }
 .rolecard__body .kv { border-bottom: 1px solid var(--rule); }

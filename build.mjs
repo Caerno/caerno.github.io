@@ -230,10 +230,10 @@ const SEAT_SCRIPT = `
 </script>`;
 
 // Favicon: срезанный угол карточки + DK, инлайн-SVG (без отдельного файла и 404).
-const FAVICON =
+const favicon = () =>
   "data:image/svg+xml," +
   encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M0 0H50L64 14V64H14L0 50Z" fill="#24486F"/><text x="32" y="43" font-family="monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#F0EBDD">DK</text></svg>`
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M0 0H50L64 14V64H14L0 50Z" fill="#24486F"/><text x="32" y="43" font-family="monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#F0EBDD">${esc(u('faviconText'))}</text></svg>`
   );
 
 function page({ title, description, body, file }) {
@@ -248,8 +248,9 @@ function page({ title, description, body, file }) {
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:type" content="profile">
-<link rel="icon" href="${FAVICON}">
+<link rel="icon" href="${favicon()}">
 <link rel="stylesheet" href="./styles.css">
+<style>.rolecard[open] > summary .rolecard__more::after { content: '${u('moreOpen')}'; }</style>
 <link rel="alternate" hreflang="${LANG === 'ru' ? 'en' : 'ru'}" href="${alt}">
 <link rel="alternate" hreflang="x-default" href="${LANG === 'ru' ? `../${file}` : `./${file}`}">
 </head>
