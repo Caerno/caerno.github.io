@@ -184,11 +184,13 @@ ${CSS}
 ${vis('hero') ? `<header class="hero">
   <canvas id="hero-c"></canvas>
   <div class="txt" id="hero-t">
-    <p class="role">${esc(D('profile.role', profile.role))}</p>
     <h1>${nameLines.map(x => esc(String(x).trim())).join('<br>')}</h1>
+    <div class="hero__low">
+    <p class="role">${esc(D('profile.role', profile.role))}</p>
     ${el('hero.headline', t => `<p class="lead">${t.replace(/\n/g, '<br>')}</p>`)}
     <p class="status">${esc(D('profile.status', profile.status))}</p>
     ${el('hero.btn', t => `<a class="btn" href="${esc(WRITE)}">${t}</a>`)}
+    </div>
   </div>
 </header>` : ''}
 
@@ -247,9 +249,9 @@ ${vis('code') ? `<section id="code"><div class="wrap">
        .map(it => ARTS[it.id.slice(4)]).filter(Boolean).map((a, i) => { const cs = shown.find(c => (c.projects || []).includes(a.id));   /* 09.10: проект, разобранный в кейсе, ведёт в кейс — подробности показываются в одном месте */
         return `<div class="it"><div class="art rise" style="transition-delay:${(i % 2) * 70}ms">
         ${cs ? `<a class="al tocase" href="#case-${cs.slug}">${esc(D(`artifact.${a.id}.label`, a.label))}</a>`
-             : `<button class="al" type="button" aria-expanded="false">${esc(D(`artifact.${a.id}.label`, a.label))}</button>`}
+             : `<p class="al">${esc(D(`artifact.${a.id}.label`, a.label))}</p>`}
         <p>${esc(D(`artifact.${a.id}.line`, a.line))}</p>
-        ${cs ? '' : `<div class="art__links" hidden>${(a.links || [{ kind: '', url: a.url }]).map(l =>
+        ${cs ? '' : `<div class="art__links">${(a.links || [{ kind: '', url: a.url }]).map(l =>   /* 28.10: под «+» были одни ссылки — показаны сразу, без «+» */
           `<a class="ext" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(S('code.link.' + l.kind) ?? l.url)} ↗</a>`).join('')}</div>`}</div></div>`; }).join('')}
   </div>
   ${eyebrow('code', 'code.eyebrow', true)}

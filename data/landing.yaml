@@ -312,7 +312,8 @@ nav.about:
       - Несколько слов обо мне
     pick: 0
   en:
-    v: []
+    v:
+      - About me
     pick: 0
 nav.cta:
   n: 5
@@ -334,7 +335,8 @@ work.eyebrow:
       - Работа
     pick: -1
   en:
-    v: []
+    v:
+      - Cases
     pick: -1
 work.h2:
   n: 7
@@ -343,10 +345,12 @@ work.h2:
       - Пять задач — пять историй.
       - Что я делал в разных задачах.
       - Пять историй из работы
-    pick: -1
+      - Кейсы
+    pick: 3
   en:
-    v: []
-    pick: -1
+    v:
+      - Cases
+    pick: 0
 work.sub:
   n: 8
   ru:
@@ -671,11 +675,11 @@ hero.headline:
         Разбираюсь в незнакомой области,
         строю работающую систему и отвечаю за данные,
         на которых принимают решения.
-    pick: -1
+    pick: 0
   en:
     v:
       - I analyze unfamiliar problems, build functional systems, and bring data to a verified result.
-    pick: -1
+    pick: 0
   now: Довожу сырые данные до проверенных ключевых показателей, влияющих на решение. — только про аналитика, в переделку (08.10)
 hero.btn:
   n: null

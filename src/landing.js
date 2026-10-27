@@ -28,14 +28,11 @@ function setCase(card, open) {
   card.classList.toggle('open', open); m.hidden = !open; t.setAttribute('aria-expanded', open ? 'true' : 'false');
   list.classList.toggle('focus', open);
 }
-document.addEventListener('click', function (ev) {          /* карточка «Других проектов»: ссылки разворачиваются, как профессии в «Кем быть» */
+document.addEventListener('click', function (ev) {          /* 28.10: ссылки «Других проектов» видны сразу, «+» остался только у кейсов */
   var a = ev.target.closest('a.tocase');
   if (a) { var c = document.getElementById(a.getAttribute('href').slice(1)); if (c) setCase(c, true); return; }
-  var b = ev.target.closest('button.al, button.case__t'); if (!b) return;
-  var card = b.closest('.art, .case');
-  if (card.classList.contains('case')) { setCase(card, card.querySelector('.case__more').hidden); return; }
-  var box = card.querySelector('.art__links'); box.hidden = !box.hidden;
-  b.setAttribute('aria-expanded', box.hidden ? 'false' : 'true');
+  var b = ev.target.closest('button.case__t'); if (!b) return;
+  var card = b.closest('.case'); setCase(card, card.querySelector('.case__more').hidden);
 });
 /* «Кем быть»: «+» у заголовка раскрывает описание и облако; при прокрутке вниз раскрытое сначала
    сворачивается, потом страница едет; свёрнутое само не раскрывается (08.10) */
