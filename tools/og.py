@@ -21,9 +21,10 @@ threading.Thread(target=srv.serve_forever, daemon=True).start()
 with sync_playwright() as p:
     b = p.chromium.launch()
     for path, out in OUT.items():
-        pg = b.new_page(viewport={'width': 1200, 'height': 630}, reduced_motion='reduce')
+        # кадр 960×504 в масштабе 1,25 = 1200×630: мелкое (роль, статус, фигура) крупнее, пустого поля меньше (27.10)
+        pg = b.new_page(viewport={'width': 960, 'height': 504}, device_scale_factor=1.25, reduced_motion='reduce')
         pg.goto(f'http://127.0.0.1:{srv.server_port}{path}', wait_until='networkidle')
-        pg.add_style_tag(content='nav{display:none !important}')
+        pg.add_style_tag(content='nav{display:none !important} .hero{min-height:0 !important}')
         pg.wait_for_selector('#hero-t.on')
         pg.wait_for_timeout(4500)                      # field.js: неподвижный кадр после T_STILL = 3,2 с
         pg.screenshot(path=str(out))
