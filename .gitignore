@@ -1,0 +1,6 @@
+dist/
+preview/
+node_modules/
+local-admin/
+tools/sources.json
+__pycache__/

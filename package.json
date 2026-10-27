@@ -1,0 +1,17 @@
+{
+  "name": "caerno-site",
+  "private": true,
+  "type": "module",
+  "description": "Personal site of Dmitry Kirsanov: static landing built from YAML content",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node build.mjs && python3 -m http.server 8138 -d dist",
+    "test": "python3 tests/smoke.py && python3 tests/career.py"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "yaml": "^2.9.1"
+  }
+}

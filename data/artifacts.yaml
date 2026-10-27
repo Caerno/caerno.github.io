@@ -1,0 +1,75 @@
+_: Проверяемые артефакты для главной. Каждый пункт — рабочая ссылка; строка line говорит, что это, без прилагательных.
+label: Code & data
+items:
+  - id: calendar
+    label: Module:Calendar — ru.wikipedia
+    line: Lua module in production on 1.4 million pages
+    url: https://github.com/Caerno/Calendar-Lua
+    links:
+      - kind: wiki
+        url: https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C:Calendar
+      - kind: github
+        url: https://github.com/Caerno/Calendar-Lua
+  - id: elections
+    label: Arbitration election votes, 2015–2024
+    line: Clustering of 49,286 votes across 40 elections, public dataset on Kaggle
+    url: https://www.kaggle.com/datasets/caerno/ruwiki-elections
+    links:
+      - kind: dataset
+        url: https://www.kaggle.com/datasets/caerno/ruwiki-elections
+      - kind: notebook
+        url: https://www.kaggle.com/code/caerno/clustering-ruwiki-votes-simple-example
+  - id: talksnapshots
+    label: talk-snapshots
+    line: Article lifecycle dashboard across seven wikis, running on Wikimedia Toolforge
+    url: https://talk-snapshots.toolforge.org/
+    links:
+      - kind: github
+        url: https://github.com/ruwiki/talk-snapshots
+      - kind: live
+        url: https://talk-snapshots.toolforge.org/
+  - id: genfont
+    label: generative-font
+    line: Handwriting samples to a usable font, MVP
+    url: https://github.com/Caerno/generative-font
+    links:
+      - kind: github
+        url: https://github.com/Caerno/generative-font
+      - kind: live
+        url: https://caerno.github.io/generative-font/
+  - id: faceage
+    label: Face age & gender on Android
+    line: I trained a model that determines gender, age, and race from a photo, and deployed it to a phone.
+    url: https://github.com/Caerno/Age-Gender_Estimation_TF-Android
+    links:
+      - kind: github
+        url: https://github.com/Caerno/Age-Gender_Estimation_TF-Android
+      - kind: apk
+        url: https://github.com/Caerno/Age-Gender_Estimation_TF-Android/releases/latest
+  - id: autocomplete
+    label: Autocomplete
+    line: Built and trained a custom model architecture from scratch for real-time in-browser text prediction (ONNX/WASM)
+    url: https://caerno.github.io/autocomplete/
+    links:
+      - kind: live
+        url: https://caerno.github.io/autocomplete/
+      - kind: github
+        url: https://github.com/Caerno/autocomplete
+  - id: pda
+    label: Python for Data Analysis
+    url: https://practicum.yandex.ru/python-for-analytics/
+    links:
+      - kind: course
+        url: https://practicum.yandex.ru/python-for-analytics/
+  - id: livipro
+    label: Livi-Pro
+    url: https://livi-pro.ru/
+    links:
+      - kind: site
+        url: https://livi-pro.ru/
+  - id: contec
+    label: 'Contec: Consulting & Legal Services'
+    url: https://web.archive.org/web/20220314165655/http://contec.ru/
+    links:
+      - kind: archive
+        url: https://web.archive.org/web/20220314165655/http://contec.ru/

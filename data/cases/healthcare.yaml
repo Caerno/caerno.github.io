@@ -1,0 +1,28 @@
+slug: healthcare
+domain: Startup
+period: 2025 — now
+org: Livi-Pro — conversational AI for clinics · Head of R&D / Lead AI Architect · full technical ownership and team leadership
+title:
+  - Health­care
+tagline: An LLM assistant for clinics, taken from the first conversation with a clinic to production in five months.
+points: |-
+  Built the assistant around how the clinic actually works: it answers from the clinic's knowledge base (RAG), understands what the patient needs and collects the booking request. Patients write in messaging apps, web chat and email; the request lands in the administrators' chat.
+  Built the release gate: simulated patients scored by an LLM judge, 50+ scenarios, 8,800+ automated tests before any rollout. Cost and latency of every dialogue are tracked against the SLA.
+  Took it to production and ran it: ~92% of patient conversations closed without an operator. Built the unit economics and the financial model for investor negotiations.
+blocks:
+  - label: What I saw
+    text: A patient dialogue is a state machine that speaks natural language. Booking is structured data collection; empathy is how that process looks to the patient. Separate the two and quality becomes something you can test instead of eyeball.
+  - label: What I built
+    text: 'In five months I took the platform from an empty repository to production with a live clinic. It has deterministic dialogue orchestration, an LLM, RAG over clinic knowledge, a booking state machine and operator handoff. Separately I built a behavioural regression rig: simulated patients talk to the bot and a calibrated LLM judge scores the behaviour they produce (5,300+ automated tests, judge on a local GPU at zero cloud cost). The cost of every model call is visible end to end.'
+  - label: Result
+    text: Clinics run in production, real patients book through the bot, and dialogue behaviour is tested systematically before a release. The unit economics of the product are modelled for investor negotiations.
+  - label: Stack
+    text: async Python, PostgreSQL, RAG over a clinic knowledge base, Kubernetes, Prometheus · Grafana · Loki, local GPU inference for the judge
+methods:
+  - domain-mapping
+  - simulation-testing
+  - cost-observability
+  - production-ownership
+projects:
+  - livipro
+links: []

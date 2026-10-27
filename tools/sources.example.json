@@ -1,0 +1,7 @@
+{
+  "openpsychometrics": "~/data/openpsychometrics/RIASEC_data12Dec2018",
+  "onet": "~/data/onet-30",
+  "career_data": "~/data/career",
+  "llm_out": "~/data/career-llm/out",
+  "embed_cache": "~/data/career-map/emb.jsonl"
+}

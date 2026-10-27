@@ -1,0 +1,18 @@
+slug: wikipedia
+domain: Wikipedia
+period: 2006 — now
+org: Russian Wikipedia — editor, administrator, arbitrator, engineer
+tagline: Writing code and services that run for years with nobody on duty, and collecting data on how a community of thousands governs itself.
+methods:
+  - entity-resolution
+  - anomaly-detection
+  - production-ownership
+includes:
+  - wiki-governance
+  - wikipedia-infra
+projects:
+  - calendar
+  - talksnapshots
+  - elections
+_: '08.10.2026: совмещённый кейс собран Claude из wiki-governance и wikipedia-infra; редактор с 2006 и арбитр — cv-data.yaml, администратор — его слова 08.10; tagline — черновик'
+center: true

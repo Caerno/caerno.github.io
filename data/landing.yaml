@@ -1,0 +1,931 @@
+_: 'Тексты главной caerno.github.io. Правятся в PAL: http://127.0.0.1:8080/site. _layout — блоки и элементы в порядке страницы, show: выводить ли на выкладке. У места варианты en и ru, pick — показанный, -1 = убрать. Ключи data:* — тексты из data/*.yaml (en) и data/i18n/ru.yaml (ru). Ответы внешней модели: Сайт-визитка/переделка-лендинга/01, 03.'
+_layout:
+  - id: nav
+    title: Меню
+    show: true
+    items:
+      - id: logo
+        title: Знак (звезда) перед именем
+        show: true
+        items: []
+      - data:profile.name
+      - nav.work
+      - nav.how
+      - nav.code
+      - nav.about
+      - id: lang
+        title: Переключатель RU / EN
+        show: true
+        items: []
+      - nav.cta
+  - id: hero
+    title: Первый экран
+    show: true
+    items:
+      - data:profile.role
+      - hero.headline
+      - data:profile.status
+      - hero.btn
+      - field.cases
+      - field.methods
+      - field.pool
+  - id: work
+    title: Кейсы
+    show: true
+    items:
+      - work.eyebrow
+      - work.h2
+      - work.sub
+      - id: case-healthcare
+        title: 'Карточка: Стартап'
+        show: true
+        items:
+          - data:case.healthcare.period
+          - data:case.healthcare.org
+          - data:case.healthcare.domain
+          - data:case.healthcare.tagline
+          - data:case.healthcare.points
+          - data:case.healthcare.industries
+          - data:case.healthcare.methods
+          - data:case.healthcare.projects
+      - id: case-edtech
+        title: 'Карточка: EdTech'
+        show: true
+        items:
+          - data:case.edtech.period
+          - data:case.edtech.org
+          - data:case.edtech.domain
+          - data:case.edtech.tagline
+          - data:case.edtech.points
+          - data:case.edtech.industries
+          - data:case.edtech.methods
+          - data:case.edtech.projects
+      - id: case-forensic-finance
+        title: 'Карточка: Финансы'
+        show: true
+        items:
+          - data:case.forensic-finance.period
+          - data:case.forensic-finance.org
+          - data:case.forensic-finance.domain
+          - data:case.forensic-finance.tagline
+          - data:case.forensic-finance.points
+          - data:case.forensic-finance.industries
+          - data:case.forensic-finance.methods
+          - data:case.forensic-finance.projects
+      - id: case-wikipedia
+        title: 'Карточка: Википедия (совмещённая, черновик 08.10)'
+        show: true
+        items:
+          - data:case.wikipedia.period
+          - data:case.wikipedia.org
+          - data:case.wikipedia.domain
+          - data:case.wikipedia.tagline
+          - data:case.wikipedia.points
+          - data:case.wikipedia.industries
+          - data:case.wikipedia.methods
+          - data:case.wikipedia.projects
+      - id: case-wiki-governance
+        title: 'Карточка: Знания'
+        show: false
+        items:
+          - data:case.wiki-governance.period
+          - data:case.wiki-governance.org
+          - data:case.wiki-governance.domain
+          - data:case.wiki-governance.tagline
+          - data:case.wiki-governance.points
+          - data:case.wiki-governance.industries
+          - data:case.wiki-governance.methods
+          - data:case.wiki-governance.projects
+      - id: case-wikipedia-infra
+        title: 'Карточка: Инфраструктура'
+        show: false
+        items:
+          - data:case.wikipedia-infra.period
+          - data:case.wikipedia-infra.org
+          - data:case.wikipedia-infra.domain
+          - data:case.wikipedia-infra.tagline
+          - data:case.wikipedia-infra.points
+          - data:case.wikipedia-infra.industries
+          - data:case.wikipedia-infra.methods
+          - data:case.wikipedia-infra.projects
+      - work.more.industries
+      - work.more.projects
+      - work.go
+      - id: work-eyebrow-end
+        title: Серая подпись — в конце блока, не в начале
+        show: false
+        items: []
+  - id: fit
+    title: Задачи
+    show: false
+    items:
+      - fit.eyebrow
+      - fit.h2
+      - fit.sub
+      - id: fit-zero-to-client
+        title: Карточка 1
+        show: true
+        items:
+          - data:fit.zero-to-client.label
+          - data:fit.zero-to-client.line
+      - id: fit-demo-to-real
+        title: Карточка 2
+        show: true
+        items:
+          - data:fit.demo-to-real.label
+          - data:fit.demo-to-real.line
+      - id: fit-contested-analysis
+        title: Карточка 3
+        show: true
+        items:
+          - data:fit.contested-analysis.label
+          - data:fit.contested-analysis.line
+  - id: how
+    title: Как работаем
+    show: false
+    items:
+      - how.eyebrow
+      - how.h2
+      - how.sub
+      - how.steps
+  - id: code
+    title: Код и данные
+    show: true
+    items:
+      - code.eyebrow
+      - code.h2
+      - id: art-calendar
+        show: false
+        title: 'Карточка: Module:Calendar — ru.wikipedia'
+        items:
+          - data:artifact.calendar.label
+          - data:artifact.calendar.line
+          - data:artifact.calendar.links
+      - id: art-elections
+        show: false
+        title: 'Карточка: Arbitration election votes, 2015–2024'
+        items:
+          - data:artifact.elections.label
+          - data:artifact.elections.line
+          - data:artifact.elections.links
+      - id: art-talksnapshots
+        show: false
+        title: 'Карточка: talk-snapshots'
+        items:
+          - data:artifact.talksnapshots.label
+          - data:artifact.talksnapshots.line
+          - data:artifact.talksnapshots.links
+      - id: art-faceage
+        title: 'Карточка: Face age & gender on Android'
+        show: true
+        items:
+          - data:artifact.faceage.label
+          - data:artifact.faceage.line
+          - data:artifact.faceage.links
+      - id: art-autocomplete
+        title: 'Карточка: Autocomplete'
+        show: true
+        items:
+          - data:artifact.autocomplete.label
+          - data:artifact.autocomplete.line
+          - data:artifact.autocomplete.links
+      - id: art-genfont
+        title: 'Карточка: generative-font'
+        show: true
+        items:
+          - data:artifact.genfont.label
+          - data:artifact.genfont.line
+          - data:artifact.genfont.links
+      - code.link.wiki
+      - code.link.github
+      - code.link.dataset
+      - code.link.notebook
+      - code.link.live
+      - code.link.apk
+      - code.link.course
+      - code.link.site
+      - code.link.archive
+      - code.more
+      - id: code-links
+        title: 'Ссылки: GitHub, Kaggle (data/profile.json)'
+        show: true
+        items: []
+      - id: code-eyebrow-end
+        title: Серая подпись — в конце блока, не в начале
+        show: false
+        items: []
+  - id: space
+    title: Кем быть
+    show: true
+    items:
+      - space.eyebrow
+      - space.h2
+      - space.sub
+      - space.more
+      - space.toggle
+      - space.cap
+      - space.btn
+      - id: space-hover
+        title: 'Облако: имена под курсором осыпаются назад, как карты в пасьянсе (свёрнутое и раскрытое)'
+        show: false
+        items: []
+      - id: space-corners
+        title: 'Облако раскрыто: имя в месте касания уходит вбок, как из фокуса (главнее первого)'
+        show: true
+        items: []
+      - id: space-eyebrow-end
+        title: Серая подпись — в конце блока, не в начале
+        show: false
+        items: []
+  - id: about
+    title: Обо мне (цитата над текстом = главная строка первого экрана)
+    show: false
+    items:
+      - about.eyebrow
+      - about.text
+  - id: faq
+    title: Частые вопросы
+    show: false
+    items:
+      - faq.eyebrow
+      - faq.h2
+      - faq.items
+  - id: end
+    title: Финал
+    show: true
+    items:
+      - end.h2
+  - id: footer
+    title: Подвал
+    show: true
+    items:
+      - id: footer-map
+        title: 'Микрокарта: показанные блоки по порядку, подписи — из пунктов меню и серых надписей над заголовками'
+        show: true
+        items: []
+      - footer.text
+      - footer.updated
+      - id: license
+        title: CC BY 4.0 (лицензию на тексты сайта не выбирал)
+        show: false
+        items: []
+nav.work:
+  n: 1
+  ru:
+    v:
+      - Кейсы
+      - Проекты
+      - Что сделано
+    pick: 0
+  en:
+    v:
+      - Cases
+    pick: 0
+nav.how:
+  n: 2
+  ru:
+    v:
+      - Как работаем
+      - Работа со мной
+      - Как идёт работа
+    pick: 0
+  en:
+    v: []
+    pick: 0
+nav.code:
+  n: 3
+  ru:
+    v:
+      - Код и данные
+      - Открытые проекты
+      - Код, данные и проекты
+    pick: -1
+  en:
+    v: []
+    pick: 0
+nav.about:
+  n: 4
+  ru:
+    v:
+      - Обо мне
+      - Кто я
+      - Несколько слов обо мне
+    pick: 0
+  en:
+    v: []
+    pick: 0
+nav.cta:
+  n: 5
+  ru:
+    v:
+      - Написать
+      - Связаться
+      - Связаться со мной
+    pick: -1
+  en:
+    v: []
+    pick: 0
+work.eyebrow:
+  n: 6
+  ru:
+    v:
+      - Кейсы
+      - Что сделал
+      - Работа
+    pick: -1
+  en:
+    v: []
+    pick: -1
+work.h2:
+  n: 7
+  ru:
+    v:
+      - Пять задач — пять историй.
+      - Что я делал в разных задачах.
+      - Пять историй из работы
+    pick: -1
+  en:
+    v: []
+    pick: -1
+work.sub:
+  n: 8
+  ru:
+    v:
+      - В каждом случае — своя задача, свой способ разобраться и свой результат.
+      - Главное о каждом проекте, подробности — внутри.
+      - Пять разных задач, в которых нужно было разобраться в данных, коде или системе.
+    pick: -1
+  en:
+    v: []
+    pick: 0
+work.go:
+  n: 9
+  ru:
+    v:
+      - Подробнее →
+      - Смотреть кейс →
+      - Разобрать кейс →
+    pick: -1
+  en:
+    v: []
+    pick: 0
+fit.eyebrow:
+  n: 10
+  ru:
+    v:
+      - Задачи
+      - Что могу сделать
+      - Где пригодиться
+    pick: 0
+  en:
+    v: []
+    pick: 0
+fit.h2:
+  n: 11
+  ru:
+    v:
+      - От данных до работающего продукта
+      - Задачи, которые я беру
+      - С чем ко мне приходят
+    pick: 0
+  en:
+    v: []
+    pick: 0
+fit.sub:
+  n: 12
+  ru:
+    v:
+      - От идеи до работающей системы — или от сырых данных до вывода, который можно проверить.
+      - Когда нужно разобраться, построить и проверить результат.
+      - Три ситуации, в которых полезен такой набор опыта.
+    pick: 0
+  en:
+    v: []
+    pick: 0
+how.eyebrow:
+  n: 13
+  ru:
+    v:
+      - Работа
+      - Как работаем
+      - В работе
+    pick: 0
+  en:
+    v: []
+    pick: 0
+how.h2:
+  n: 14
+  ru:
+    v:
+      - Сначала разбираемся, потом делаем.
+      - От задачи к работающему результату.
+      - Сначала задача, потом решение.
+    pick: 0
+  en:
+    v: []
+    pick: 0
+how.sub:
+  n: 15
+  ru:
+    v:
+      - Начинаем с того, что именно должно измениться. Остальное уточняется по ходу.
+      - Сначала фиксируем задачу и ожидаемый результат.
+      - Работа строится вокруг конкретной задачи, а не вокруг заранее выбранного решения.
+    pick: 0
+  en:
+    v: []
+    pick: 0
+how.steps:
+  n: 16-18
+  ru:
+    v:
+      - - h: Шаг 1. Разобраться
+          t: Сначала фиксируем задачу, исходные данные и то, что должно получиться.
+        - h: Шаг 2. Проверить
+          t: Смотрим, что говорят данные и где решение может ошибаться.
+        - h: Шаг 3. Сделать
+          t: Собираем нужное решение и проверяем его на реальных данных.
+    pick: 0
+  en:
+    v: []
+    pick: 0
+code.eyebrow:
+  n: 19
+  ru:
+    v:
+      - Открытые проекты
+      - Проекты и данные
+      - Что можно посмотреть
+    pick: -1
+  en:
+    v: []
+    pick: 0
+code.h2:
+  n: 20
+  ru:
+    v:
+      - Код, данные и работающие проекты
+      - То, что можно открыть и проверить
+      - Проекты, которые можно посмотреть
+      - 'Другие проекты:'
+      - Другие проекты
+    pick: 4
+  en:
+    v:
+      - 'Other projects:'
+      - Other projects
+    pick: 1
+space.eyebrow:
+  n: 21
+  ru:
+    v:
+      - Кем быть
+      - Интересы и профессии
+      - Выбор профессии
+    pick: 0
+  en:
+    v:
+      - Your Thing
+    pick: 0
+space.h2:
+  n: 22
+  ru:
+    v:
+      - Проект помогающий людям найти профессии, которые им подходят.
+      - Тест интересов, который ведёт к профессиям.
+      - Посмотреть, какие профессии близки вашим интересам.
+      - Проект, помогающий людям найти профессии, которые им подходят.
+      - Какие профессии вам подошли бы, если бы можно было выбрать любую?
+    pick: 4
+  en:
+    v:
+      - What professions would suit you if you could do anything?
+    pick: 0
+space.sub:
+  n: 23
+  ru:
+    v:
+      - Ответы влияют на следующие вопросы, а в конце тест показывает наиболее близкие профессии из нескольких справочников.
+      - Тест подстраивается под ваши ответы и в конце показывает близкие профессии с их описаниями.
+      - Отвечайте на вопросы — следующий зависит от предыдущих ответов. В конце будут профессии, близкие вашим интересам.
+      - Не обязательно отвечать на все 70 вопросов. Уже после 15 есть первые результаты. Тест задаст 20-30 самых важных вопросов.
+      - Не обязательно отвечать на все 148 вопросов. Уже после 12 есть первые результаты. Тест задаст 20–30 самых важных вопросов.
+      - 'Отвечать на все 148 вопросов не обязательно: первые результаты после 12, каждый следующий вопрос уточняет их.'
+    pick: 5
+  en:
+    v:
+      - You can, but don't have to answer all 70 questions. Initial results are available after just 15. The first 20–30 questions matter most.
+      - You can, but don't have to answer all 78 questions. Initial results are available after just 12. The first 20–30 questions matter most.
+      - 'You don''t have to answer all 78 questions: first results after 12, and every next question sharpens them.'
+    pick: 2
+space.btn:
+  n: 24
+  ru:
+    v:
+      - Пройти тест →
+      - Начать тест →
+      - Кем быть →
+    pick: 0
+  en:
+    v:
+      - Take a test →
+      - Take the test →
+    pick: 1
+space.cap:
+  n: 25
+  ru:
+    v:
+      - 'Профессии и их описание: O*NET 30.0, CC BY 4.0.'
+      - 'Источник данных о профессиях: O*NET 30.0, лицензия CC BY 4.0.'
+      - Облако профессий на основе O*NET 30.0, CC BY 4.0.
+    pick: 2
+  en:
+    v:
+      - Cloud of professions based on O*NET 30.0, CC BY 4.0.
+    pick: 0
+about.eyebrow:
+  n: 26
+  ru:
+    v:
+      - Обо мне
+      - Кто я
+      - Несколько слов
+    pick: 0
+  en:
+    v: []
+    pick: 0
+about.text:
+  n: 27
+  ru:
+    v:
+      - - 'Мне интересны задачи, где сначала нужно разобраться в том, что на самом деле происходит: в данных, коде, системе или процессе. Поэтому среди моих работ есть и LLM-продукт, и анализ данных, и открытые исследования, и код для Википедии.'
+        - 'В разных проектах повторяется один подход: найти проверяемые факты, отделить их от предположений и довести результат до рабочего состояния. В финансовом и количественном анализе для споров и расследований это были цифры и документы; в ML — данные, тесты и поведение модели.'
+        - 'Я работаю на стыке анализа и инженерии: могу разбираться в незнакомой области, строить решение вокруг данных и оставлять после работы код, тесты или открытый набор данных.'
+      - - В моих проектах постоянно встречаются задачи, где нельзя просто взять готовый ответ. Нужно сначала понять, что происходит, затем собрать способ это проверить и только после этого делать вывод.
+        - 'Это одинаково работает для финансового анализа, машинного обучения, Википедии и собственных исследований: данные должны быть понятны, вывод — проверяем, а результат — пригоден для дальнейшей работы.'
+        - Поэтому я совмещаю анализ данных с инженерной частью задачи.
+      - - 'За разными кейсами стоят разные области, но задача часто одна: превратить большой или сырой массив информации в то, на что можно опереться.'
+        - Иногда это работающий продукт, иногда открытый датасет, иногда код, который используется на миллионах страниц, иногда исследование, которое можно повторить по исходным данным.
+        - Мне близка работа, где результат можно открыть, проверить и использовать дальше.
+    pick: 0
+  en:
+    v: []
+    pick: 0
+faq.eyebrow:
+  n: 28
+  ru:
+    v:
+      - Частые вопросы
+      - Вопросы
+      - Что обычно спрашивают
+    pick: 0
+  en:
+    v: []
+    pick: 0
+faq.h2:
+  n: 29
+  ru:
+    v:
+      - Что важно знать до начала работы
+      - Что нужно знать обо мне
+      - Как устроено сотрудничество
+    pick: 0
+  en:
+    v: []
+    pick: 0
+faq.items:
+  n: 30
+  ru:
+    v:
+      - - q: Где вы находитесь и в каком часовом поясе работаете?
+          a: Я работаю удалённо, часовой пояс — UTC+4.
+        - q: На каком языке можно работать?
+          a: Русский и английский. Английский — C1.
+        - q: Какие задачи вы берёте?
+          a: LLM-продукты, прототипы, которые нужно довести до работы на живых пользователях, и анализ в областях, где выводы должны выдерживать проверку.
+        - q: Как обычно начинается работа?
+          a: ''
+    pick: 0
+  en:
+    v: []
+    pick: 0
+end.h2:
+  n: 31
+  ru:
+    v:
+      - Написать мне
+      - Связаться со мной
+      - Для связи
+    pick: -1
+  en:
+    v: []
+    pick: -1
+field.cases:
+  n: '1: 32; 2: 2.1'
+  ru:
+    v:
+      - healthcare: Стартап | Ливи-ПРО
+        edtech: Обучение | Практикум
+        forensic-finance: Финансы | Консалтинг
+        wikipedia: Знания | Википедия
+        wiki-governance: Знания | Выборы арбитров
+        wikipedia-infra: Инфраструктура | Module:Calendar
+    pick: 0
+  en:
+    v:
+      - healthcare: Startup | Livi-Pro
+        edtech: EdTech | Practicum
+        forensic-finance: Finance | Consulting
+        wikipedia: Wikipedia | Open Source
+        wiki-governance: Wiki governance | Arbitration elections
+        wikipedia-infra: Wikipedia infra | Module:Calendar
+    pick: 0
+  by: label (en) узла в data/derived/hero-points.json
+  decided:
+    Wiki governance: Знания — решение владельца 08.10
+  now: подписи кейсов на фигуре; несколько — сменяются (буквы роятся и схлопываются в узел)
+field.methods:
+  n: '1: 33; 2: 2.2 (модель советует вариант 2)'
+  ru:
+    v:
+      - anomaly-detection: аномалии
+        cost-observability: прозрачность затрат
+        domain-mapping: погружение в бизнес
+        entity-resolution: сопоставление сущностей
+        production-ownership: эксплуатация
+        simulation-testing: симуляционные тесты
+    pick: 0
+  en:
+    v: []
+    pick: 0
+  by: label (en) узла в data/derived/hero-points.json
+  now: подписи методов на фигуре
+hero.headline:
+  n: '2: 1.1'
+  ru:
+    v:
+      - Разбираюсь в незнакомой задаче, строю работающую систему и довожу данные до проверенного результата.
+      - Разбираюсь в новой области, строю работающие решения и превращаю данные в проверяемый результат.
+      - Вижу цель, разбираюсь в сложных задачах и строю работающую систему с опорой на данные.
+      - |-
+        Разбираюсь в незнакомой области,
+        строю работающую систему и отвечаю за данные,
+        на которых принимают решения.
+    pick: -1
+  en:
+    v:
+      - I analyze unfamiliar problems, build functional systems, and bring data to a verified result.
+    pick: -1
+  now: Довожу сырые данные до проверенных ключевых показателей, влияющих на решение. — только про аналитика, в переделку (08.10)
+hero.btn:
+  n: null
+  ru:
+    v:
+      - Написать →
+    pick: -1
+  en:
+    v: []
+    pick: 0
+footer.updated:
+  n: null
+  ru:
+    v:
+      - обновлено
+    pick: -1
+  en:
+    v:
+      - updated
+    pick: -1
+code.link.wiki:
+  n: null
+  ru:
+    v:
+      - Модуль в рувики
+    pick: 0
+  en:
+    v:
+      - Module on ru.wikipedia
+    pick: 0
+code.link.github:
+  n: null
+  ru:
+    v:
+      - Код на GitHub
+    pick: 0
+  en:
+    v:
+      - Code on GitHub
+    pick: 0
+code.link.dataset:
+  n: null
+  ru:
+    v:
+      - Датасет на Kaggle
+    pick: 0
+  en:
+    v:
+      - Dataset on Kaggle
+    pick: 0
+code.link.notebook:
+  n: null
+  ru:
+    v:
+      - Тетрадка с анализом на Kaggle
+      - Анализ на Kaggle
+    pick: 1
+  en:
+    v:
+      - Analysis notebook on Kaggle
+    pick: 0
+code.link.live:
+  n: null
+  ru:
+    v:
+      - Работающая версия
+      - Посмотреть вживую
+    pick: 1
+  en:
+    v:
+      - Live version
+      - Live site
+    pick: 1
+code.more:
+  n: null
+  ru:
+    v:
+      - 'Другие проекты смотрите тут:'
+      - 'Также смотрите:'
+      - Также смотрите
+    pick: 2
+  en:
+    v:
+      - 'More projects:'
+      - 'See also:'
+      - See also
+    pick: 2
+field.pool:
+  n: null
+  now: 'серые тексты фигуры: вспышка от кейса проявляет навык этого кейса (data/atoms/capabilities.yaml → cases)'
+  ru:
+    v:
+      - python: Python
+        asyncio: asyncio
+        aiohttp: aiohttp
+        pydantic: Pydantic
+        postgres: PostgreSQL
+        sql: SQL
+        alembic: Alembic
+        rest: дизайн API
+        docker: Docker
+        k8s: Kubernetes
+        cicd: CI/CD
+        git: Git
+        linux: Linux
+        devops: DevOps
+        llm: LLM
+        rag: RAG
+        prompting: промт инжиниринг
+        agents: агентские системы
+        nlp: NLP
+        ml: ML
+        localinf: инференс
+        simtest: симуляционные тесты
+        codereview: ревью кода
+        obsv: наблюдаемость
+        costobs: прозрачность затрат
+        domainmap: погружение в бизнес
+        anomaly: аномалии
+        entityres: сопоставление сущностей
+        dataviz: анализ данных
+        unitecon: юнит-экономика
+        delivery: деплой
+        teaching: менторство
+        lua: lua
+    pick: 0
+  en:
+    v:
+      - python: Python
+        asyncio: asyncio
+        aiohttp: aiohttp
+        pydantic: Pydantic
+        postgres: PostgreSQL
+        sql: SQL
+        alembic: Alembic
+        rest: REST API design
+        docker: Docker
+        k8s: Kubernetes
+        cicd: CI/CD
+        git: Git
+        linux: Linux
+        devops: DevOps
+        llm: LLM engineering
+        rag: RAG / retrieval
+        prompting: Prompt engineering
+        agents: Agentic systems
+        nlp: NLP
+        ml: Machine learning
+        localinf: Local inference
+        simtest: Simulation testing
+        codereview: Code review
+        obsv: Observability
+        costobs: Cost observability
+        domainmap: Domain mapping
+        anomaly: Anomaly detection
+        entityres: Entity resolution
+        dataviz: Data analysis & reporting
+        unitecon: Unit economics
+        delivery: Delivery management
+        teaching: Teaching & mentoring
+        lua: lua
+    pick: 0
+work.more.industries:
+  n: null
+  ru:
+    v:
+      - Отрасли клиентов
+    pick: -1
+  en:
+    v:
+      - Client industries
+    pick: -1
+work.more.projects:
+  n: null
+  ru:
+    v:
+      - Проекты
+    pick: 0
+  en:
+    v:
+      - Projects
+    pick: 0
+space.more:
+  n: null
+  now: текст над облаком при раскрытии (черновик Claude 08.10)
+  ru:
+    v:
+      - Каждый знак — профессия из базы O*NET; рядом стоят профессии с похожими интересами. По ответам считается профиль ваших интересов и показываются наиболее близкие к нему профессии.
+    pick: 0
+  en:
+    v:
+      - 'Each symbol is an occupation from O*NET; occupations with similar interests sit close together. The test places you in the same space: your answers give an interest profile, and at the end you see the occupations nearest to it.'
+    pick: 0
+space.toggle:
+  n: null
+  now: название теста внутри облака, по нему раскрывается блок (08.10)
+  ru:
+    v:
+      - Кем быть
+    pick: 0
+  en:
+    v:
+      - Your Thing
+    pick: 0
+footer.text:
+  n: null
+  now: свободная строка подвала
+  ru:
+    v: []
+    pick: -1
+  en:
+    v: []
+    pick: -1
+code.link.apk:
+  n: null
+  ru:
+    v:
+      - Скачать APK
+    pick: 0
+  en:
+    v:
+      - Download APK
+    pick: 0
+code.link.course:
+  n: null
+  ru:
+    v:
+      - Страница курса
+    pick: 0
+  en:
+    v:
+      - Course page
+    pick: 0
+code.link.site:
+  n: null
+  ru:
+    v:
+      - Сайт
+    pick: 0
+  en:
+    v:
+      - Website
+    pick: 0
+code.link.archive:
+  n: null
+  ru:
+    v:
+      - Сайт в веб-архиве
+    pick: 0
+  en:
+    v:
+      - Archived website
+    pick: 0

@@ -1,0 +1,669 @@
+{
+ "_": "RIASEC 48 items, public domain (Liao, Armstrong & Rounds 2008 via openpsychometrics.org). GRM params: a in probit units (multiply by 1.7 for logistic), b = 4 category thresholds. Coarse classical calibration, see tools/career-calibrate.py.",
+ "source": "openpsychometrics.org/_rawdata/RIASEC_data12Dec2018.zip",
+ "n": 108719,
+ "dropped": {
+  "range": 10064,
+  "fakewords": 27045
+ },
+ "scales": [
+  "R",
+  "I",
+  "A",
+  "S",
+  "E",
+  "C"
+ ],
+ "norms": {
+  "R": {
+   "mean": 2.0824,
+   "sd": 0.8824
+  },
+  "I": {
+   "mean": 2.9688,
+   "sd": 1.042
+  },
+  "A": {
+   "mean": 2.8471,
+   "sd": 1.0214
+  },
+  "S": {
+   "mean": 3.244,
+   "sd": 0.9317
+  },
+  "E": {
+   "mean": 2.5592,
+   "sd": 0.8833
+  },
+  "C": {
+   "mean": 2.384,
+   "sd": 0.978
+  }
+ },
+ "items": [
+  {
+   "id": "R1",
+   "scale": "R",
+   "en": "Test the quality of parts before shipment",
+   "r": 0.485,
+   "a": 0.554,
+   "b": [
+    -1.084,
+    -0.21,
+    1.434,
+    2.739
+   ]
+  },
+  {
+   "id": "R2",
+   "scale": "R",
+   "en": "Lay brick or tile",
+   "r": 0.647,
+   "a": 0.849,
+   "b": [
+    -0.18,
+    0.56,
+    1.518,
+    2.682
+   ]
+  },
+  {
+   "id": "R3",
+   "scale": "R",
+   "en": "Work on an offshore oil-drilling rig",
+   "r": 0.56,
+   "a": 0.675,
+   "b": [
+    0.495,
+    1.377,
+    2.297,
+    3.351
+   ]
+  },
+  {
+   "id": "R4",
+   "scale": "R",
+   "en": "Assemble electronic parts",
+   "r": 0.647,
+   "a": 0.849,
+   "b": [
+    -0.387,
+    0.405,
+    1.205,
+    2.19
+   ]
+  },
+  {
+   "id": "R5",
+   "scale": "R",
+   "en": "Operate a grinding machine in a factory",
+   "r": 0.697,
+   "a": 0.973,
+   "b": [
+    0.274,
+    1.124,
+    1.973,
+    2.788
+   ]
+  },
+  {
+   "id": "R6",
+   "scale": "R",
+   "en": "Fix a broken faucet",
+   "r": 0.7,
+   "a": 0.98,
+   "b": [
+    -0.279,
+    0.444,
+    1.279,
+    2.302
+   ]
+  },
+  {
+   "id": "R7",
+   "scale": "R",
+   "en": "Assemble products in a factory",
+   "r": 0.699,
+   "a": 0.978,
+   "b": [
+    -0.152,
+    0.689,
+    1.589,
+    2.494
+   ]
+  },
+  {
+   "id": "R8",
+   "scale": "R",
+   "en": "Install flooring in houses",
+   "r": 0.695,
+   "a": 0.966,
+   "b": [
+    -0.011,
+    0.781,
+    1.616,
+    2.58
+   ]
+  },
+  {
+   "id": "I1",
+   "scale": "I",
+   "en": "Study the structure of the human body",
+   "r": 0.571,
+   "a": 0.695,
+   "b": [
+    -1.999,
+    -1.165,
+    -0.111,
+    1.162
+   ]
+  },
+  {
+   "id": "I2",
+   "scale": "I",
+   "en": "Study animal behavior",
+   "r": 0.639,
+   "a": 0.83,
+   "b": [
+    -1.625,
+    -0.933,
+    -0.074,
+    1.157
+   ]
+  },
+  {
+   "id": "I3",
+   "scale": "I",
+   "en": "Do research on plants or animals",
+   "r": 0.754,
+   "a": 1.146,
+   "b": [
+    -1.114,
+    -0.509,
+    0.189,
+    1.189
+   ]
+  },
+  {
+   "id": "I4",
+   "scale": "I",
+   "en": "Develop a new medical treatment or procedure",
+   "r": 0.596,
+   "a": 0.741,
+   "b": [
+    -1.289,
+    -0.492,
+    0.443,
+    1.602
+   ]
+  },
+  {
+   "id": "I5",
+   "scale": "I",
+   "en": "Conduct biological research",
+   "r": 0.782,
+   "a": 1.256,
+   "b": [
+    -0.828,
+    -0.241,
+    0.459,
+    1.387
+   ]
+  },
+  {
+   "id": "I6",
+   "scale": "I",
+   "en": "Study whales and other types of marine life",
+   "r": 0.718,
+   "a": 1.031,
+   "b": [
+    -1.045,
+    -0.419,
+    0.331,
+    1.335
+   ]
+  },
+  {
+   "id": "I7",
+   "scale": "I",
+   "en": "Work in a biology lab",
+   "r": 0.752,
+   "a": 1.14,
+   "b": [
+    -0.791,
+    -0.153,
+    0.594,
+    1.525
+   ]
+  },
+  {
+   "id": "I8",
+   "scale": "I",
+   "en": "Make a map of the bottom of an ocean",
+   "r": 0.546,
+   "a": 0.652,
+   "b": [
+    -0.676,
+    0.16,
+    1.086,
+    2.339
+   ]
+  },
+  {
+   "id": "A1",
+   "scale": "A",
+   "en": "Conduct a musical choir",
+   "r": 0.609,
+   "a": 0.768,
+   "b": [
+    -0.581,
+    0.226,
+    1.122,
+    2.126
+   ]
+  },
+  {
+   "id": "A2",
+   "scale": "A",
+   "en": "Direct a play",
+   "r": 0.685,
+   "a": 0.941,
+   "b": [
+    -0.857,
+    -0.185,
+    0.562,
+    1.53
+   ]
+  },
+  {
+   "id": "A3",
+   "scale": "A",
+   "en": "Design artwork for magazines",
+   "r": 0.55,
+   "a": 0.659,
+   "b": [
+    -1.376,
+    -0.526,
+    0.409,
+    1.648
+   ]
+  },
+  {
+   "id": "A4",
+   "scale": "A",
+   "en": "Write a song",
+   "r": 0.699,
+   "a": 0.977,
+   "b": [
+    -0.972,
+    -0.332,
+    0.406,
+    1.287
+   ]
+  },
+  {
+   "id": "A5",
+   "scale": "A",
+   "en": "Write books or plays",
+   "r": 0.65,
+   "a": 0.854,
+   "b": [
+    -1.08,
+    -0.456,
+    0.242,
+    1.187
+   ]
+  },
+  {
+   "id": "A6",
+   "scale": "A",
+   "en": "Play a musical instrument",
+   "r": 0.637,
+   "a": 0.827,
+   "b": [
+    -1.304,
+    -0.72,
+    0.063,
+    1.064
+   ]
+  },
+  {
+   "id": "A7",
+   "scale": "A",
+   "en": "Perform stunts for a movie or television show",
+   "r": 0.381,
+   "a": 0.412,
+   "b": [
+    -1.192,
+    -0.023,
+    1.226,
+    2.824
+   ]
+  },
+  {
+   "id": "A8",
+   "scale": "A",
+   "en": "Design sets for plays",
+   "r": 0.676,
+   "a": 0.916,
+   "b": [
+    -0.899,
+    -0.235,
+    0.517,
+    1.554
+   ]
+  },
+  {
+   "id": "S1",
+   "scale": "S",
+   "en": "Give career guidance to people",
+   "r": 0.513,
+   "a": 0.598,
+   "b": [
+    -2.315,
+    -1.323,
+    -0.089,
+    1.366
+   ]
+  },
+  {
+   "id": "S2",
+   "scale": "S",
+   "en": "Do volunteer work at a non-profit organization",
+   "r": 0.531,
+   "a": 0.627,
+   "b": [
+    -2.508,
+    -1.696,
+    -0.423,
+    1.079
+   ]
+  },
+  {
+   "id": "S3",
+   "scale": "S",
+   "en": "Help people who have problems with drugs or alcohol",
+   "r": 0.632,
+   "a": 0.816,
+   "b": [
+    -1.596,
+    -0.805,
+    0.112,
+    1.265
+   ]
+  },
+  {
+   "id": "S4",
+   "scale": "S",
+   "en": "Teach an individual an exercise routine",
+   "r": 0.434,
+   "a": 0.482,
+   "b": [
+    -2.094,
+    -0.924,
+    0.487,
+    2.191
+   ]
+  },
+  {
+   "id": "S5",
+   "scale": "S",
+   "en": "Help people with family-related problems",
+   "r": 0.699,
+   "a": 0.978,
+   "b": [
+    -1.719,
+    -1.052,
+    -0.272,
+    0.798
+   ]
+  },
+  {
+   "id": "S6",
+   "scale": "S",
+   "en": "Supervise the activities of children at a camp",
+   "r": 0.614,
+   "a": 0.778,
+   "b": [
+    -1.373,
+    -0.614,
+    0.273,
+    1.433
+   ]
+  },
+  {
+   "id": "S7",
+   "scale": "S",
+   "en": "Teach children how to read",
+   "r": 0.657,
+   "a": 0.87,
+   "b": [
+    -1.492,
+    -0.776,
+    0.096,
+    1.21
+   ]
+  },
+  {
+   "id": "S8",
+   "scale": "S",
+   "en": "Help elderly people with their daily activities",
+   "r": 0.623,
+   "a": 0.797,
+   "b": [
+    -1.256,
+    -0.391,
+    0.623,
+    1.722
+   ]
+  },
+  {
+   "id": "E1",
+   "scale": "E",
+   "en": "Sell restaurant franchises to individuals",
+   "r": 0.567,
+   "a": 0.688,
+   "b": [
+    -0.468,
+    0.581,
+    1.776,
+    2.906
+   ]
+  },
+  {
+   "id": "E2",
+   "scale": "E",
+   "en": "Sell merchandise at a department store",
+   "r": 0.556,
+   "a": 0.669,
+   "b": [
+    -0.858,
+    0.26,
+    1.563,
+    2.873
+   ]
+  },
+  {
+   "id": "E3",
+   "scale": "E",
+   "en": "Manage the operations of a hotel",
+   "r": 0.623,
+   "a": 0.797,
+   "b": [
+    -1.193,
+    -0.305,
+    0.715,
+    1.97
+   ]
+  },
+  {
+   "id": "E4",
+   "scale": "E",
+   "en": "Operate a beauty salon or barber shop",
+   "r": 0.468,
+   "a": 0.53,
+   "b": [
+    -0.844,
+    0.395,
+    1.649,
+    2.983
+   ]
+  },
+  {
+   "id": "E5",
+   "scale": "E",
+   "en": "Manage a department within a large company",
+   "r": 0.533,
+   "a": 0.63,
+   "b": [
+    -1.562,
+    -0.648,
+    0.502,
+    1.893
+   ]
+  },
+  {
+   "id": "E6",
+   "scale": "E",
+   "en": "Manage a clothing store",
+   "r": 0.688,
+   "a": 0.947,
+   "b": [
+    -0.902,
+    -0.085,
+    0.834,
+    1.806
+   ]
+  },
+  {
+   "id": "E7",
+   "scale": "E",
+   "en": "Sell houses",
+   "r": 0.542,
+   "a": 0.646,
+   "b": [
+    -0.825,
+    0.177,
+    1.31,
+    2.596
+   ]
+  },
+  {
+   "id": "E8",
+   "scale": "E",
+   "en": "Run a toy store",
+   "r": 0.529,
+   "a": 0.623,
+   "b": [
+    -1.12,
+    -0.158,
+    0.996,
+    2.289
+   ]
+  },
+  {
+   "id": "C1",
+   "scale": "C",
+   "en": "Generate the monthly payroll checks for an office",
+   "r": 0.705,
+   "a": 0.994,
+   "b": [
+    -0.456,
+    0.309,
+    1.247,
+    2.169
+   ]
+  },
+  {
+   "id": "C2",
+   "scale": "C",
+   "en": "Inventory supplies using a hand-held computer",
+   "r": 0.631,
+   "a": 0.814,
+   "b": [
+    -0.728,
+    0.206,
+    1.322,
+    2.457
+   ]
+  },
+  {
+   "id": "C3",
+   "scale": "C",
+   "en": "Use a computer program to generate customer bills",
+   "r": 0.763,
+   "a": 1.182,
+   "b": [
+    -0.508,
+    0.225,
+    1.023,
+    1.862
+   ]
+  },
+  {
+   "id": "C4",
+   "scale": "C",
+   "en": "Maintain employee records",
+   "r": 0.709,
+   "a": 1.006,
+   "b": [
+    -0.733,
+    0.079,
+    1.069,
+    2.061
+   ]
+  },
+  {
+   "id": "C5",
+   "scale": "C",
+   "en": "Compute and record statistical and other numerical data",
+   "r": 0.65,
+   "a": 0.855,
+   "b": [
+    -0.646,
+    0.102,
+    0.953,
+    1.996
+   ]
+  },
+  {
+   "id": "C6",
+   "scale": "C",
+   "en": "Operate a calculator",
+   "r": 0.605,
+   "a": 0.76,
+   "b": [
+    -0.969,
+    -0.176,
+    1.059,
+    2.18
+   ]
+  },
+  {
+   "id": "C7",
+   "scale": "C",
+   "en": "Handle customers' bank transactions",
+   "r": 0.695,
+   "a": 0.968,
+   "b": [
+    -0.342,
+    0.499,
+    1.394,
+    2.299
+   ]
+  },
+  {
+   "id": "C8",
+   "scale": "C",
+   "en": "Keep shipping and receiving records",
+   "r": 0.754,
+   "a": 1.147,
+   "b": [
+    -0.409,
+    0.363,
+    1.262,
+    2.078
+   ]
+  }
+ ]
+}

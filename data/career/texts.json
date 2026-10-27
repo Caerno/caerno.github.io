@@ -1,0 +1,281 @@
+{
+  "_": "Тексты вкладки Career space. en — канон, ru — перевод. Пункты теста переводятся в i18n/ru.json (career.item.<id>).",
+  "en": {
+    "title": "Your Thing",
+    "kicker": "Adaptive career test",
+    "start": "Start",
+    "resume": "Continue",
+    "restart": "Start over",
+    "likert": [
+      "Dislike",
+      "Slightly dislike",
+      "Neutral",
+      "Slightly enjoy",
+      "Enjoy"
+    ],
+    "progress": "Question {n} of at most {total}",
+    "showResults": "Show occupations",
+    "sharpEnough": "Further answers will change little.",
+    "occTitle": "Closest occupations",
+    "occNote": "Occupations from the O*NET database closest to your answers. Click an occupation to open its description.",
+    "distance": "distance",
+    "copy": "Copy profile (JSON)",
+    "copied": "Copied",
+    "method": "How it works",
+    "src": {
+      "riasec": "interests",
+      "tipi": "character",
+      "ddo": "pick one of two"
+    },
+    "pairStem": "Which would you prefer, if you were trained for both?",
+    "tipiStem": "How much is this about you?",
+    "tipiEnds": [
+      "No",
+      "Partly",
+      "Yes"
+    ],
+    "navTest": "Test",
+    "sources": "Sources: openpsychometrics.org raw data, RIASEC 2015–2018 · Gosling, Rentfrow & Swann 2003 · E. A. Klimov, DDO · ESCO, © European Union · This page includes information from the O*NET 30.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA), used under the CC BY 4.0 license.",
+    "footPrivacy": "Answers stay in this browser's local storage. Nothing is sent anywhere.",
+    "shareTitle": "Share",
+    "shareNote": "Copy your result as a picture or text and paste it anywhere. To send it to the author:",
+    "done": "No more questions.",
+    "confirmRestart": "Erase all answers and start over?",
+    "keysHint": "Keys 1–5 work too.",
+    "lead": "Answer the questions and see which occupations suit you.",
+    "about": [
+      "Short questions about the kind of work you would enjoy. Every answer refines the result, and the next question is chosen from the previous ones. After a dozen answers you can see which occupations come closest, or keep going: the more you answer, the more precise the result.",
+      "There are no right answers; go with how you feel. Your answers stay in your browser and are not sent anywhere."
+    ],
+    "methodIntro": "The algorithm rests on a mathematical model that combines three psychological questionnaires:",
+    "methodInstruments": [
+      [
+        "RIASEC",
+        "48 questions on occupational interests."
+      ],
+      [
+        "TIPI",
+        "10 questions on personality (the Big Five)."
+      ],
+      [
+        "Klimov's DDO",
+        "20 questions where you pick one of two options."
+      ]
+    ],
+    "methodHowTitle": "How the system works",
+    "methodHow": [
+      [
+        "Smart survey",
+        "Questions come in a single stream. The algorithm always picks the question whose answer will sharpen the result the most. Every answer instantly recalculates your profile on 11 hidden scales."
+      ],
+      [
+        "Ranking",
+        "At the top are the occupations closest to your interests. The Russian version also takes into account working conditions and how long you are ready to study."
+      ],
+      [
+        "Reliability",
+        "The interest model is trained on data from more than 107,000 people who took the tests in 2015–2018."
+      ]
+    ],
+    "methodWhereTitle": "Where do the occupations come from?",
+    "methodWhere": "The list of occupations and their parameters come from the O*NET 30.0 database (U.S. Department of Labor).",
+    "methodTabs": "Each occupation has tabs. O*NET: the description and a link to the O*NET site. ESCO: occupations of the European classification linked by the official O*NET crosswalk.",
+    "methodNoteTitle": "Technical note",
+    "methodNote": "The Russian version of TIPI uses a working translation rather than an official adaptation, and Klimov's questions are mapped onto the scales by content only and are still being calibrated.",
+    "tabOnet": "O*NET",
+    "tabEsco": "ESCO",
+    "tabMt": "Mintrud directory",
+    "onetOpen": "Open on the O*NET site",
+    "onetLang": "",
+    "escoNote": "ESCO occupations that the official crosswalk links to this O*NET occupation.",
+    "mtNote": "",
+    "mtOpen": "",
+    "loading": "Loading…",
+    "loadFail": "Could not load the data.",
+    "srcInstr": {
+      "riasec": "RIASEC",
+      "tipi": "TIPI",
+      "ddo": "Klimov"
+    },
+    "keysHintN": "Keys 1–{n} work too.",
+    "methodHowIntro": "The test picks each next question itself and ranks occupations by how close they are to your interests.",
+    "shareFmt": {
+      "img": "Picture",
+      "md": "Markdown",
+      "html": "HTML",
+      "json": "JSON"
+    },
+    "shareHead": "My occupations",
+    "saved": "Saved",
+    "shareFile": "your-thing.png",
+    "pickYes": "Mine",
+    "pickNo": "Not for me",
+    "swipeHint": "Swipe a row right for “mine”, left for “not for me”.",
+    "nopeTitle": "Not for me · {n}",
+    "pickMax": "Up to three.",
+    "badgeHint": "Mark up to three occupations as “mine” to make a picture.",
+    "badgeHead": "My pick",
+    "badgeNeed": "Mark occupations first"
+  },
+  "ru": {
+    "title": "Кем быть",
+    "kicker": "Адаптивный тест интересов",
+    "start": "Начать",
+    "resume": "Продолжить",
+    "restart": "Начать заново",
+    "likert": [
+      "Не нравится",
+      "Скорее нет",
+      "Всё равно",
+      "Скорее да",
+      "Нравится"
+    ],
+    "progress": "Вопрос {n} из не более {total}",
+    "showResults": "Показать профессии",
+    "sharpEnough": "Дальше ответы почти ничего не изменят.",
+    "occTitle": "Ближайшие профессии",
+    "occNote": "Профессии базы O*NET: выше — те, что подходят по интересам, вашим условиям и сроку входа. Нажмите на профессию, чтобы открыть описание.",
+    "distance": "расстояние",
+    "copy": "Скопировать профиль (JSON)",
+    "copied": "Скопировано",
+    "method": "Как это устроено",
+    "src": {
+      "riasec": "интересы",
+      "tipi": "характер",
+      "ddo": "выбор из двух"
+    },
+    "pairStem": "Что бы вы предпочли, если бы умели и то и другое?",
+    "tipiStem": "Насколько это про вас?",
+    "tipiEnds": [
+      "Нет",
+      "Отчасти",
+      "Да"
+    ],
+    "navTest": "Тест",
+    "sources": "Источники: сырые данные openpsychometrics.org, RIASEC 2015–2018 · Gosling, Rentfrow & Swann 2003 · Е. А. Климов, ДДО · ESCO, © Европейский союз · Справочник профессий Минтруда России · Росстат: перепись населения 2020, «Здравоохранение в России» · Минобрнауки и Минпросвещения: формы ВПО-1 и СПО-1 за 2025 год · опросы ФОМ, ВЦИОМ, SuperJob · На странице использованы данные базы O*NET 30.0 Министерства труда США (USDOL/ETA) по лицензии CC BY 4.0.",
+    "footPrivacy": "Ответы остаются в локальном хранилище этого браузера. Никуда ничего не отправляется.",
+    "shareTitle": "Поделиться",
+    "shareNote": "Скопируйте результат картинкой или текстом и вставьте куда угодно. Прислать автору:",
+    "done": "Вопросы закончились.",
+    "confirmRestart": "Стереть все ответы и начать заново?",
+    "keysHint": "Можно отвечать клавишами 1–5.",
+    "lead": "Ответьте на вопросы и посмотрите, какие профессии вам подходят.",
+    "about": [
+      "Короткие вопросы о том, какая работа вам по душе. Каждый ответ уточняет результат, и следующий вопрос подбирается по предыдущим. После дюжины ответов можно посмотреть, какие профессии ближе всего, а можно отвечать дальше: чем больше ответов, тем точнее результат.",
+      "Правильных ответов нет — отвечайте как чувствуете. Ответы остаются в вашем браузере и никуда не отправляются."
+    ],
+    "methodIntro": "Модель сводит в один профиль три опросника интересов и черт, а затем сверяет профессии с вашими условиями и возможностями:",
+    "methodInstruments": [
+      [
+        "RIASEC",
+        "48 вопросов о профессиональных интересах."
+      ],
+      [
+        "TIPI",
+        "10 вопросов о чертах характера («Большая пятёрка»)."
+      ],
+      [
+        "ДДО Климова",
+        "20 вопросов, где нужно выбрать одно из двух."
+      ],
+      [
+        "Условия работы",
+        "30 вопросов вида «Готовы ли вы работать ночью?»."
+      ],
+      [
+        "Возможности",
+        "образование, документы, здоровье: без чего в часть профессий не берут или путь в них длиннее."
+      ],
+      [
+        "О вас",
+        "пол, возраст, образование и сколько времени вы готовы учиться."
+      ]
+    ],
+    "methodHowTitle": "Как работает система",
+    "methodHow": [
+      [
+        "Умный опрос",
+        "Вопросы идут в едином потоке. Алгоритм всегда выбирает тот вопрос, ответ на который сильнее всего уточнит результат. Каждый ваш выбор мгновенно пересчитывает профиль по 11 скрытым шкалам."
+      ],
+      [
+        "Восполнение данных",
+        "Если система не задала вам какой-то вопрос, она опирается на статистику для вашего пола и возраста. Например, вероятность дальтонизма у мужчин — около 8%, а у женщин — всего 0,4%."
+      ],
+      [
+        "Формирование рейтинга",
+        "На самом верху — профессии, которые совпадают с вашими интересами, подходят по условиям труда и вписываются в желаемые сроки обучения. Длительный срок обучения не удаляет профессию, а лишь опускает её ниже. Варианты, куда не возьмут по здоровью или закону, попадают в отдельный список с указанием причины."
+      ],
+      [
+        "Оценка условий работы",
+        "Мы проверяем каждую профессию по пяти блокам:\nГрафик: ночные смены, вечера и выходные, авралы, командировки, вахта.\nЗдоровье: весь день на ногах или за компьютером, перенос тяжестей, мелкая работа для глаз.\nСреда: работа на улице, шум, пыль и химия, грязь, жара/холод, риск для жизни.\nЛюди: агрессия, недовольные клиенты, выступления, тяжелобольные, кровь, животные.\nСпецифика: нестабильный доход, план продаж, цена ошибки, рутина."
+      ],
+      [
+        "Наглядные теги",
+        "Карточка профессии показывает, как в неё войти и сколько учиться. Если закон требует диплом или допуск, появится тег «закон» (наведите на него курсор для деталей). Зелёные теги означают, что ваши ожидания совпали, красные — то, от чего вы отказались."
+      ],
+      [
+        "Надёжность",
+        "Алгоритм оценки интересов обучен на данных более 107 000 человек, прошедших тестирование в 2015–2018 годах."
+      ]
+    ],
+    "methodWhereTitle": "Откуда профессии?",
+    "methodWhere": "Список профессий и их параметры взяты из базы O*NET 30.0 (Министерство труда США). Требования и условия по каждой профессии собраны языковой моделью по данным O*NET и перенесены на Россию и Беларусь. Доли по населению — перепись 2020 года, Росстат, Минздрав, выпуск вузов и колледжей 2025 года, опросы.",
+    "methodTabs": "У каждой профессии есть вкладки. O*NET — описание и ссылка на сайт O*NET. ESCO — профессии европейского классификатора по официальной таблице соответствия с O*NET. Справочник Минтруда — похожие российские профессии, подобраны автоматически по названию и могут ошибаться.",
+    "methodNoteTitle": "Техническое примечание",
+    "methodNote": "Русская версия TIPI использует рабочий перевод (а не официальную адаптацию), а вопросы Климова пока привязаны к шкалам только по смыслу и проходят стадию калибровки. Требования, условия и русские названия профессий — черновая разметка языковой моделью, людьми пока не сверены.",
+    "tabOnet": "O*NET",
+    "tabEsco": "ESCO",
+    "tabMt": "Справочник Минтруда",
+    "onetOpen": "Открыть на сайте O*NET",
+    "onetLang": "Описание O*NET на английском.",
+    "escoNote": "Профессии ESCO, которые официальная таблица соответствия связывает с этой профессией O*NET. Названия на английском.",
+    "mtNote": "Похожие профессии из Справочника профессий Минтруда России. Подобраны автоматически по названию, могут ошибаться.",
+    "mtOpen": "Открыть в Справочнике",
+    "loading": "Загрузка…",
+    "loadFail": "Не удалось загрузить данные.",
+    "srcLimit": {
+      "context": "о вас",
+      "barrier": "возможности",
+      "condition": "условия работы"
+    },
+    "skip": "Не хочу отвечать",
+    "pathNote": "путь {y}",
+    "lessYear": "меньше года",
+    "blockedTitle": "Подходят по интересам, но есть препятствие · {n}",
+    "blockedReason": "{need}: ваш ответ «{a}»",
+    "srcInstr": {
+      "riasec": "RIASEC",
+      "tipi": "TIPI",
+      "ddo": "Климов"
+    },
+    "entry": {
+      "открытый": "без подготовки",
+      "курсы": "после курсов",
+      "диплом": "по диплому",
+      "портфолио": "по портфолио",
+      "лестница": "через опыт",
+      "отбор": "по отбору"
+    },
+    "law": "закон",
+    "keysHintN": "Можно отвечать клавишами 1–{n}.",
+    "methodHowIntro": "Тест сам выбирает следующий вопрос и строит список профессий по трём вещам: что вам интересно, на какие условия вы готовы и сколько готовы учиться.",
+    "shareFmt": {
+      "img": "Картинка",
+      "md": "Markdown",
+      "html": "HTML",
+      "json": "JSON"
+    },
+    "shareHead": "Мои профессии",
+    "saved": "Сохранено",
+    "shareFile": "kem-byt.png",
+    "methodHowFold": true,
+    "pickYes": "Моё",
+    "pickNo": "Не моё",
+    "swipeHint": "Смахните строку вправо — «моё», влево — «не моё».",
+    "nopeTitle": "Не моё · {n}",
+    "pickMax": "Можно выбрать не больше трёх.",
+    "badgeHint": "Отметьте до трёх профессий как «моё» — соберём картинку.",
+    "badgeHead": "Мой выбор",
+    "badgeNeed": "Сначала отметьте профессии"
+  }
+}

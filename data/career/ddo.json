@@ -1,0 +1,361 @@
+{
+ "_": "ДДО Е. А. Климова, 20 пар. Русский текст дословно по careertest.ru/tests/ddo-klimov/ (05.10.2026); английский перевод мой. w — вес варианта по шкалам RIASEC: кроссволк МОЙ, по содержанию пункта, НЕ калиброван. Модель: P(выбран a) = sigmoid(kappa * (w_a − w_b)·theta). Права на текст не проверены — сверить до публикации.",
+ "kappa": 1.0,
+ "stem": {
+  "ru": "Что бы вы предпочли, если бы умели и то и другое?",
+  "en": "Which would you prefer, if you were trained for both?"
+ },
+ "pairs": [
+  {
+   "id": "D1",
+   "a": {
+    "ru": "Ухаживать за животными",
+    "en": "Take care of animals",
+    "w": {
+     "R": 0.7,
+     "S": 0.3
+    }
+   },
+   "b": {
+    "ru": "Обслуживать машины, приборы (следить, регулировать)",
+    "en": "Maintain machines and instruments (monitor, adjust)",
+    "w": {
+     "R": 1
+    }
+   }
+  },
+  {
+   "id": "D2",
+   "a": {
+    "ru": "Помогать больным",
+    "en": "Help sick people",
+    "w": {
+     "S": 1
+    }
+   },
+   "b": {
+    "ru": "Составлять таблицы, схемы, программы для вычислительных машин",
+    "en": "Compile tables, diagrams, computer programs",
+    "w": {
+     "C": 0.5,
+     "I": 0.5
+    }
+   }
+  },
+  {
+   "id": "D3",
+   "a": {
+    "ru": "Следить за качеством книжных иллюстраций, плакатов, художественных открыток, грампластинок",
+    "en": "Check the quality of book illustrations, posters, art postcards, records",
+    "w": {
+     "A": 1
+    }
+   },
+   "b": {
+    "ru": "Следить за состоянием, развитием растений",
+    "en": "Monitor the condition and growth of plants",
+    "w": {
+     "R": 1
+    }
+   }
+  },
+  {
+   "id": "D4",
+   "a": {
+    "ru": "Обрабатывать материалы (дерево, ткань, металл, пластмассу и т.п.)",
+    "en": "Work materials (wood, fabric, metal, plastic, etc.)",
+    "w": {
+     "R": 1
+    }
+   },
+   "b": {
+    "ru": "Доводить товары до потребителя, рекламировать, продавать",
+    "en": "Bring goods to the consumer: advertise, sell",
+    "w": {
+     "E": 1
+    }
+   }
+  },
+  {
+   "id": "D5",
+   "a": {
+    "ru": "Обсуждать научно-популярные книги, статьи",
+    "en": "Discuss popular-science books and articles",
+    "w": {
+     "I": 1
+    }
+   },
+   "b": {
+    "ru": "Обсуждать художественные книги (или пьесы, концерты)",
+    "en": "Discuss fiction (or plays, concerts)",
+    "w": {
+     "A": 1
+    }
+   }
+  },
+  {
+   "id": "D6",
+   "a": {
+    "ru": "Выращивать молодняк (животных какой-либо породы)",
+    "en": "Raise young animals of some breed",
+    "w": {
+     "R": 1
+    }
+   },
+   "b": {
+    "ru": "Тренировать товарищей (или младших) в выполнении каких-либо действий (трудовых, учебных, спортивных)",
+    "en": "Train peers (or younger ones) in some activity (work, study, sport)",
+    "w": {
+     "S": 1
+    }
+   }
+  },
+  {
+   "id": "D7",
+   "a": {
+    "ru": "Копировать рисунки, изображения (или настраивать музыкальные инструменты)",
+    "en": "Copy drawings and images (or tune musical instruments)",
+    "w": {
+     "A": 1
+    }
+   },
+   "b": {
+    "ru": "Управлять каким-либо грузовым (подъёмным или транспортным) средством – подъёмным краном, трактором, тепловозом и др.",
+    "en": "Operate a cargo vehicle or hoist: a crane, a tractor, a locomotive, etc.",
+    "w": {
+     "R": 1
+    }
+   }
+  },
+  {
+   "id": "D8",
+   "a": {
+    "ru": "Сообщать, разъяснять людям нужные им сведения (в справочном бюро, на экскурсии и т.д.)",
+    "en": "Give and explain information people need (at an information desk, on a tour, etc.)",
+    "w": {
+     "S": 1
+    }
+   },
+   "b": {
+    "ru": "Оформлять выставки, витрины (или участвовать в подготовке пьес, концертов)",
+    "en": "Design exhibitions and shop windows (or help prepare plays, concerts)",
+    "w": {
+     "A": 1
+    }
+   }
+  },
+  {
+   "id": "D9",
+   "a": {
+    "ru": "Ремонтировать вещи, изделия (одежду, технику), жилище",
+    "en": "Repair things (clothes, appliances), housing",
+    "w": {
+     "R": 1
+    }
+   },
+   "b": {
+    "ru": "Искать и исправлять ошибки в текстах, таблицах, рисунках",
+    "en": "Find and correct errors in texts, tables, drawings",
+    "w": {
+     "C": 1
+    }
+   }
+  },
+  {
+   "id": "D10",
+   "a": {
+    "ru": "Лечить животных",
+    "en": "Treat animals",
+    "w": {
+     "I": 0.5,
+     "R": 0.5
+    }
+   },
+   "b": {
+    "ru": "Выполнять вычисления, расчеты",
+    "en": "Do calculations",
+    "w": {
+     "C": 1
+    }
+   }
+  },
+  {
+   "id": "D11",
+   "a": {
+    "ru": "Выводить новые сорта растений",
+    "en": "Breed new plant varieties",
+    "w": {
+     "I": 1
+    }
+   },
+   "b": {
+    "ru": "Конструировать, проектировать новые виды промышленных изделий (машины, одежду, дома, продукты питания и т.п.)",
+    "en": "Design new kinds of industrial products (machines, clothes, houses, food, etc.)",
+    "w": {
+     "R": 0.5,
+     "I": 0.5
+    }
+   }
+  },
+  {
+   "id": "D12",
+   "a": {
+    "ru": "Разбирать споры, ссоры между людьми, убеждать, разъяснять, наказывать, поощрять",
+    "en": "Settle disputes between people: persuade, explain, punish, reward",
+    "w": {
+     "S": 0.5,
+     "E": 0.5
+    }
+   },
+   "b": {
+    "ru": "Разбираться в чертежах, схемах, таблицах (проверять, уточнять, приводить в порядок)",
+    "en": "Work through drawings, diagrams, tables (check, refine, put in order)",
+    "w": {
+     "C": 1
+    }
+   }
+  },
+  {
+   "id": "D13",
+   "a": {
+    "ru": "Наблюдать, изучать работу кружков художественной самодеятельности",
+    "en": "Observe and study amateur arts groups",
+    "w": {
+     "A": 1
+    }
+   },
+   "b": {
+    "ru": "Наблюдать, изучать жизнь микробов",
+    "en": "Observe and study the life of microbes",
+    "w": {
+     "I": 1
+    }
+   }
+  },
+  {
+   "id": "D14",
+   "a": {
+    "ru": "Обслуживать, налаживать медицинские приборы, аппараты",
+    "en": "Maintain and adjust medical devices",
+    "w": {
+     "R": 1
+    }
+   },
+   "b": {
+    "ru": "Оказывать людям медицинскую помощь при ранениях, ушибах, ожогах и т.п.",
+    "en": "Give people medical aid for wounds, bruises, burns, etc.",
+    "w": {
+     "S": 1
+    }
+   }
+  },
+  {
+   "id": "D15",
+   "a": {
+    "ru": "Составлять точные описания-отчёты о наблюдаемых явлениях, событиях, измеряемых объектах и др.",
+    "en": "Write precise reports on observed phenomena, events, measured objects",
+    "w": {
+     "C": 0.5,
+     "I": 0.5
+    }
+   },
+   "b": {
+    "ru": "Художественно описывать, изображать события (наблюдаемые и представляемые)",
+    "en": "Describe and depict events artistically (observed or imagined)",
+    "w": {
+     "A": 1
+    }
+   }
+  },
+  {
+   "id": "D16",
+   "a": {
+    "ru": "Делать лабораторные анализы в больнице",
+    "en": "Do laboratory tests in a hospital",
+    "w": {
+     "I": 1
+    }
+   },
+   "b": {
+    "ru": "Принимать, осматривать больных, беседовать с ними, назначать лечение",
+    "en": "See and examine patients, talk with them, prescribe treatment",
+    "w": {
+     "S": 0.5,
+     "I": 0.5
+    }
+   }
+  },
+  {
+   "id": "D17",
+   "a": {
+    "ru": "Красить или расписывать стены помещений, поверхность изделий",
+    "en": "Paint or decorate walls and surfaces of products",
+    "w": {
+     "R": 0.5,
+     "A": 0.5
+    }
+   },
+   "b": {
+    "ru": "Осуществлять монтаж или сборку машин, приборов",
+    "en": "Assemble or install machines and instruments",
+    "w": {
+     "R": 1
+    }
+   }
+  },
+  {
+   "id": "D18",
+   "a": {
+    "ru": "Организовать культпоходы сверстников или младших в театры, музеи, экскурсии, туристические походы и т.п.",
+    "en": "Organise outings for peers or younger ones to theatres, museums, tours, hikes",
+    "w": {
+     "S": 0.5,
+     "E": 0.5
+    }
+   },
+   "b": {
+    "ru": "Играть на сцене, принимать участие в концертах",
+    "en": "Act on stage, take part in concerts",
+    "w": {
+     "A": 1
+    }
+   }
+  },
+  {
+   "id": "D19",
+   "a": {
+    "ru": "Изготовлять по чертежам детали, изделия (машины, одежду), строить здания",
+    "en": "Make parts and products from drawings (machines, clothes), construct buildings",
+    "w": {
+     "R": 1
+    }
+   },
+   "b": {
+    "ru": "Заниматься черчением, копировать чертежи, карты",
+    "en": "Do drafting, copy drawings and maps",
+    "w": {
+     "C": 0.5,
+     "R": 0.5
+    }
+   }
+  },
+  {
+   "id": "D20",
+   "a": {
+    "ru": "Вести борьбу с болезнями растений, с вредителями леса, сада",
+    "en": "Fight plant diseases and forest or garden pests",
+    "w": {
+     "R": 0.5,
+     "I": 0.5
+    }
+   },
+   "b": {
+    "ru": "Работать на клавишных машинах (пишущей машинке, телетайпе, наборной машине и др.)",
+    "en": "Work on keyboard machines (typewriter, teletype, typesetting machine, etc.)",
+    "w": {
+     "C": 1
+    }
+   }
+  }
+ ]
+}
