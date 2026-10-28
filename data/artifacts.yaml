@@ -30,7 +30,7 @@ items:
         url: https://talk-snapshots.toolforge.org/
   - id: genfont
     label: Living handwriting
-    line: Imitated handwriting in a PDF; each letter changes its form every time
+    line: Generates handwritten-style text in PDFs, varying letter shapes to avoid identical repetitions.
     url: https://github.com/Caerno/generative-font
     links:
       - kind: github
@@ -48,7 +48,7 @@ items:
         url: https://github.com/Caerno/Age-Gender_Estimation_TF-Android/releases/latest
   - id: autocomplete
     label: Autocomplete
-    line: Built and trained a custom model architecture from scratch for real-time in-browser text prediction (ONNX/WASM)
+    line: Designed and trained a custom language model for real-time text completion in the browser, running via ONNX/WASM.
     url: https://caerno.github.io/autocomplete/
     links:
       - kind: live

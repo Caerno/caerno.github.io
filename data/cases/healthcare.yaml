@@ -1,14 +1,14 @@
 slug: healthcare
 domain: Startup
 period: 2025 — now
-org: Livi-Pro — conversational AI for clinics · Head of R&D / Lead AI Architect · full technical ownership and team leadership
+org: Livi-Pro — conversational AI for clinics · Head of R&D / Lead AI Architect · architecture, engineering and production delivery
 title:
   - Health­care
-tagline: An LLM assistant for clinics, taken from the first conversation with a clinic to production in five months.
+tagline: Built and launched a clinic-facing LLM assistant in five months, from initial requirements to production.
 points: |-
-  Built the assistant around how the clinic actually works: it answers from the clinic's knowledge base (RAG), understands what the patient needs and collects the booking request. Patients write in messaging apps, web chat and email; the request lands in the administrators' chat.
-  Built the release gate: simulated patients scored by an LLM judge, 50+ scenarios, 8,800+ automated tests before any rollout. Cost and latency of every dialogue are tracked against the SLA.
-  Took it to production and ran it: ~92% of patient conversations closed without an operator. Built the unit economics and the financial model for investor negotiations.
+  Designed the assistant around clinic workflows. It retrieves information from the clinic's knowledge base (RAG), identifies the patient's request and collects appointment details. Patients can contact it through messaging apps, web chat or email; requests are forwarded to clinic administrators.
+  Built a pre-release evaluation pipeline with simulated patients and an LLM judge, covering 50+ scenarios and 8,800+ automated tests. Tracked the cost and latency of every dialogue against the service-level targets.
+  Launched the system and oversaw its production operation. Around 92% of patient conversations were handled without human intervention. Developed the unit economics and financial model to support investor discussions.
 blocks:
   - label: What I saw
     text: A patient dialogue is a state machine that speaks natural language. Booking is structured data collection; empathy is how that process looks to the patient. Separate the two and quality becomes something you can test instead of eyeball.

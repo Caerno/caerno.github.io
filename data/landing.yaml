@@ -24,6 +24,7 @@ _layout:
     items:
       - data:profile.role
       - hero.headline
+      - meta.description
       - data:profile.status
       - hero.btn
       - field.cases
@@ -658,7 +659,13 @@ field.methods:
         entity-resolution: сопоставление сущностей
         production-ownership: эксплуатация
         simulation-testing: симуляционные тесты
-    pick: 0
+      - anomaly-detection: аномалии
+        cost-observability: мониторинг затрат
+        domain-mapping: анализ предметной области
+        entity-resolution: сопоставление сущностей
+        production-ownership: эксплуатация
+        simulation-testing: симуляционные тесты
+    pick: 1
   en:
     v: []
     pick: 0
@@ -675,12 +682,25 @@ hero.headline:
         Разбираюсь в незнакомой области,
         строю работающую систему и отвечаю за данные,
         на которых принимают решения.
-    pick: 0
+      - Превращаю сложные, незнакомые задачи в работающие системы и решения с опорой на данные.
+    pick: 4
   en:
     v:
       - I analyze unfamiliar problems, build functional systems, and bring data to a verified result.
-    pick: 0
+      - I turn complex, unfamiliar problems into working systems and evidence-backed decisions.
+    pick: 1
   now: Довожу сырые данные до проверенных ключевых показателей, влияющих на решение. — только про аналитика, в переделку (08.10)
+meta.description:
+  n: null
+  now: описание ссылки в превью мессенджеров и поисковиков; пусто — берётся главная строка
+  ru:
+    v:
+      - Инженерия AI-систем, анализ данных и исследования — от сложных исходных данных до работающих решений и проверяемых результатов.
+    pick: 0
+  en:
+    v:
+      - AI engineering, data analysis and research — from complex source material to working systems and evidence-backed results.
+    pick: 0
 hero.btn:
   n: null
   ru:
@@ -788,21 +808,21 @@ field.pool:
         devops: DevOps
         llm: LLM
         rag: RAG
-        prompting: промт инжиниринг
-        agents: агентские системы
+        prompting: проектирование промптов
+        agents: агентные системы
         nlp: NLP
         ml: ML
         localinf: инференс
         simtest: симуляционные тесты
         codereview: ревью кода
         obsv: наблюдаемость
-        costobs: прозрачность затрат
-        domainmap: погружение в бизнес
+        costobs: мониторинг затрат
+        domainmap: анализ предметной области
         anomaly: аномалии
         entityres: сопоставление сущностей
         dataviz: анализ данных
         unitecon: юнит-экономика
-        delivery: деплой
+        delivery: управление проектами
         teaching: менторство
         lua: lua
     pick: 0

@@ -2,7 +2,7 @@ slug: wikipedia
 domain: Wikipedia
 period: 2006 — now
 org: Russian Wikipedia — editor, administrator, arbitrator, engineer
-tagline: Writing code and services that run for years with nobody on duty, and collecting data on how a community of thousands governs itself.
+tagline: I build and maintain long-running services for Russian Wikipedia and analyze how a community of thousands makes decisions.
 methods:
   - entity-resolution
   - anomaly-detection

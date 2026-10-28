@@ -125,7 +125,7 @@ function render(lang, publish) {
   const nameLines = ru ? String(D('profile.nameLines', '')).split(/[|\n]/) : profile.nameLines;
   const other = ru ? '../' : './ru/';
   const headline = S('hero.headline');
-  const desc = (headline || `${D('profile.role', profile.role)} · ${D('profile.status', profile.status)}`).replace(/\n/g, ' ');   /* превью ссылки в мессенджерах (27.10) */
+  const desc = (S('meta.description') || headline || `${D('profile.role', profile.role)} · ${D('profile.status', profile.status)}`).replace(/\n/g, ' ');   /* превью ссылки в мессенджерах: своё место, иначе главная строка */
   /* серые тексты: для каждого кейса — навыки из data/atoms с этим кейсом, подпись на языке страницы; пустая — не берём */
   const pl = removed('field.pool') ? {} : (S('field.pool') || {});
   const incl = slug => [slug, ...((cases.find(c => c.slug === slug) || {}).includes || [])];   /* совмещённый кейс берёт навыки своих частей */

@@ -4,11 +4,11 @@ period: 2022 — 2025
 org: Practicum — lead expert for the Data Analysis and Data Science tracks · head of the “Python for Data Analysis” course
 title:
   - EdTech
-tagline: Client projects, an expert group and a submission process that stopped losing deadlines.
+tagline: Led client analytics projects, built an expert review team and streamlined submissions to reduce missed deadlines.
 points: |-
   Hired and led the expert review team.
-  Led analytics for 20+ startup and non-profit projects: SQL/API data pipelines, ROI and churn models, metrics defended to the client.
-  Set up the process from scratch: a no-code submission workflow in Jira, SLA breaches down from about two a week to isolated cases.
+  Led analytics for 20+ startup and nonprofit projects, building SQL/API data pipelines, ROI and churn models, and presenting the resulting metrics to clients.
+  Introduced a no-code submission workflow in Jira from scratch, reducing SLA breaches from roughly two per week to occasional cases.
 blocks:
   - label: What I saw
     text: 'Code review at volume is anomaly detection: a few typical mistakes show up across endlessly different tasks. What matters is not knowing the answer in advance but finding the problem fast in unfamiliar code. I also saw a problem in the process itself: the work was tracked in spreadsheets, so a late review was noticed only after the deadline had passed.'
