@@ -336,7 +336,10 @@
       }
 
       var scale = (0.20 + 0.80 * e) * breathe * (1 - 0.34 * f);
-      var cx = W * (0.5 + (opts.flyTo || 0.22) * f), cy = H * 0.5;
+      /* 28.10: отъезд вбок освобождал место имени слева на той же высоте; имя теперь сверху, роль снизу — на узком почти не едем:
+         390 px → 0,04 ширины, 986 → 0,16, от 1300 — прежние 0,22 */
+      var flyTo = opts.flyTo != null ? opts.flyTo : 0.04 + 0.18 * Math.max(0, Math.min(1, (W - 400) / 900));
+      var cx = W * (0.5 + flyTo * f), cy = H * 0.5;
       var BW = W, BH = H, gs = 1;
       if (GROW) { if (!REDUCED) growStep(t, Math.min(0.05, Math.max(0, t - (GROW.lt || t)))); GROW.lt = t;
         BW = GROW.W0 || W; BH = GROW.H0 || H; cx += GROW.ox; cy += GROW.oy; }   /* центр — середина коробки */
