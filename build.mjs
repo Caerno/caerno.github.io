@@ -34,6 +34,13 @@ const BUILT     = new Date().toISOString().slice(0, 10);
 const TG    = profile.links.find(l => l.label === 'Telegram');
 const WRITE = TG ? TG.url : 'mailto:kirsanov.dima@gmail.com';
 const TEST  = { en: 'https://caerno.github.io/your-thing/', ru: 'https://caerno.github.io/your-thing/ru/' };
+/* 28.10: ссылки на свои страницы ведут на версию языка главной; у остальных (Kaggle, рувики, talk-snapshots…) язык один */
+const IN_LANG = [
+  [/^https:\/\/caerno\.github\.io\/generative-font\/$/, (u, l) => u + '?lang=' + l],          /* страница понимает ?lang= */
+  [/^https:\/\/caerno\.github\.io\/autocomplete\/$/, (u, l) => u + l + '/'],                  /* /autocomplete/en/, /ru/ */
+  [/^https:\/\/github\.com\/Caerno\/generative-font$/, (u, l) => l === 'ru' ? u + '#живой-почерк--pdf' : u],   /* русская половина README */
+];
+const inLang = (u, lang) => { const r = IN_LANG.find(([re]) => re.test(u)); return r ? r[1](u, lang) : u; };
 
 /* видимость блоков и карточек из _layout: id → show */
 const SHOW = new Map();
@@ -208,7 +215,7 @@ ${vis('work') ? `<section id="work"><div class="wrap">
       (projs.length ? `${projs.map(a => `<div class="proj">
           <p class="proj__n">${esc(D(`artifact.${a.id}.label`, a.label))}</p>${a.line ? `<p>${esc(D(`artifact.${a.id}.line`, a.line))}</p>` : ''}
           <div class="art__links">${(a.links || [{ kind: '', url: a.url }]).map(l =>
-            `<a class="ext" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(S('code.link.' + l.kind) ?? l.url)} ↗</a>`).join('')}</div></div>`).join('')}` : '');
+            `<a class="ext" href="${esc(inLang(l.url, lang))}" target="_blank" rel="noopener">${esc(S('code.link.' + l.kind) ?? l.url)} ↗</a>`).join('')}</div></div>`).join('')}` : '');
     const title = esc(unforensic(D(`case.${c.slug}.domain`, c.domain), lang));
     return `<div class="it"><${tag} class="case rise" id="case-${c.slug}"${go ? ' href="#"' : ''}>
       <div><div class="tag">${esc(D(`case.${c.slug}.period`, c.period))}</div></div>
@@ -252,7 +259,7 @@ ${vis('code') ? `<section id="code"><div class="wrap">
              : `<p class="al">${esc(D(`artifact.${a.id}.label`, a.label))}</p>`}
         <p>${esc(D(`artifact.${a.id}.line`, a.line))}</p>
         ${cs ? '' : `<div class="art__links">${(a.links || [{ kind: '', url: a.url }]).map(l =>   /* 28.10: под «+» были одни ссылки — показаны сразу, без «+» */
-          `<a class="ext" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(S('code.link.' + l.kind) ?? l.url)} ↗</a>`).join('')}</div>`}</div></div>`; }).join('')}
+          `<a class="ext" href="${esc(inLang(l.url, lang))}" target="_blank" rel="noopener">${esc(S('code.link.' + l.kind) ?? l.url)} ↗</a>`).join('')}</div>`}</div></div>`; }).join('')}
   </div>
   ${eyebrow('code', 'code.eyebrow', true)}
   ${vis('code-links') ? el('code.more', t => `<p class="more rise">${t}</p>`) : ''}

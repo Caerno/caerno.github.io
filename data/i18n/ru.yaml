@@ -340,8 +340,8 @@ artifact.talksnapshots.label: talk-snapshots
 artifact.pda.label: Python для анализа данных
 artifact.contec.label: 'Контэк: консалтинг и юридические услуги'
 artifact.talksnapshots.line: Дашборд жизненного цикла статей в семи вики, работает на Wikimedia Toolforge
-artifact.genfont.label: generative-font
-artifact.genfont.line: Образцы почерка → готовый шрифт, MVP
+artifact.genfont.label: Живой почерк
+artifact.genfont.line: Имитация рукописного текста в PDF; каждая буква каждый раз выходит по-своему
 career.item.R1: Проверять качество деталей перед отгрузкой
 career.item.R2: Класть кирпич или плитку
 career.item.R3: Работать на морской буровой платформе

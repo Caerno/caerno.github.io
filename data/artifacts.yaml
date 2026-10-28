@@ -29,8 +29,8 @@ items:
       - kind: live
         url: https://talk-snapshots.toolforge.org/
   - id: genfont
-    label: generative-font
-    line: Handwriting samples to a usable font, MVP
+    label: Living handwriting
+    line: Imitated handwriting in a PDF; each letter changes its form every time
     url: https://github.com/Caerno/generative-font
     links:
       - kind: github
