@@ -23,10 +23,23 @@ function Hold(el, T, held, done, fall, dir, paint) {   /* fall 0..1: сопро�
 /* кейсы: один открыт — он крупнее, остальные тише; открытие одного закрывает другие; вложенные «+» в проектах — как раньше */
 function setCase(card, open) {
   var list = card.closest('.cases'), t = card.querySelector('button.case__t'), m = card.querySelector('.case__more'); if (!t || !m) return;
+  var y0 = t.getBoundingClientRect().top;   /* 28.10: нажатый заголовок остаётся на месте экрана — иначе закрытый длинный кейс выше уводит открытый вверх */
   list.querySelectorAll('.case.open').forEach(function (c) { if (c === card) return;
     c.classList.remove('open'); c.querySelector('.case__more').hidden = true; c.querySelector('button.case__t').setAttribute('aria-expanded', 'false'); });
   card.classList.toggle('open', open); m.hidden = !open; t.setAttribute('aria-expanded', open ? 'true' : 'false');
   list.classList.toggle('focus', open);
+  pin(t, y0);
+}
+/* держит элемент на y0 по экрану, пока идут переходы кейсов (h3 .4s, scale .5s): закрытый заголовок выше сжимается ещё ~16 px;
+   прокрутка мгновенная — html{scroll-behavior:smooth} вёл бы поправку видимо; колесо, касание или клавиша — отпускаем */
+var pinRaf = 0;
+function pin(el, y0) {
+  var end = performance.now() + 600;
+  function stop() { cancelAnimationFrame(pinRaf); pinRaf = 0; }
+  function step() { var d = el.getBoundingClientRect().top - y0; if (Math.abs(d) >= 0.5) scrollBy({ top: d, behavior: 'instant' });
+    pinRaf = performance.now() < end ? requestAnimationFrame(step) : 0; }
+  stop(); step();
+  ['wheel', 'touchstart', 'keydown'].forEach(function (k) { addEventListener(k, stop, { once: true, passive: true }); });
 }
 document.addEventListener('click', function (ev) {          /* 28.10: ссылки «Других проектов» видны сразу, «+» остался только у кейсов */
   var a = ev.target.closest('a.tocase');
