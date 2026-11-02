@@ -629,11 +629,13 @@ end.h2:
       - Связаться со мной
       - Для связи
       - 'Ищу работу: найм или контракт, удалённо. Напишите мне.'
-    pick: 3
+      - Готов к совместной работе и интересным проектам
+    pick: 4
   en:
     v:
       - 'Looking for work: full‑time or contract, remote. Write to me.'   # неразрывный дефис U+2011: «full-time» не рвётся по строкам (02.11)
-    pick: 0
+      - "Let's build something together. Open for full‑time & contract remote work."   # тоже U+2011 (03.11)
+    pick: 1
 end.map:
   n: null
   now: 'подпись ссылки на финал в микрокарте подвала (02.11): раньше бралась из end.h2, теперь он — целая фраза'
