@@ -632,7 +632,7 @@ end.h2:
     pick: 3
   en:
     v:
-      - 'Looking for work: full-time or contract, remote. Write to me.'
+      - 'Looking for work: full‑time or contract, remote. Write to me.'   # неразрывный дефис U+2011: «full-time» не рвётся по строкам (02.11)
     pick: 0
 end.map:
   n: null
