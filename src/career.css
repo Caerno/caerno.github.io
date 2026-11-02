@@ -131,6 +131,10 @@ h3.block{font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;text-tran
 .mnote b{color:var(--mid)}
 .about{max-width:68ch;margin-top:26px}
 .about p{color:var(--mid);font-size:16px;line-height:1.6;margin:0 0 12px}
+/* карта профессий (02.11): облако всегда развёрнуто, во весь блок */
+.cloudbox{position:relative;border:1px solid var(--line);background:var(--bg2);border-radius:3px;height:min(78vh,720px);min-height:360px;overflow:hidden;margin-top:28px}
+.cloudbox canvas{position:absolute;inset:0;width:100%;height:100%}
+.cloudbox .cap{position:absolute;left:20px;right:20px;bottom:14px;background:linear-gradient(180deg,transparent,#17181B 42%);padding-top:14px;font-family:var(--mono);font-size:10.5px;color:var(--dim)}
 footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:14px;color:var(--dim)}
 footer .wrap{display:flex;gap:20px;flex-wrap:wrap}
 footer a{text-decoration:none}

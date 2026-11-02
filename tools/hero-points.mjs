@@ -25,13 +25,26 @@ function cloud() {
     const lam = mul(m, v).reduce((s, x, i) => s + x * v[i], 0);
     return { v, lam };
   }
-  const p1 = power(cov);
-  const deflated = cov.map((r, i) => r.map((x, j) => x - p1.lam * p1.v[i] * p1.v[j]));
-  const p2 = power(deflated);
+  /* все шесть компонент: первые две — координаты облака, остальные четыре — оттенок разлетающихся имён (02.11) */
+  const PC = []; let m = cov;
+  for (let k = 0; k < 6; k++) { const p = power(m); PC.push(p); m = m.map((r, i) => r.map((x, j) => x - p.lam * p.v[i] * p.v[j])); }
+  const [p1, p2] = PC;
 
   const dot = (a, b) => a.reduce((s, x, i) => s + x * b[i], 0);
   const pts = z.map((row, i) => ({ x: dot(row, p1.v), y: dot(row, p2.v), t: src.occupations[i].title }));
   const sx = Math.max(...pts.map(p => Math.abs(p.x))), sy = Math.max(...pts.map(p => Math.abs(p.y)));
+  /* оттенок по тому, чего в 2D не видно: остаток в PC3–PC6. Два варианта на пробу (02.11, его слово «и то и то»):
+     k — кластер k-means (5 групп, старт детерминированный: самые далёкие точки), h — угол в плоскости PC3/PC4, 0..1 */
+  const rest = z.map(row => PC.slice(2).map(p => dot(row, p.v)));
+  const h = rest.map(r => round((Math.atan2(r[1], r[0]) / (2 * Math.PI) + 1) % 1));
+  const K = 5, d2 = (a, b) => a.reduce((s, x, i) => s + (x - b[i]) ** 2, 0);
+  let cents = [rest[0]];
+  while (cents.length < K) { let best = 0, bd = -1; rest.forEach((r, i) => { const d = Math.min(...cents.map(c => d2(r, c))); if (d > bd) { bd = d; best = i; } }); cents.push(rest[best]); }
+  let kk = new Array(rest.length).fill(0);
+  for (let it = 0; it < 60; it++) {
+    kk = rest.map(r => { let b = 0, bd = Infinity; cents.forEach((c, j) => { const d = d2(r, c); if (d < bd) { bd = d; b = j; } }); return b; });
+    cents = cents.map((c, j) => { const mem = rest.filter((_, i) => kk[i] === j); return mem.length ? c.map((_, q) => mem.reduce((s, r) => s + r[q], 0) / mem.length) : c; });
+  }
 
   /* акцент — его собственная точка. theta в candidates.json уже в тех же единицах,
      что и z-оценки профессий: career.js (строки 72–78) сравнивает их напрямую,
@@ -52,9 +65,10 @@ function cloud() {
     n: pts.length,
     caption: { en: `${pts.length} occupations, O*NET interest space`, ru: `${pts.length} профессии O*NET в пространстве интересов` },
     source: 'data/career/occupations.json · O*NET 30.0 Interests, CC BY 4.0',
-    axes: { pc1: p1.v.map(v => round(v)), pc2: p2.v.map(v => round(v)), share: [round(p1.lam / 6), round(p2.lam / 6)] },
+    axes: { pc1: p1.v.map(v => round(v)), pc2: p2.v.map(v => round(v)), scale: [round(sx), round(sy)], share: PC.map(p => round(p.lam / 6)) },
     me: me ? [round(me.x), round(me.y)] : null,
     meCoarse,
+    tint: { k: kk, h },                               /* оттенок имени: кластер 0..4 / угол 0..1 (field.js, opts.tint) */
     points: pts.map(p => [round(p.x / sx), round(p.y / sy), 1])
   };
 }

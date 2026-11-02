@@ -100,7 +100,7 @@ const inline = f => fs.readFileSync(f, 'utf8').replace(/\n$/, '');
 const CSS = inline('src/landing.css'), LANDING_JS = inline('src/landing.js'), FIELD_JS = fs.readFileSync('src/field.js', 'utf8');
 /* знак: src/brand/ пишет tools/brand.py; в меню — знак без плитки, фавиконы лежат рядом со страницами */
 const SITE = 'https://caerno.github.io/';                 /* og:image — только абсолютным адресом */
-const MARK = inline('src/brand/mark.svg'), ICONS = ['favicon.svg', 'favicon.ico', 'apple-touch-icon.png'];
+const MARK = inline('src/brand/mark.svg'), ICONS = ['favicon.svg', 'favicon.ico', 'apple-touch-icon.png', 'photo.png'];   /* photo.png — tools/photo.py (02.11) */
 
 function render(lang, publish) {
   const ru = lang === 'ru';
@@ -227,6 +227,11 @@ ${vis('work') ? `<section id="work"><div class="wrap">
     </${tag}></div>`; }).join('')}</div>
 </div></section>` : ''}
 
+${vis('photo') ? `<section id="photo" class="photo"><div class="wrap">
+  ${(l => `<div class="photo__box rise">${l ? `<a href="${esc(l.url)}" target="_blank" rel="noopener">` : ''}<img class="photo__img" src="${up}photo.png" width="240" height="240" alt="${esc(D('profile.name', profile.name))}">${l ? '</a>' : ''}
+  ${l ? `<a class="ext" href="${esc(l.url)}" target="_blank" rel="noopener">LinkedIn ↗</a>` : ''}</div>`)(profile.links.find(l => l.label === 'LinkedIn'))}
+</div></section>` : ''}
+
 ${vis('fit') ? `<section id="fit"><div class="wrap">
   ${el('fit.eyebrow', t => `<p class="eyebrow rise">${t}</p>`)}
   ${el('fit.h2', t => `<h2 class="rise">${t}</h2>`)}
@@ -271,10 +276,8 @@ ${vis('space') ? `<section id="space"><div class="wrap">
   ${eyebrow('space', 'space.eyebrow', false)}
   ${el('space.h2', t => `<h2 class="rise">${t}</h2>`)}
   ${el('space.sub', t => `<p class="sub rise">${t}</p>`)}
-  ${S('space.more') ? `<div class="space__more"><p>${esc(S('space.more'))}</p></div>` : ''}
   <div class="cloudbox rise"><canvas id="cloud-c"></canvas>
-    ${S('space.more') && S('space.toggle') ? `<button class="space__name" type="button" aria-expanded="false">${esc(S('space.toggle'))}</button>` : ''}<div class="cap" id="cloud-p">${esc(S('space.cap') ?? 'O*NET 30.0, CC BY 4.0')}</div></div>
-  ${el('space.btn', t => `<p class="space__btn"><a class="btn ghost" href="${TEST[lang]}">${t}</a></p>`)}
+    ${el('space.btn', t => `<a class="space__name" href="${TEST[lang]}">${t}</a>`)}<div class="cap" id="cloud-p">${esc(S('space.cap') ?? 'O*NET 30.0, CC BY 4.0')}</div></div>
   ${eyebrow('space', 'space.eyebrow', true)}
 </div></section>` : ''}
 
@@ -310,9 +313,9 @@ ${(() => { const inner = [vis('footer-map') && MAP.length ? `<span class="fmap">
   return vis('footer') && inner ? `<footer><div class="wrap" style="display:flex;gap:20px;flex-wrap:wrap;padding:0">${inner}</div></footer>` : ''; })()}
 
 <script>
-${LANDING_JS}
 const POINTS = ${JSON.stringify(POINTS)};
 ${FIELD_JS}
+${LANDING_JS}
 </script>
 `;
 }

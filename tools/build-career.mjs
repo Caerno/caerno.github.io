@@ -25,6 +25,10 @@ export async function buildCareer(outDir = join(ROOT, 'dist', 'career'), { prett
     readFile(join(ROOT, 'src', 'career.css'), 'utf8'), readFile(join(ROOT, 'src', 'career.js'), 'utf8'),
     J('data/career/xwalk.json'), J('data/career/constraints.json'), J('data/career/ru-names.json'),
   ]);
+  // Карта профессий внизу страницы (02.11): облако из главной (src/field.js, точки из data/derived/hero-points.json);
+  // имена под курсором разлетаются, оттенок — по кластеру в PC3–PC6 (?tint=k) или углу PC3/PC4 (?tint=h); точка отвечающего — career.js.
+  const fieldJs = await readFile(join(ROOT, 'src', 'field.js'), 'utf8');
+  const cloudSet = (await J('data/derived/hero-points.json')).sets.find((x) => x.id === 'cloud');
   const cssMin = css.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n{2,}/g, '\n').trim();
 
   for (const lang of ['en', 'ru']) {
@@ -43,6 +47,8 @@ export async function buildCareer(outDir = join(ROOT, 'dist', 'career'), { prett
     }
     const occList = occ.occupations;
     // Ограничения (барьеры, условия, путь) — только на русской странице: тексты вопросов пока только по-русски.
+    const { me, meCoarse, ...cloud } = cloudSet;   // ничьих векторов на странице: его точка в карту не идёт
+    const POINTS = { sets: [{ ...cloud, names: occList.map((o) => (isRu && ruNames[o.code]) || o.title), hoverNames: true, cornerNames: false }] };
     const payload = { T, items, model: careerModel(model, bank), occ: occList, occStats: occ.stats, xwalkUrl: './xwalk.json', ruNames, ...(isRu ? { limits } : {}) };
     // Вкладки профессии грузятся отдельным файлом при первом открытии: на русской — с Справочником Минтруда.
     const xo = {}; for (const [c, v] of Object.entries(xw.onet)) xo[c] = isRu ? { d: v.d, esco: v.esco, mt: v.mt } : { d: v.d, esco: v.esco };
@@ -140,11 +146,20 @@ ${model.dims.slice(n6).map((s) => bar(s, T.big5[s], T.big5Hints[s])).join('\n')}
   <p class="srcline">${esc(T.sources)}</p>
 </div></section>
 
+<section id="map"><div class="wrap">
+  <p class="eyebrow">O*NET 30.0</p>
+  <h2>${esc(T.mapTitle)}</h2>
+  <p class="sub">${esc(T.mapNote)}</p>
+  <div class="cloudbox"><canvas id="cloud-c"></canvas><div class="cap">${esc(T.mapCap)}</div></div>
+</div></section>
+
 <footer><div class="wrap">
   <span>${esc(T.footPrivacy)}</span>
 </div></footer>
 <script>var CAREER_DATA = ${JSON.stringify(payload).replace(/</g, '\\u003c')};</script>
 <script>
+var POINTS = ${JSON.stringify(POINTS)};
+${fieldJs}
 ${js}
 </script>
 </body>

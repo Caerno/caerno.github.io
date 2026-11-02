@@ -165,6 +165,18 @@
       if (k !== 1) ctx.font = FS + 'px "Geist Mono", monospace';
     }
 
+    /* Точка отвечающего (страница теста, 02.11): mark([x, y]) в координатах облака (−1..1) или null; оранжевый знак, чуть пульсирует */
+    var MARK = null;
+    this.mark = function (xy) { MARK = xy; if (REDUCED && running && visible) loop(); };
+    function drawMark(cx, cy, rx, ry, ca, sa, t) {
+      if (!MARK) return;
+      var X = cx + (MARK[0] * ca - MARK[1] * sa) * rx, Y = cy + (MARK[0] * sa + MARK[1] * ca) * ry;
+      var pu = REDUCED ? 0.5 : 0.5 + 0.5 * Math.sin(t * 2.6);
+      ctx.save(); ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.beginPath(); ctx.arc(X, Y, 9 + 3 * pu, 0, Math.PI * 2); ctx.strokeStyle = 'rgba(224,112,58,' + (0.25 + 0.3 * pu).toFixed(2) + ')'; ctx.lineWidth = 1.5; ctx.stroke();
+      ctx.font = '500 ' + (FS * (1.5 + 0.15 * pu)).toFixed(1) + 'px "Geist Mono", monospace'; ctx.fillStyle = '#E0703A'; ctx.fillText('@', X, Y);
+      ctx.restore();
+    }
     var LR = 120;                                    /* радиус лупы, px */
     var lensA = 0;                                   /* сила лупы: растёт при наведении, плавно гаснет после */
     var LENS = REDUCED ? 0.6 : 1.9;                  /* прибавка к размеру в центре лупы */
@@ -177,14 +189,32 @@
        drift (cornerNames) — только раскрытое: имя в месте касания уходит вбок и расплывается, как из фокуса. */
     var NAMES = set.names || null, SP = NAMES ? new Float32Array(set.points.length * 2) : null;
     var NPN = 16, NP = [], npHead = 0, npLast = -1, npLastT = -1;
-    for (var q0 = 0; q0 < NPN; q0++) NP.push({ on: false, i: 0, x: 0, y: 0, t0: 0, kind: 0, vx: 0, vy: 0, rot: 0 });
-    var T_FALL = 1.8, T_DRIFT = 1.6;
+    for (var q0 = 0; q0 < NPN; q0++) NP.push({ on: false, i: 0, x: 0, y: 0, t0: 0, kind: 0, vx: 0, vy: 0, rot: 0, col: '' });
+    /* Механика имени под курсором (02.11, на пробу, opts.names / ?names=): fall — бросок вбок и мягкое падение (kind 0, за знаками);
+       float — всплывает пузырём, чуть покачиваясь, не уменьшаясь (2); type — печатается по букве у точки, держится, стирается (3);
+       pin — встаёт подписью у точки и висит, пока не вытеснят новые (4). drift (1) — прежний уход вбок при раскрытии. */
+    var NMODE = { fall: 0, float: 2, type: 3, pin: 4 }[opts.names] || 0;
+    var CYCLE = opts.names === 'cycle' ? [0, 3, 2, 4] : null, cyc = 0;   /* его решение 02.11: по кругу fall → type → float → pin, движущиеся чередуются с неподвижными */
+    function nextMode() { if (!CYCLE) return NMODE; var m = CYCLE[cyc]; cyc = (cyc + 1) % CYCLE.length; return m; }
+    var T_FALL = 3.6, T_DRIFT = 1.6, T_FLOAT = 4.5, T_TYPE = 4.0, T_PIN = 7.0;
+    /* Цвет имени (02.11): не белый, а приглушённый оттенок по тому, чего в 2D-проекции не видно (set.tint из hero-points.mjs):
+       opts.tint 'k' — пять кластеров по PC3–PC6, 'h' — угол в плоскости PC3/PC4 плавной радугой; иначе — прежний белый. */
+    var KPAL = [22, 95, 170, 232, 305];
+    function nameColor(i) {
+      var T = set.tint; if (!T || !opts.tint) return '#E8E6E1';
+      var hue = opts.tint === 'h' ? T.h[i] * 360 : KPAL[T.k[i] % KPAL.length];
+      return 'hsl(' + hue.toFixed(0) + ',40%,68%)';
+    }
     function npSpawn(i, x, y, t, kind) {
       var n = NP[npHead]; npHead = (npHead + 1) % NPN;
-      n.on = true; n.i = i; n.x = x; n.y = y; n.t0 = t; n.kind = kind;
+      n.on = true; n.i = i; n.x = x; n.y = y; n.t0 = t; n.kind = kind; n.col = nameColor(i);
       var side = Math.random() < 0.5 ? -1 : 1;
-      if (kind === 0) { n.vx = side * (50 + Math.random() * 90); n.vy = -(230 + Math.random() * 90); n.rot = side * (0.15 + Math.random() * 0.3); }
-      else { n.vx = (x >= W / 2 ? 1 : -1) * (120 + Math.random() * 60); n.vy = (Math.random() - 0.5) * 20; n.rot = 0; }
+      if (kind === 0) {                                /* бросок вбок-вверх: 35–75° от вертикали в случайную сторону, скорость случайная (02.11, «больше вправо-влево») */
+        var a = -Math.PI / 2 + side * (0.6 + Math.random() * 0.7), sp = 180 + Math.random() * 90;
+        n.vx = Math.cos(a) * sp; n.vy = Math.sin(a) * sp; n.rot = (Math.random() - 0.5) * 0.7;
+      }
+      else if (kind === 1) { n.vx = (x >= W / 2 ? 1 : -1) * (120 + Math.random() * 60); n.vy = (Math.random() - 0.5) * 20; n.rot = 0; }
+      else { n.vx = (Math.random() - 0.5) * 30; n.vy = -(40 + Math.random() * 25); n.rot = Math.random() * 6.28; }   /* float: лёгкий снос; type/pin: место стоит */
     }
     /* один шрифт на всю таблицу, размер — масштабом, прозрачность — globalAlpha: ни разбора шрифта, ни размытия на кадр */
     function npText(n, x, y, sc, a, rot, shade) {
@@ -200,17 +230,31 @@
       ctx.font = '500 ' + (FS - 2) + 'px "Geist", sans-serif'; ctx.fillStyle = '#E8E6E1';   /* на пару пунктов меньше поля */
       ctx.strokeStyle = opts.bgColor || '#121315'; ctx.lineJoin = 'round';
       for (var k = 0; k < NPN; k++) {
-        var n = NP[k]; if (!n.on || n.kind !== only) continue;
-        var T = n.kind === 0 ? T_FALL : T_DRIFT, u = (t - n.t0) / T;
+        var n = NP[k]; if (!n.on || (only ? n.kind === 0 : n.kind !== 0)) continue;   /* за знаками — только fall, остальные спереди */
+        var T = [T_FALL, T_DRIFT, T_FLOAT, T_TYPE, T_PIN][n.kind], u = (t - n.t0) / T;
         if (u >= 1) { n.on = false; continue; }
-        if (n.kind === 0) {                              /* осыпь: бросок, тяжесть, отскок от дна, уход вглубь, шлейф */
+        ctx.fillStyle = n.col || '#E8E6E1';
+        if (n.kind === 0) {                              /* осыпь: бросок вбок, слабая тяжесть, почти не уменьшается (02.11: мягче и медленнее) */
           for (var g = 1; g >= 0; g--) {
             var tau = Math.max(0, (t - n.t0) - g * 0.08), uu = tau / T;
-            var x = n.x + n.vx * tau, y = n.y + n.vy * tau + 300 * tau * tau, fl = H + 6;   /* отскок — у самого низа рамки */
+            var x = n.x + n.vx * 0.6 * tau, y = n.y + n.vy * 0.6 * tau + 45 * tau * tau, fl = H + 6;   /* отскок — у самого низа рамки */
             if (y > fl) y = fl - (y - fl) * 0.45;
-            var big = Math.max(0, 1 - uu * 2.2);           /* в начале полёта крупнее и с тенью, потом уходит вглубь */
-            npText(n, x, y, 1.15 + 1.0 * big - 0.6 * uu, (1 - uu) * (g ? 0.3 : 1), n.rot * uu, g ? 0 : 0.85 * big);
+            var big = Math.max(0, 1 - uu * 1.2);
+            npText(n, x, y, 1.25 + 0.5 * big - 0.15 * uu, Math.min(1, (1 - uu) * 1.6) * (g ? 0.3 : 1), n.rot * uu * 0.5, g ? 0 : 0.85 * big);
           }
+        } else if (n.kind === 2) {                       /* float: всплывает, покачиваясь; размер постоянный; в конце растворяется */
+          var tf = t - n.t0, xf = n.x + n.vx * tf + Math.sin(tf * 1.7 + n.rot) * 9, yf = n.y - 10 + n.vy * tf;
+          npText(n, xf, yf, 1.3, Math.min(1, u * 6) * Math.min(1, (1 - u) * 3), 0, 0.85);
+        } else if (n.kind === 3) {                       /* type: печатается по букве, держится, стирается с конца; курсор _ мигает */
+          var full = NAMES[n.i], L = full.length, tt = t - n.t0, tin = L * 0.045, tout = T - L * 0.025;
+          var shown = tt < tin ? Math.floor(tt / 0.045) : tt < tout ? L : Math.max(0, L - Math.floor((tt - tout) / 0.025));
+          var txt = full.slice(0, shown) + (Math.floor(tt * 3) % 2 ? '_' : ' ');
+          ctx.save(); ctx.textAlign = 'left'; ctx.translate(n.x + 10, n.y - 14); ctx.scale(1.3, 1.3);
+          ctx.lineWidth = 7 / 1.3; ctx.globalAlpha = 0.85; ctx.strokeText(txt, 0, 0); ctx.globalAlpha = 1; ctx.fillText(txt, 0, 0); ctx.restore();
+        } else if (n.kind === 4) {                       /* pin: подпись у точки с короткой ножкой; висит, в последние 1,5 с гаснет */
+          var ap = Math.min(1, u * 8) * Math.min(1, (1 - u) * T / 1.5), lx = n.x, ly = n.y;
+          ctx.save(); ctx.globalAlpha = ap * 0.6; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(lx, ly - 4); ctx.lineTo(lx, ly - 16); ctx.strokeStyle = ctx.fillStyle; ctx.stroke(); ctx.restore();
+          npText(n, lx, ly - 24, 1.25, ap, 0, 0.85);
         } else {                                         /* уход из фокуса: вбок, копии расползаются */
           var e = 1 - Math.pow(1 - u, 2), x2 = n.x + n.vx * e * T * 0.6, y2 = n.y - 12 + n.vy * u, sp = 7 * u, a2 = 1 - u, sc = 1.3 - 0.25 * u;
           npText(n, x2, y2, sc, a2, 0, 0);
@@ -344,7 +388,7 @@
       if (GROW) { if (!REDUCED) growStep(t, Math.min(0.05, Math.max(0, t - (GROW.lt || t)))); GROW.lt = t;
         BW = GROW.W0 || W; BH = GROW.H0 || H; cx += GROW.ox; cy += GROW.oy; }   /* центр — середина коробки */
       var gx = GROW ? 1 + (GROW.rw - 1) * GROW.g : 1, gy = GROW ? 1 + (GROW.rh - 1) * GROW.g : 1;
-      var rx = Math.min(BW * (opts.rx || 0.30), 520) * scale * gx, ry = Math.min(BH * (opts.ry || 0.34), 330) * scale * gy;
+      var rx = Math.min(BW * (opts.rx || 0.30), opts.rxMax || 520) * scale * gx, ry = Math.min(BH * (opts.ry || 0.34), opts.ryMax || 330) * scale * gy;   /* пределы — опциями: карта на странице теста крупнее (02.11) */
       var ca = Math.cos(rot), sa = Math.sin(rot), alpha = 1 - 0.55 * f;
       var dt = Math.min(0.1, Math.max(0, t - lastT)); lastT = t;
       lensA = REDUCED ? (ptr.on ? 1 : 0) : lensA + ((ptr.on ? 1 : 0) - lensA) * Math.min(1, dt * (ptr.on ? 8 : 1.6));
@@ -410,7 +454,7 @@
       ctx.fillStyle = opts.bgColor || '#121315'; ctx.fillRect(0, 0, W, H);
       if (NAMES && hi >= 0 && hi !== npLast && t - npLastT > 0.12 && !REDUCED) {   /* новое касание — новая строка таблицы */
         var openNow = GROW && GROW.open && GROW.g > 0.85;
-        var kind = openNow && set.cornerNames ? 1 : (set.hoverNames ? 0 : -1);
+        var kind = openNow && set.cornerNames ? 1 : (set.hoverNames ? nextMode() : -1);
         if (kind >= 0) { npSpawn(hi, SP[hi * 2], SP[hi * 2 + 1], t, kind); npLast = hi; npLastT = t; }
       }
       if (!ptr.on) npLast = -1;
@@ -427,6 +471,7 @@
       big.sort(function (p, q) { return q[4] - p[4]; });
       big.forEach(function (b) { glyph(b[0], b[1], b[2], b[3], lens(b[4])); });
       drawLabels(lab);
+      drawMark(cx, cy, rx, ry, ca, sa, t);
       drawNames(t, 1);
       if (REDUCED && NAMES && hi >= 0 && (set.hoverNames || set.cornerNames)) {   /* название под курсором — на месте, без полёта */
         ctx.save(); ctx.textBaseline = 'middle'; ctx.textAlign = 'center'; ctx.lineJoin = 'round';
@@ -458,31 +503,5 @@
     this.set = set;
   }
 
-  document.fonts.ready.then(function () {
-    var hero = new Field(document.getElementById('hero-c'), { set: 'graph', labels: true, fly: true, lang: document.documentElement.lang || 'ru' });
-    hero.start();
-    var t = document.getElementById('hero-t');
-    setTimeout(function () { t.classList.add('on'); }, REDUCED ? 0 : 2200);   /* текст — в середине отъезда, как раньше */
-
-    /* облако запускается, только когда доезжает до экрана */
-    var cc = document.getElementById('cloud-c');
-    var cloud = new Field(cc, { set: 'cloud', fly: false, bg: false, rx: 0.22, ry: 0.30, fs: 11, bgColor: '#17181B', grow: true });
-    window.CLOUD = cloud;
-    var started = false;
-    new IntersectionObserver(function (es) {
-      es.forEach(function (en) { if (en.isIntersecting && !started) { started = true; cloud.start();
-        var c = cloud.set;
-        var cp = document.getElementById('cloud-p');
-        if (!cp.textContent.trim()) cp.innerHTML = c.source +
-          ' · две главные компоненты: ' + (c.axes.share[0] * 100).toFixed(1) + '% + ' + (c.axes.share[1] * 100).toFixed(1) + '% дисперсии';
-      } });
-    }, { threshold: 0.25 }).observe(cc);
-
-    /* появление секций и тень у навигации */
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-    document.querySelectorAll('.rise').forEach(function (el) { io.observe(el); });
-    addEventListener('scroll', function () { document.getElementById('nav').classList.toggle('stuck', scrollY > 24); }, { passive: true });
-  });
+  window.Field = Field; window.FIELD_REDUCED = REDUCED;   /* запуск — в landing.js (главная) и career.js (страница теста), 02.11 */
 })();

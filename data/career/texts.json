@@ -115,7 +115,10 @@
     "pickMax": "Up to three.",
     "badgeHint": "Mark up to three occupations as “mine” to make a picture.",
     "badgeHead": "My pick",
-    "badgeNeed": "Mark occupations first"
+    "badgeNeed": "Mark occupations first",
+    "mapTitle": "Map of occupations",
+    "mapNote": "All 923 O*NET occupations in interest space: two principal components of RIASEC, so similar occupations sit close together. Hover over a symbol to see the occupation; the orange mark is where your answers put you.",
+    "mapCap": "O*NET 30.0, CC BY 4.0 · two principal components of RIASEC interests"
   },
   "ru": {
     "title": "Кем быть",
@@ -276,6 +279,9 @@
     "pickMax": "Можно выбрать не больше трёх.",
     "badgeHint": "Отметьте до трёх профессий как «моё» — соберём картинку.",
     "badgeHead": "Мой выбор",
-    "badgeNeed": "Сначала отметьте профессии"
+    "badgeNeed": "Сначала отметьте профессии",
+    "mapTitle": "Карта профессий",
+    "mapNote": "Все 923 профессии O*NET в пространстве интересов: две главные компоненты RIASEC, похожие профессии стоят рядом. Наведите на знак — увидите профессию; оранжевая метка — где по вашим ответам находитесь вы.",
+    "mapCap": "O*NET 30.0, CC BY 4.0 · две главные компоненты интересов RIASEC"
   }
 }

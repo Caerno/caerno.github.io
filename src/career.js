@@ -410,6 +410,22 @@ if (typeof document !== 'undefined' && typeof CAREER_DATA !== 'undefined') (func
   }
   load();
   var st = rebuild(), showing = false;   // сохранённый выбор — сразу в профиль
+  // Карта профессий внизу (02.11): облако из field.js; точка отвечающего — среднее RIASEC текущего профиля (в z-единицах
+  // профессий, как в rankOcc) в тех же двух главных компонентах, что и облако (axes из hero-points.mjs). До первого ответа точки нет.
+  var CLOUD = null, cloudEl = document.getElementById('cloud-c');
+  if (cloudEl && window.Field) document.fonts.ready.then(function () {
+    CLOUD = new Field(cloudEl, { set: 'cloud', fly: false, bg: false, rx: 0.42, ry: 0.42, rxMax: 640, ryMax: 420, fs: 12, bgColor: '#17181B',
+      tint: (location.search.match(/[?&]tint=(\w)/) || [])[1] || 'h',
+      names: (location.search.match(/[?&]names=(\w+)/) || [])[1] || 'cycle' });   /* по умолчанию по кругу fall → type → float → pin; ?names=fall|float|type|pin — одна (02.11) */   /* по умолчанию радуга по углу PC3/PC4 (его выбор 02.11), ?tint=k — кластеры */
+    CLOUD.start(); markMe();
+  });
+  function markMe() {
+    if (!CLOUD) return;
+    if (!nAll()) return CLOUD.mark(null);
+    var ax = CLOUD.set.axes, x = 0, y = 0, i;
+    for (i = 0; i < 6; i++) { x += st.mu[i] * ax.pc1[i]; y += st.mu[i] * ax.pc2[i]; }
+    CLOUD.mark([Math.max(-1, Math.min(1, x / ax.scale[0])), Math.max(-1, Math.min(1, y / ax.scale[1]))]);
+  }
   function nPicks() { return Object.keys(picks).length; }
   function nAll() { return st.n - st.extra + (LIM ? Object.keys(lans).length : 0); }
 
@@ -441,7 +457,7 @@ if (typeof document !== 'undefined' && typeof CAREER_DATA !== 'undefined') (func
     if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
     if (showing) res.hidden = false;
     document.body.classList.add('nohover');
-    answers.push([item.id, y]); save(); st = rebuild(); renderBars(); if (showing) renderResults(); renderQuestion();
+    answers.push([item.id, y]); save(); st = rebuild(); markMe(); renderBars(); if (showing) renderResults(); renderQuestion();
   }
   function answerLimit(id, code) {
     if (busy()) return;
@@ -647,7 +663,7 @@ if (typeof document !== 'undefined' && typeof CAREER_DATA !== 'undefined') (func
     if (picks[code] === v) delete picks[code];
     else if (v === 'yes' && yes >= 3) { pickNote(T.pickMax); return; }
     else picks[code] = v;
-    save(); st = rebuild(); renderResults(); renderQuestion();
+    save(); st = rebuild(); markMe(); renderResults(); renderQuestion();
   }
   function pickNote(t) { var n = document.getElementById('career-pick-note'); if (!n) return; n.textContent = t; n.hidden = false; setTimeout(function () { n.hidden = true; }, 2500); }
   // ✓ и ✕ справа — по наведению (десктоп); на сенсорном экране кнопок нет, строку смахивают: вправо — «моё», влево — «не моё».
