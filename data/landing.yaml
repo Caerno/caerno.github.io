@@ -261,6 +261,7 @@ _layout:
     items:
       - end.h2
       - end.cv
+      - end.map
   - id: footer
     title: Подвал
     show: true
@@ -632,6 +633,17 @@ end.h2:
   en:
     v:
       - 'Looking for work: full-time or contract, remote. Write to me.'
+    pick: 0
+end.map:
+  n: null
+  now: 'подпись ссылки на финал в микрокарте подвала (02.11): раньше бралась из end.h2, теперь он — целая фраза'
+  ru:
+    v:
+      - Контакты
+    pick: 0
+  en:
+    v:
+      - Contact
     pick: 0
 end.cv:
   n: null

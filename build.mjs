@@ -147,7 +147,7 @@ function render(lang, publish) {
   const langSw = ru ? `<b>RU</b> / <a href="${other}">EN</a>` : `<a href="${other}">RU</a> / <b>EN</b>`;
   /* микрокарта для подвала: показанные блоки в порядке страницы, подпись — из меню или надписи над заголовком */
   const MAP = [['work', 'nav.work'], ['fit', 'fit.eyebrow'], ['how', 'nav.how'], ['code', 'nav.code'], ['space', 'space.eyebrow'],
-               ['about', 'nav.about'], ['faq', 'faq.eyebrow'], ['end', 'end.h2']]
+               ['about', 'nav.about'], ['faq', 'faq.eyebrow'], ['end', 'end.map']]   /* 02.11: у финала в подвале своя короткая подпись, end.h2 стал фразой */
     .filter(([id, k]) => vis(id) && S(k)).map(([id, k]) => `<a href="#${id}">${esc(S(k))}</a>`);
 
   return `<!doctype html>
