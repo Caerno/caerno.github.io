@@ -196,7 +196,10 @@
     var NMODE = { fall: 0, float: 2, type: 3, pin: 4 }[opts.names] || 0;
     var CYCLE = opts.names === 'cycle' ? [0, 3, 2, 4] : null, cyc = 0;   /* его решение 02.11: по кругу fall → type → float → pin, движущиеся чередуются с неподвижными */
     function nextMode() { if (!CYCLE) return NMODE; var m = CYCLE[cyc]; cyc = (cyc + 1) % CYCLE.length; return m; }
-    var T_FALL = 3.6, T_DRIFT = 1.6, T_FLOAT = 4.5, T_TYPE = 4.0, T_PIN = 7.0;
+    /* Общее гашение (его слово 02.11): у всех механик одна длительность T_ALL и одна огибающая альфы — сигмоида от старта,
+       середина ENV_C, ширина ENV_W; последние ~1,5 с имя почти прозрачно, статичные (type, pin) не висят дольше движущихся. */
+    var T_ALL = 5.0, T_DRIFT = 1.6, ENV_C = 2.6, ENV_W = 0.45;
+    function env(tt) { return 1 - 1 / (1 + Math.exp(-(tt - ENV_C) / ENV_W)); }
     /* Цвет имени (02.11): не белый, а приглушённый оттенок по тому, чего в 2D-проекции не видно (set.tint из hero-points.mjs):
        opts.tint 'k' — пять кластеров по PC3–PC6, 'h' — угол в плоскости PC3/PC4 плавной радугой; иначе — прежний белый. */
     var KPAL = [22, 95, 170, 232, 305];
@@ -231,7 +234,7 @@
       ctx.strokeStyle = opts.bgColor || '#121315'; ctx.lineJoin = 'round';
       for (var k = 0; k < NPN; k++) {
         var n = NP[k]; if (!n.on || (only ? n.kind === 0 : n.kind !== 0)) continue;   /* за знаками — только fall, остальные спереди */
-        var T = [T_FALL, T_DRIFT, T_FLOAT, T_TYPE, T_PIN][n.kind], u = (t - n.t0) / T;
+        var T = n.kind === 1 ? T_DRIFT : T_ALL, u = (t - n.t0) / T, A = n.kind === 1 ? 1 : env(t - n.t0);
         if (u >= 1) { n.on = false; continue; }
         ctx.fillStyle = n.col || '#E8E6E1';
         if (n.kind === 0) {                              /* осыпь: бросок вбок, слабая тяжесть, почти не уменьшается (02.11: мягче и медленнее) */
@@ -240,19 +243,19 @@
             var x = n.x + n.vx * 0.6 * tau, y = n.y + n.vy * 0.6 * tau + 45 * tau * tau, fl = H + 6;   /* отскок — у самого низа рамки */
             if (y > fl) y = fl - (y - fl) * 0.45;
             var big = Math.max(0, 1 - uu * 1.2);
-            npText(n, x, y, 1.25 + 0.5 * big - 0.15 * uu, Math.min(1, (1 - uu) * 1.6) * (g ? 0.3 : 1), n.rot * uu * 0.5, g ? 0 : 0.85 * big);
+            npText(n, x, y, 1.25 + 0.5 * big - 0.15 * uu, A * (g ? 0.3 : 1), n.rot * uu * 0.5, g ? 0 : 0.85 * big);
           }
         } else if (n.kind === 2) {                       /* float: всплывает, покачиваясь; размер постоянный; в конце растворяется */
           var tf = t - n.t0, xf = n.x + n.vx * tf + Math.sin(tf * 1.7 + n.rot) * 9, yf = n.y - 10 + n.vy * tf;
-          npText(n, xf, yf, 1.3, Math.min(1, u * 6) * Math.min(1, (1 - u) * 3), 0, 0.85);
+          npText(n, xf, yf, 1.3, Math.min(1, u * 6) * A, 0, 0.85);
         } else if (n.kind === 3) {                       /* type: печатается по букве, держится, стирается с конца; курсор _ мигает */
           var full = NAMES[n.i], L = full.length, tt = t - n.t0, tin = L * 0.045, tout = T - L * 0.025;
           var shown = tt < tin ? Math.floor(tt / 0.045) : tt < tout ? L : Math.max(0, L - Math.floor((tt - tout) / 0.025));
           var txt = full.slice(0, shown) + (Math.floor(tt * 3) % 2 ? '_' : ' ');
           ctx.save(); ctx.textAlign = 'left'; ctx.translate(n.x + 10, n.y - 14); ctx.scale(1.3, 1.3);
-          ctx.lineWidth = 7 / 1.3; ctx.globalAlpha = 0.85; ctx.strokeText(txt, 0, 0); ctx.globalAlpha = 1; ctx.fillText(txt, 0, 0); ctx.restore();
+          ctx.lineWidth = 7 / 1.3; ctx.globalAlpha = 0.85 * A; ctx.strokeText(txt, 0, 0); ctx.globalAlpha = A; ctx.fillText(txt, 0, 0); ctx.restore();
         } else if (n.kind === 4) {                       /* pin: подпись у точки с короткой ножкой; висит, в последние 1,5 с гаснет */
-          var ap = Math.min(1, u * 8) * Math.min(1, (1 - u) * T / 1.5), lx = n.x, ly = n.y;
+          var ap = Math.min(1, u * 8) * A, lx = n.x, ly = n.y;
           ctx.save(); ctx.globalAlpha = ap * 0.6; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(lx, ly - 4); ctx.lineTo(lx, ly - 16); ctx.strokeStyle = ctx.fillStyle; ctx.stroke(); ctx.restore();
           npText(n, lx, ly - 24, 1.25, ap, 0, 0.85);
         } else {                                         /* уход из фокуса: вбок, копии расползаются */
