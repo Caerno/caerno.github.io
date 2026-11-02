@@ -146,7 +146,7 @@ a.al::after{content:' →';color:var(--accent);font-family:var(--mono);font-weig
 /* финальный призыв */
 .end{text-align:center;padding:clamp(90px,12vw,180px) 0}
 .end h2{margin:0 auto 26px;font-size:clamp(34px,5vw,68px);max-width:16ch;letter-spacing:-.03em}
-.end .row{display:inline-grid;grid-template-columns:1fr 1fr;gap:12px}   /* 28.10: обе кнопки одной ширины — по самой длинной */
+.end .row{display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:12px}   /* 28.10: кнопки одной ширины — по самой длинной; 02.11: третья «Запросить резюме» */
 .end .row .btn{text-align:center}
 footer{border-top:1px solid var(--line);padding:26px 0 40px;font-family:var(--mono);font-size:11px;color:var(--dim);
        display:flex;gap:20px;flex-wrap:wrap}
@@ -165,7 +165,7 @@ footer a{text-decoration:none}
   nav .wrap{gap:16px}
   nav .wrap > a:not(.cta){display:none}
   nav .lang,nav .cta{white-space:nowrap}
-  .end .row{grid-template-columns:1fr}   /* на телефоне кнопки друг над другом */
+  .end .row{grid-auto-flow:row;grid-auto-columns:auto}   /* на телефоне кнопки друг над другом */
 }
 /* «убрать анимацию» в системе: без переходов, плавной прокрутки и сдвигов; секции видны сразу (холсты — в field.js) */
 @media (prefers-reduced-motion:reduce){

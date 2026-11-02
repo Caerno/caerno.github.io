@@ -260,6 +260,7 @@ _layout:
     show: true
     items:
       - end.h2
+      - end.cv
   - id: footer
     title: Подвал
     show: true
@@ -626,10 +627,23 @@ end.h2:
       - Написать мне
       - Связаться со мной
       - Для связи
-    pick: -1
+      - 'Ищу работу: найм или контракт, удалённо. Напишите.'
+    pick: 3
   en:
-    v: []
-    pick: -1
+    v:
+      - 'Looking for work: full-time or contract, remote. Write to me.'
+    pick: 0
+end.cv:
+  n: null
+  now: 'кнопка «Запросить резюме» в финале (02.11): mailto с готовой темой и телом «компания, роль, контакт»; PDF на сайте нет — его решение'
+  ru:
+    v:
+      - Запросить резюме
+    pick: 0
+  en:
+    v:
+      - Request CV
+    pick: 0
 field.cases:
   n: '1: 32; 2: 2.1'
   ru:
