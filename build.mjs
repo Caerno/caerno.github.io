@@ -102,10 +102,6 @@ const CSS = inline('src/landing.css'), LANDING_JS = inline('src/landing.js'), FI
 const SITE = 'https://caerno.github.io/';                 /* og:image — только абсолютным адресом */
 const MARK = inline('src/brand/mark.svg'), ICONS = ['favicon.svg', 'favicon.ico', 'apple-touch-icon.png', 'photo.png'];   /* photo.png — tools/photo.py (02.11) */
 
-/* «Запросить резюме» (02.11): PDF на сайте нет; письмо с готовой темой и полями — он отвечает резюме сам */
-const cvMail = lang => { const ru = lang === 'ru';
-  const subj = ru ? 'Запрос резюме' : 'CV request', body = ru ? 'Компания:\nРоль:\nКонтакт:\n' : 'Company:\nRole:\nContact:\n';
-  return `subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`; };
 function render(lang, publish) {
   const ru = lang === 'ru';
   const up = publish && ru ? '../' : '';                    /* dist/ru/ берёт фавиконы из dist/ */
@@ -305,8 +301,8 @@ ${vis('end') ? `<section class="end" id="end"><div class="wrap">
   <div class="row rise">
     ${TG ? `<a class="btn" href="${esc(TG.url)}">Telegram @${esc(TG.url.split('/').pop())}</a>` : ''}
     <a class="btn${TG ? ' ghost' : ''}" href="mailto:kirsanov.dima@gmail.com">kirsanov.dima@gmail.com</a>
-    ${el('end.cv', t => `<a class="btn ghost" href="mailto:kirsanov.dima@gmail.com?${cvMail(lang)}">${t}</a>`)}
   </div>
+  ${el('end.cv', t => `<p class="end__cv rise">${t}</p>`)}
 </div></section>` : ''}
 </main>
 
